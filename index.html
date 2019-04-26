@@ -1,36 +1,132 @@
 <html>
+	<head>
+		<title>Happy Birthday Lamu!!🎂</title>
+		<meta name="viewport" content="width= device-width, initial-scale=1.0">
+		<style>
+			.zoom0 {
+				transform: scale(26);
+				filter: blur(8px) brightness(60%);
+				transition: 2s;
+			}
+			.zoom {
+				transition: transform 65s;
+			}
+			.hide {
+	         	opacity: 0.1;
+	         	position: absolute;
+	        }
+	        .show {
+	        	opacity: 1;
+	        	position: absolute;
+				top: 40%;
+				left: 2%;
+				transition:.3s;
+	        }
 
-	<meta name="viewport" content="width= device-width, initial-scale=1.0">	<head>
+	        .show2 {
+	        	opacity: 1;
+	        	position: absolute;
+				top: 4%;
+				left: 2%;
+				transition:.3s;
+	        }
 
-		<link rel="stylesheet" href="styles.css">
+         	html, body {
+				margin: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			.container {
+			 	position: relative;
+			 	text-align: center;
+				
+			}
+			.banner {
+  				position: absolute;
+				left: 22%;
+				top: 32%;
+				font-family: Hind Siliguri;
+				color: white;
+				font-size: 32px;
+			}
 
-		<title>Nahin's Site</title>
+			.ha {
+				background-color: #2d2d2d;
+  				color: white;
+  				width: 100%;
+  				font-size: 28px;
+  				border-radius: 100px;
+  				text-align: center;
+			}
 
-		<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+			
+
+		</style>
 	</head>
-
 	<body>
+		<div class="containar">
+			<img id="lamu" src="lamu.jpg" class="zoom0" onclick="scale(); setTimeout(fx, 3000);" height="100%">
+			<div id="win7id" class="hide">
+				<img src="win7.png">
+			</div>
 
-		<img src="dp.png" style="max-width: 50%; height: auto" alt="Nahin">
+			<div id="fairid" class="hide">
+				<img src="fair.png" width="90%">
+			</div>
 
-		<p style="font-family: Patrick Hand" >Nahin Bin Kaysar</p>
+			<div id="graphid" class="hide">
+				<img src="graph.png" width="90%">
+			</div>
+				
 
-		<a href="http://fb.me/nahin.binkaysar.7/">
+			<div id="nbkid" class="hide">
+				<img src="nbk.png" width="110%">
+			</div>
 
-			<img src="facebook.png">
+			<div id="catid" class="hide">
+				<img src="cat.png" width="100%%">
+			</div>
 
-		</a>
-
-		<a href="http://m.me/nahin.binkaysar.7/">
-
-			<img src="messenger.png">
-
-		</a>
-		
-		<a href="http://instagram.com/nahin_binkaysar/">
-			<img src="instagram.png">
-		</a>
-
+			<div id="ban" class="banner">
+				<p>তাহলে শুরু করি?</p>
+				<p class="ha" onclick="scale(); setTimeout(fx, 3000);">হ্যাঁ</p>
+				<p class="ha" onclick="scale(); setTimeout(fx, 3000);">অবশ্যই</p>
+			</div>	
+			
+		</div>
 	</body>
-
+	<script type="text/javascript">
+		function scale() {
+			document.getElementById("lamu").className="zoom";
+			document.getElementById("ban").className="hide";
+		}
+        function fx() {
+			document.getElementById("win7id").className="show";
+			setTimeout(w7van, 10000);
+        }
+        function w7van() {
+        	document.getElementById("win7id").className="hide";
+        	document.getElementById("fairid").className="show2";
+        	setTimeout(fairvan, 13000);
+        }
+        function fairvan() {
+        	document.getElementById("fairid").className="hide";
+        	document.getElementById("graphid").className="show2";
+        	setTimeout(graphvan, 13000);
+        }
+        function graphvan() {
+        	document.getElementById("graphid").className="hide";
+        	document.getElementById("nbkid").className="show2";
+        	setTimeout(nbkvan, 13000);
+        }
+        function nbkvan() {
+        	document.getElementById("nbkid").className="hide";
+        	document.getElementById("catid").className="show";
+        	setTimeout(catvan, 13000);
+        }
+        function catvan() {
+        	document.getElementById("catid").className="hide";
+        	document.getElementById("catid").className="show";
+        }
+	</script>
 </html>

@@ -1,7 +1,7 @@
 body{
 	background-color: #263238;
 	font-family: Amatic SC;
-	font-size: 64px;
+	
 	color: #ECEFF1;
 	text-align: center;
 
@@ -9,7 +9,7 @@ body{
 }
 
 p{
-	font-size: 48px;
+	
 	font-family: Sue Ellen Francisco;
 }
 
@@ -18,6 +18,7 @@ p{
   transition: 0.3s;
   width: 40%;
   border-radius: 5px;
+  padding: 200px 160px;
 }
 
 .card:hover {
@@ -30,4 +31,14 @@ img {
 
 .container {
   padding: 2px 16px;
+}
+
+.container1 {
+  padding: 200px 160px;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
 }

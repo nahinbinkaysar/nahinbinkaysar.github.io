@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
 		<title>Happy Birthday Lamu!!🎂</title>
 		<meta name="viewport" content="width= device-width, initial-scale=1.0">
 		<style>
@@ -12,7 +13,11 @@
 				transition: transform 65s;
 			}
 			.hide {
-	         	opacity: 0.1;
+	         	opacity: 0;
+	         	position: absolute;
+	        }
+	        .show-stock {
+	        	opacity: 1;
 	         	position: absolute;
 	        }
 	        .show {
@@ -31,6 +36,13 @@
 				transition:.3s;
 	        }
 
+	        .show-hat {
+	        	opacity: 1;
+	        	position: absolute;
+				top: 0.3%;
+				left: 37%;
+				transition:1s;
+	        }
          	html, body {
 				margin: 0;
 				height: 100%;
@@ -45,9 +57,10 @@
   				position: absolute;
 				left: 22%;
 				top: 32%;
-				font-family: Hind Siliguri;
+				font-family: 'Hind Siliguri', sans-serif;
 				color: white;
 				font-size: 32px;
+				transition:1s;
 			}
 
 			.ha {
@@ -80,12 +93,29 @@
 				
 
 			<div id="nbkid" class="hide">
-				<img src="nbk.png" width="110%">
+				<img src="nbk.png" width="80%%">
 			</div>
 
 			<div id="catid" class="hide">
-				<img src="cat.png" width="100%%">
+				<img src="cat.png" width="70%%">
 			</div>
+
+			<div id="hatid" class="hide">
+				<img src="hat.png" width="56%%">
+			</div>
+
+			<div class="hide" id="hbdid">
+				<img src="hbd.png" width="70%">
+			</div>
+			<div class="hide" id="loveid">
+				<img src="love.png" width="70%" style="padding-top: 60%; padding-left: 8%">
+			</div>
+			<div class="hide" id="basiid">
+				<a href="basi.html">
+					<img src="link.png" width="75%" style="padding-top: 120%; padding-left: 4%">
+				</a>
+			</div>
+
 
 			<div id="ban" class="banner">
 				<p>তাহলে শুরু করি?</p>
@@ -121,12 +151,15 @@
         }
         function nbkvan() {
         	document.getElementById("nbkid").className="hide";
-        	document.getElementById("catid").className="show";
+        	document.getElementById("catid").className="show2";
         	setTimeout(catvan, 13000);
         }
         function catvan() {
         	document.getElementById("catid").className="hide";
-        	document.getElementById("catid").className="show";
+        	document.getElementById("hatid").className="show-hat";
+        	document.getElementById("hbdid").className="banner";
+        	document.getElementById("loveid").className="banner";
+        	document.getElementById("basiid").className="banner";
         }
 	</script>
 </html>

@@ -13,6 +13,11 @@
               <a href="http://natshint.blogspot.com/2019/01/bmi-calculator.html">BMI Calculator</a>
               <a href="hp4">Harry Potter and the Goblet of Fire</a>
               <a href="hp5">Harry Potter and the Order of the Phoenix</a>
+
+            <h1 style="margin-top: 128px;">“</h1>
+              <p id="hope" style="margin-top: -38px;">  </p>
+
+
             </div>
             <span class="revealbtn" onclick="openNav()"><</span>
             <img src="dark.jpg" alt="Nahin" style= "max-width: 256px; border-radius: 50%;">
@@ -33,8 +38,16 @@
             </div>
 
             <script>
+                var r_text = new Array ();
+                r_text[0] = "I was just thinking about you!";
+                r_text[1] = "You are a great example for others.";
+                r_text[2] = "You have great idsdfsdgsdfghsdfhgsdjgfghdfgdsfgdeas.";
+                r_text[3] = "When I grow up I want to be you!";
+                r_text[4] = "I appreciate all of your opinions.";
                 function openNav() {
                     document.getElementById("mySidenav").style.width = "250px";
+                    var i = Math.floor(r_text.length * Math.random());
+                    document.getElementById("hope").innerHTML = r_text[i];
                 }
 
                 function closeNav() {

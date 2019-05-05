@@ -1,44 +1,87 @@
-body{
-	background-color: #263238;
-	font-family: Amatic SC;
-	
-	color: #ECEFF1;
-	text-align: center;
-
-
+body {
+  font-family: 'PT Serif', serif;
+  background-color: black;
+  color: white;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-p{
-	
-	font-family: Sue Ellen Francisco;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
   transition: 0.3s;
-  width: 40%;
-  border-radius: 5px;
-  padding: 200px 160px;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.sidenav a:hover {
+  color: MediumSeaGreen;
 }
 
-img {
-  border-radius: 5px 5px 0 0;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+  margin-top: 14px;
+  margin-left: 0;
 }
 
-.container {
-  padding: 2px 16px;
+.revealbtn {
+	font-size:30px;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	cursor:pointer;
+	font-family: 'Gothic A1', sans-serif;
+}
+.revealbtn:hover {
+  color: MediumSeaGreen;
+}
+div.lheight {
+	line-height: 40%;
 }
 
-.container1 {
-  padding: 200px 160px;
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
-.center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #73AD21;
-  padding: 10px;
+
+.btn-group button {
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: center;
+}
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.btn-group button:hover {
+  background-color: MediumSeaGreen;
+}
+
+.smb {
+  font-size: 32px;
+  text-decoration: none;
+  transition: 0.5s;
+  color: white;
 }

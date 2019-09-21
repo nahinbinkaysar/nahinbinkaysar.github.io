@@ -70,15 +70,30 @@ div.lheight {
 .fab:hover {
     color: MediumSeaGreen;
 }
+
+.fas {
+  font-size: 28px;
+  text-decoration: none;
+  transition: 0.5s;
+  color: white;
+
+}
+.fas:hover {
+    font-size: 32px;
+    color: MediumSeaGreen;
+}
+
 .fa-facebook-f {
 	margin-top: 3px;
 	margin-right: -6px;
 	font-size: 26px;
 }
 
-textarea { 
-	background-color: #333;
+textarea {
+  border:0; 
+	background-color: #222;
 	color: #fff;
+  width:100%;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;

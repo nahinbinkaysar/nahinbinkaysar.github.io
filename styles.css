@@ -1,41 +1,41 @@
 body {
-  font-family: 'PT Serif', serif;
-  background-color: black;
-  color: white;
+	font-family: 'PT Serif', serif;
+	background-color: black;
+	color: white;
 }
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  display: block;
-  transition: 0.3s;
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	display: block;
+	transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: MediumSeaGreen;
+	color: MediumSeaGreen;
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 36px;
-  margin-top: 14px;
-  margin-left: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 36px;
+	margin-top: 14px;
+	margin-left: 0;
 }
 
 .revealbtn {
@@ -47,7 +47,7 @@ body {
 	font-family: 'Gothic A1', sans-serif;
 }
 .revealbtn:hover {
-  color: MediumSeaGreen;
+	color: MediumSeaGreen;
 }
 div.lheight {
 	line-height: 40%;
@@ -55,32 +55,32 @@ div.lheight {
 
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
 }
 
 .fab {
-  font-size: 32px;
+	font-size: 32px;
 	width: 42px;
-  text-decoration: none;
+	text-decoration: none;
 	transition: 0.5s;
-  color: white;
+	color: white;
 
 }
 .fab:hover {
-    color: MediumSeaGreen;
+	color: MediumSeaGreen;
 }
 
 .fas {
-  font-size: 28px;
-  text-decoration: none;
-  transition: 0.5s;
-  color: white;
+	font-size: 28px;
+	text-decoration: none;
+	transition: 0.5s;
+	color: white;
 
 }
 .fas:hover {
-    font-size: 32px;
-    color: MediumSeaGreen;
+		font-size: 32px;
+		color: MediumSeaGreen;
 }
 
 .fa-facebook-f {
@@ -90,11 +90,17 @@ div.lheight {
 }
 
 textarea {
-  border:0; 
+	border:0;
+	resize: none;
 	background-color: #222;
 	color: #fff;
-  width:100%;
+	width:100%;
+	padding-left: 6px; 
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+
+textarea:focus {
+	outline: none;
 }

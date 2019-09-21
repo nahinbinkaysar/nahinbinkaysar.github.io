@@ -1,10 +1,23 @@
 <html>
 	<head>
 	<link rel="stylesheet" href="styles.css">
-
-   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Atma&display=swap" rel="stylesheet">	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Atma&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Gothic+A1|PT+Serif" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		.back {
+		font-size:30px;
+		position: absolute;
+		left: 16px;
+		top: 16px;
+		cursor:pointer;
+		font-family: 'Gothic A1', sans-serif;
+		}
+		.back:hover {
+			color: MediumSeaGreen;
+		}
+	</style>
 	<title>Her Response💔</title>
 	</head>
 	<body align="center">
@@ -16,12 +29,14 @@
 				<button id="hint" type="submit" style="background-color: black; border: 0;" class="btn btn-success paperplane">
 				    <i class="fas fa-paper-plane"></i>
 				</button>
-				<div class="lds-ripple" style="display:none;"><div></div><div></div></div>
+				<center><div class="lds-ripple" style="padding-left: 30px; display:none;"><div></div><div></div></div></center>
 			</div>
 
 			<div style="display:none; font-family: 'Atma', cursive;" class="thankyou_message">
-      			<h2 style="font-size: 32">ধন্যবাদ </h2>
-      			<p style="font-size: 20">o(^▽^)o</p> 
+      			<h2 style="font-size: 36">ধন্যবাদ </h2>
+      			<p style="font-size: 28">o(^▽^)o</p> 
+      			<span class="back" onclick="window.location.href='index'"><</span>
+
       		</div>
 		</form>
   		<script data-cfasync="false" src="form-submission-handler.js"></script>

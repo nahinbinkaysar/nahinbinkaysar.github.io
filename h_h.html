@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		h_h
+	</title>
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css" href="">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<style type="text/css">		
+		html, body {
+			margin: 0;
+			height: 100%
+			overflow: hidden;
+			background-color: black;
+		}
+		
+		.sw {
+			width: 32%;
+			height: auto;
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			animation-name: sword;
+			animation-duration: 2s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+		}
+		.center {
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		.cr {
+			width: 32px;
+			height: auto;
+			animation-name: creeper;
+			animation-duration: 5s;
+			animation-iteration-count: 1;
+			animation-delay: 3s;
+		}
+
+		@keyframes sword {
+			from {
+				bottom: 2px;
+			}
+			to {
+				bottom: -2px;
+			}
+		}
+
+
+				
+
+		@keyframes creeper {
+			0% {
+				width: 32px;
+			}
+
+			8% {
+				width: 36px;
+				-webkit-filter: brightness(100%); /* Safari */
+  				filter: brightness(100%);	
+			}
+
+			16% {
+				width: 40px;
+				-webkit-filter: brightness(100%); /* Safari */
+  				filter: brightness(100%);
+			}
+
+			24% {
+				width: 48px;
+				-webkit-filter: brightness(100%); /* Safari */
+  				filter: brightness(100%);
+			}
+			32% {
+				width: 58px;
+				-webkit-filter: brightness(200%); /* Safari */
+  				filter: brightness(200%);
+			}
+
+			40% {
+				width: 70px;
+				-webkit-filter: brightness(200%); /* Safari */
+  				filter: brightness(200%);
+			}
+
+			50% {
+				width: 74px;
+				-webkit-filter: brightness(200%); /* Safari */
+  				filter: brightness(200%);
+			}
+
+			58% {
+				width: 76px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+			64% {
+				width: 78px;
+				-webkit-filter: brightness(500%); /* Safari */
+  				filter: brightness(500%);
+			}
+
+			70% {
+				width: 80px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+			74% {
+				width: 82px;
+				-webkit-filter: brightness(700%); /* Safari */
+  				filter: brightness(700%);
+			}
+
+			78% {
+				width: 84px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+			82% {
+				width: 86px;
+				-webkit-filter: brightness(900%); /* Safari */
+  				filter: brightness(900%);
+			}
+			84% {
+				width: 88px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+
+			86% {
+				width: 90px;
+				-webkit-filter: brightness(1200%); /* Safari */
+  				filter: brightness(1200%);
+			}
+			88% {
+				width: 92px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+			90% {
+				width: 94px;
+				-webkit-filter: brightness(2000%); /* Safari */
+  				filter: brightness(2000%);
+			}
+
+			95% {
+				width: 120px;
+				-webkit-filter: brightness(10%); /* Safari */
+  				filter: brightness(10%);
+			}
+
+			100% {
+				-webkit-filter: brightness(10000%) contrast(1000%);
+				filter: brightness(10000%) contrast(1000%);
+				width: 10000px;
+			}
+		}
+		.vann {
+			opacity: 0;
+		}
+
+
+		.shww {
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-family: Minecraftia;
+			color: white;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="center" id="hbd">
+		
+	
+		<h1>HAPPY BIRTHDAY!!! &nbsp Bin Emran</h1>
+
+	</div>
+	<img id="creeper" src="creeper.png" class="cr center">
+	<img id="sword" src="sword.png" class="sw">
+</img>
+</body>
+<script type="text/javascript">
+	setTimeout(van, 8000);
+	function van() {
+		document.getElementById('creeper').className="vann";
+		document.getElementById('sword').className="vann";
+		document.getElementById('hbd').className="shww";
+	}
+</script>
+</html>

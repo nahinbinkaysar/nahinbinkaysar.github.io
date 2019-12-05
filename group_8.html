@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		function toggleDarkLight() {
+			var body = document.getElementById("body");
+			var navbar = document.getElementById("navbar");
+			var currentClass = body.className;
+			var currentClass2 = navbar.className;
+			body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+			navbar.className = currentClass == "dark-mode1" ? "light-mode1" : "dark-mode1";
+		}
+	</script>
+</head>
+<style>
+	body {
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	body.dark-mode {
+		background-color: #202124;
+		color: #eee;
+	}
+	body.light-mode {
+		background-color: #eee;
+		color: #202124;
+	}
+	navbar.dark-mode1 {
+		background-color: #202124;
+		color: #eee;
+		overflow: hidden;
+		position: fixed;
+		bottom: 0;
+		padding: 2px;
+		width: 100%;
+	}
+	navbar.light-mode1 {
+		background-color: #eee;
+		color: #202124;
+		overflow: hidden;
+		position: fixed;
+		bottom: 0;
+		padding: 2px;
+		width: 100%;
+	}
+	
+
+	.search {
+		border-radius: 5px;
+		width: 100%;
+		padding-bottom: 8px;
+		padding-top: 8px;
+		height: 20px;
+		background: tomato;
+	}
+
+</style>
+
+<body id="body" class="dark-mode">
+	
+	<div id="navbar" class="dark-mode1">
+		<table width="100%" >
+			<tr align="center">
+				<td><i class="fas fa-arrow-left"></i></td>
+				
+				<td width="88%">
+					<div  class="search">search</div>
+				</td>
+				<td onclick="toggleDarkLight()" ><i class="fas fa-moon"></i></td>
+				<td><i class="fas fa-download"></i></td>
+			</tr>
+		</table>
+	</div>
+
+	<iframe src="g8_source.html" style="position: absolute; height: 100%; border: none; width: 100%"></iframe>
+
+</body>
+
+</html>

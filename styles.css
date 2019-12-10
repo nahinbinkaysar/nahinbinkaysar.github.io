@@ -1,0 +1,178 @@
+body {
+	font-family: 'PT Serif', serif;
+	background-color: black;
+	color: white;
+}
+
+
+@import "compass/css3";
+
+.glitch{
+  color:white;
+  font-size:100px;
+  position:relative;
+  width:400px;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: MediumSeaGreen;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 36px;
+	margin-top: 14px;
+	margin-left: 0;
+}
+
+.revealbtn {
+	font-size:30px;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	cursor:pointer;
+	font-family: 'Gothic A1', sans-serif;
+}
+.revealbtn:hover {
+	color: MediumSeaGreen;
+}
+div.lheight {
+	line-height: 40%;
+}
+
+
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
+
+.fab {
+	font-size: 32px;
+	width: 42px;
+	text-decoration: none;
+	transition: 0.5s;
+	color: white;
+
+}
+.fab:hover {
+	color: MediumSeaGreen;
+}
+
+.fas {
+	font-size: 28px;
+	text-decoration: none;
+	transition: 0.5s;
+	color: white;
+
+}
+.fas:hover {
+		font-size: 32px;
+		color: MediumSeaGreen;
+}
+
+.fa-facebook-f {
+	margin-top: 3px;
+	margin-right: -6px;
+	font-size: 26px;
+}
+
+textarea {
+	border:0;
+	resize: none;
+	background-color: #222;
+	color: #fff;
+	width:100%;
+	padding-left: 6px; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+
+
+
+
+
+
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 6px;
+  height: 6px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 16px;
+    left: 16px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 34px;
+    height: 34px;
+    opacity: 0;
+  }
+}

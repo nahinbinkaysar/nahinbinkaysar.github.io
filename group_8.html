@@ -2,79 +2,77 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Roboto+Condensed&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<script type="text/javascript">
-		function toggleDarkLight() {
-			var body = document.getElementById("body");
-			var navbar = document.getElementById("navbar");
-			var currentClass = body.className;
-			var currentClass2 = navbar.className;
-			body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-			navbar.className = currentClass == "dark-mode1" ? "light-mode1" : "dark-mode1";
-		}
+
 	</script>
 </head>
 <style>
+	html, body {
+		height: 100%;
+
+	}
 	body {
+  		display: flex;
+  		flex-direction: row;
 		margin: 0;
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	body.dark-mode {
-		background-color: #202124;
-		color: #eee;
-	}
-	body.light-mode {
+		font-family: 'Roboto Condensed', sans-serif;
+		font-family: 'Hind Siliguri', sans-serif;
 		background-color: #eee;
 		color: #202124;
 	}
-	navbar.dark-mode1 {
-		background-color: #202124;
-		color: #eee;
-		overflow: hidden;
-		position: fixed;
-		bottom: 0;
-		padding: 2px;
-		width: 100%;
-	}
-	navbar.light-mode1 {
+	navbar {
 		background-color: #eee;
 		color: #202124;
-		overflow: hidden;
-		position: fixed;
 		bottom: 0;
-		padding: 2px;
+		
 		width: 100%;
 	}
 	
 
-	.search {
-		border-radius: 5px;
-		width: 100%;
-		padding-bottom: 8px;
-		padding-top: 8px;
-		height: 20px;
-		background: tomato;
+	.frameflex {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: column;
+		flex-flow: column;
+	}
+
+	.navbarflex {
+		display: -webkit-flex;
+		display: flex;
+		color: #fff;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		background-color: #202124;
+		padding-bottom: : 20px;
+		padding-top: 10px;
+	}
+
+	.fas {
+		transition: 0.5s;
+		color: white;
+	}
+	.fas:hover {
+		color: #6200ee;
 	}
 
 </style>
 
-<body id="body" class="dark-mode">
-	
-	<div id="navbar" class="dark-mode1">
-		<table width="100%" >
-			<tr align="center">
-				<td><i class="fas fa-arrow-left"></i></td>
-				
-				<td width="88%">
-					<div  class="search">search</div>
-				</td>
-				<td onclick="toggleDarkLight()" ><i class="fas fa-moon"></i></td>
-				<td><i class="fas fa-download"></i></td>
-			</tr>
-		</table>
+<body id="body">
+	<div class="frameflex" style="flex: 1;">
+		<iframe id="g8_frame"src="g8_source.html" style="height: 100%; border: none; width: 100%"></iframe>
+		<div class="navbarflex">
+			<a href="/index.html" align="right" class="fas fa-arrow-left" style="flex: 1;"></a>
+			<a align="center" style="flex: 1;">⸻</a>
+			<a href="/g8_book.pdf" align="left" class="fas fa-download" style="flex: 1;"></a>
+		</div>
 	</div>
+	
 
-	<iframe src="g8_source.html" style="position: absolute; height: 100%; border: none; width: 100%"></iframe>
+	
+	
 
 </body>
 

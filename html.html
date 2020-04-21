@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
+<style>
+	p {
+		font-size: 32px;
+	}
+	button {
+		width: 100px;
+	}
+</style>
 <head>
-	<link rel = "stylesheet" href="styles.css">
-	<title>HTML</title>
+	<title>test</title>
 </head>
 <body>
-	<p>I watched the storm, so beautiful yet terrific.</p>
-	<img src="https://www.facebook.com/photo/download/?fbid=278106652973294&ext=1534789559&hash=AeSbxWby3aDue1SW" alt="Dhaka was good in 1970s">
+	<p id="d"></p>
+	<button type="button" onclick="test()">.</button>
+	
+
+
+	<script>
+		function test() {
+			if (document.getElementById('d').innerHTML == "Nahin") {
+				document.getElementById('d').innerHTML = "Uruban";
+
+			}else document.getElementById('d').innerHTML = "Nahin";
+		}
+	</script>
 </body>
 </html>

@@ -54,8 +54,14 @@ body {
 	align-items: flex-start;
 	justify-content: center;
 	bottom: 0;
-	color: #202124;
+	background-color: #121212;
+	color: #bdbdbd;
 	width: 100%;
 	height: 24px;
 	transition: 0.3s;
+}
+
+.dark-mode-nav {
+	background-color: #bdbdbd;
+	color: #121212;
 }

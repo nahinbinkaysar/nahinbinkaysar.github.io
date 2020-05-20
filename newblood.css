@@ -1,0 +1,63 @@
+@font-face {
+	font-family: Museo;
+	src: url(museoslab700.woff);
+}
+
+body {
+	font-family: 'Museo';
+}
+
+.dark-mode {
+	background-color: #121212;
+	color: #bdbdbd;
+}
+
+.topRightPane {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.topRightPane > div {
+	margin: 8px;
+}
+
+.profileSection {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.profileSection>div {
+	width: 256px;
+}
+
+.imageAndButtons {
+	display: flex;
+}
+
+.vertButtons {
+	display: flex;
+	flex-direction: column;
+}
+
+.vertButtons > i {
+	color: grey;
+	margin: -6px;
+	font-size: 28px;
+}
+
+.fas {
+	font-size: 24px;
+}
+
+.socialSection {
+	display: flex;
+	margin-top: 64px;
+	justify-content: center;
+}
+
+.socialSection>i {
+	margin: 8px;
+	font-size: 34px;
+}

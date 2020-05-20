@@ -23,10 +23,14 @@
         <i class="fab fa-telegram"></i>
     </div>
     <div class="navbar" id="nav">
-        <i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>
-    </div>
-    <div id="content" class="navbarContent">
-        <p>Datatype</p>
+        <i id="up" class="fas fa-chevron-up" style="text-align: center;" onclick="openNav()"></i>
+        <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
     </div>
     <script>
         var activated = 0;
@@ -37,19 +41,17 @@
         }
         function openNav() {
             if (activated == 0) {
-                document.getElementById("nav").style.bottom = "30%";
+                document.getElementById("nav").style.height = "30%";
                 document.getElementById("up").style.transform = 'rotate(180deg)';
                 document.getElementById("topRP").style.filter = "blur(3px)";
                 document.getElementById("profileS").style.filter = "blur(3px)";
                 document.getElementById("socialS").style.filter = "blur(3px)";
                 document.getElementById("socialS").style.filter = "blur(3px)";
-                document.getElementById("content").style.display = "flex";
-                document.getElementById("content").style.height = "30%";
                 
                 activated = 1; 
             }
             else {
-                document.getElementById("nav").style.bottom = "0";
+                document.getElementById("nav").style.height = "24px";
                 document.getElementById("up").style.transform = 'rotate(0deg)';
                 document.getElementById("topRP").style.filter = "blur(0px)";
                 document.getElementById("profileS").style.filter = "blur(0px)";

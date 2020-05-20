@@ -23,11 +23,11 @@
         <i class="fab fa-telegram"></i>
     </div>
     <div class="navbar" id="nav">
-            <i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>
-            <div id="content" class="navbarContent">
-                <p>Datatype</p>
-            </div>
-        </div>
+        <i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>
+    </div>
+    <div id="content" class="navbarContent">
+        <p>Datatype</p>
+    </div>
     <script>
         var activated = 0;
         function dark() {
@@ -37,18 +37,19 @@
         }
         function openNav() {
             if (activated == 0) {
-                document.getElementById("nav").style.height = "30%";
+                document.getElementById("nav").style.bottom = "30%";
                 document.getElementById("up").style.transform = 'rotate(180deg)';
                 document.getElementById("topRP").style.filter = "blur(3px)";
                 document.getElementById("profileS").style.filter = "blur(3px)";
                 document.getElementById("socialS").style.filter = "blur(3px)";
                 document.getElementById("socialS").style.filter = "blur(3px)";
-                document.getElementById("content").style.display = block;
+                document.getElementById("content").style.display = "flex";
+                document.getElementById("content").style.height = "30%";
                 
                 activated = 1; 
             }
             else {
-                document.getElementById("nav").style.height = "24px";
+                document.getElementById("nav").style.bottom = "0";
                 document.getElementById("up").style.transform = 'rotate(0deg)';
                 document.getElementById("topRP").style.filter = "blur(0px)";
                 document.getElementById("profileS").style.filter = "blur(0px)";

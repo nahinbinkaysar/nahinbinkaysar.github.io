@@ -63,7 +63,12 @@ body {
 
 .navbarContent {
 	display: none;
-	
+	position: fixed;
+	bottom: 0;
+	background-color: #121212;
+	width: 100%;
+	height: 24px;
+	transition: 0.3s;
 }
 
 .dark-mode-nav {

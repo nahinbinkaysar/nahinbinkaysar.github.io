@@ -52,11 +52,9 @@ body {
 	display: flex;
 	background-color: magenta;
 	position: fixed;
+	justify-content: center;
 	bottom: 0;
 	color: #202124;
 	width: 100%;
-}
-
-.navbar>i {
-	
+	height: 0%;
 }

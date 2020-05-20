@@ -22,13 +22,17 @@
         <i class="fab fa-github"></i>
         <i class="fab fa-telegram"></i>
     </div>
-    <div class="navbar">
-            <i class="fas fa-chevron-up"></i>
+    <div class="navbar" id="nav">
+            <i class="fas fa-chevron-up" onclick="openNav()"></i>
         </div>
     <script>
         function dark() {
             var element = document.body;
             element.classList.toggle("dark-mode");
+        }
+        function openNav() {
+            document.getElementById("mySidebar").style.height = "30%";
+            // document.getElementById("main").style.marginLeft = "250px";
         }
     </script>
 </body>

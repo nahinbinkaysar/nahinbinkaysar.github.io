@@ -44,10 +44,9 @@ body {
 	transition: 0.3s;
 }
 
-.socialSection>a {
+.socialSection>i {
 	margin: 8px;
 	font-size: 34px;
-	text-decoration: none;
 }
 
 .navbar {
@@ -78,25 +77,6 @@ body {
 }
 
 .navbar a {
-	border: 1px solid #bdbdbd;
-	border-radius: 100px;
-	text-decoration: none;
-	padding: 2px 8px 2px 8px;
-	margin: 16px 4px -2px 4px;
-	font-size: 18px;
-	font-family: 'Roboto', sans-serif;
-	color: #bdbdbd;
-	display: block;
-	transition: 0.3s;
-}
-
-
-.light-mode-nav {
-	background-color: #bdbdbd;
-	color: #121212;
-}
-
-.light-mode-nav a {
 	border: 1px solid #121212;
 	border-radius: 100px;
 	text-decoration: none;

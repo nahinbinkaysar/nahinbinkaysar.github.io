@@ -4,8 +4,8 @@
 }
 
 body {
-	display: flex;
-	flex-flow: wrap column;
+	height: 640px;
+	margin: 0;
 	/*filter: blur(3px);*/
 	font-family: 'Museo';
 }
@@ -51,7 +51,12 @@ body {
 .navbar {
 	display: flex;
 	background-color: magenta;
-	color: #202124;
+	position: fixed;
 	bottom: 0;
+	color: #202124;
 	width: 100%;
+}
+
+.navbar>i {
+	
 }

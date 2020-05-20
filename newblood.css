@@ -56,5 +56,6 @@ body {
 	bottom: 0;
 	color: #202124;
 	width: 100%;
-	height: 0%;
+	height: 24px;
+	transition: 0.3s;
 }

@@ -52,6 +52,7 @@ body {
 	display: flex;
 	position: fixed;
 	align-items: flex-start;
+	flex-flow: wrap column;
 	bottom: 0;
 	background-color: #121212;
 	color: #bdbdbd;
@@ -60,6 +61,17 @@ body {
 	transition: 0.3s;
 }
 
+.handle {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: tomato;
+}
+
+
+.navbarContent {
+	display: flex;
+}
 
 .navbar a {
   padding: 8px 8px 8px 32px;
@@ -75,3 +87,4 @@ body {
 	background-color: #bdbdbd;
 	color: #121212;
 }
+

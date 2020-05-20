@@ -65,25 +65,27 @@ body {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	background-color: tomato;
 }
 
 
 .navbarContent {
+	margin-left: 16px;
+	marker-top: 16px;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .navbar a {
-	 width: 100px;
-      height: 100px;
-      border: 2px solid white;
-      border-radius: 100px;
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+	border: 1px solid #bdbdbd;
+	border-radius: 100px;
+	text-decoration: none;
+	padding: 2px 8px 2px 8px;
+	margin: 16px 4px -2px 4px;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	color: #bdbdbd;
+	display: block;
+	transition: 0.3s;
 }
 
 

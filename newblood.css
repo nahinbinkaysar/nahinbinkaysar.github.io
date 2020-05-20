@@ -4,6 +4,9 @@
 }
 
 body {
+	display: flex;
+	flex-flow: wrap column;
+	/*filter: blur(3px);*/
 	font-family: 'Museo';
 }
 
@@ -13,6 +16,7 @@ body {
 }
 
 .topRightPane {
+	background-color: green;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -22,29 +26,11 @@ body {
 }
 
 .profileSection {
+	background-color: blue;
 	display: flex;
 	align-items: center;
-	flex-direction: column;
+	flex-flow: wrap column;
 	justify-content: center;
-}
-
-.profileSection>div {
-	width: 256px;
-}
-
-.imageAndButtons {
-	display: flex;
-}
-
-.vertButtons {
-	display: flex;
-	flex-direction: column;
-}
-
-.vertButtons > i {
-	color: grey;
-	margin: -6px;
-	font-size: 28px;
 }
 
 .fas {
@@ -52,12 +38,20 @@ body {
 }
 
 .socialSection {
+	background-color: red;
 	display: flex;
-	margin-top: 64px;
 	justify-content: center;
 }
 
 .socialSection>i {
 	margin: 8px;
 	font-size: 34px;
+}
+
+.navbar {
+	display: flex;
+	background-color: magenta;
+	color: #202124;
+	bottom: 0;
+	width: 100%;
 }

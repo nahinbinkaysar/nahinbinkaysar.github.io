@@ -24,6 +24,9 @@
     </div>
     <div class="navbar" id="nav">
             <i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>
+            <div id="content" class="navbarContent">
+                <p>Datatype</p>
+            </div>
         </div>
     <script>
         var activated = 0;
@@ -39,6 +42,9 @@
                 document.getElementById("topRP").style.filter = "blur(3px)";
                 document.getElementById("profileS").style.filter = "blur(3px)";
                 document.getElementById("socialS").style.filter = "blur(3px)";
+                document.getElementById("socialS").style.filter = "blur(3px)";
+                document.getElementById("content").style.display = block;
+                
                 activated = 1; 
             }
             else {

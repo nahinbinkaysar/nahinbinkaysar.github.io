@@ -61,6 +61,11 @@ body {
 	transition: 0.3s;
 }
 
+.navbarContent {
+	display: none;
+	
+}
+
 .dark-mode-nav {
 	background-color: #bdbdbd;
 	color: #121212;

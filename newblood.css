@@ -4,7 +4,6 @@
 }
 
 body {
-	height: 640px;
 	margin: 0;
 	/*filter: blur(3px);*/
 	font-family: 'Museo';
@@ -16,9 +15,9 @@ body {
 }
 
 .topRightPane {
-	background-color: green;
 	display: flex;
 	justify-content: flex-end;
+	transition: 0.5s;
 }
 
 .topRightPane > div {
@@ -26,21 +25,22 @@ body {
 }
 
 .profileSection {
-	background-color: blue;
 	display: flex;
 	align-items: center;
 	flex-flow: wrap column;
 	justify-content: center;
+	transition: 0.5s;
 }
 
 .fas {
 	font-size: 24px;
+	transition: 0.5s;
 }
 
 .socialSection {
-	background-color: red;
 	display: flex;
 	justify-content: center;
+	transition: 0.3s;
 }
 
 .socialSection>i {
@@ -50,8 +50,8 @@ body {
 
 .navbar {
 	display: flex;
-	background-color: magenta;
 	position: fixed;
+	align-items: flex-start;
 	justify-content: center;
 	bottom: 0;
 	color: #202124;

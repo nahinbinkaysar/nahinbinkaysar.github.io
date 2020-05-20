@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>Nahin Bin Kaysar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="newblood.css">
     <script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body id="body">
     <div id="topRP" class="topRightPane">
-        <div><i class="fas fa-moon" onclick="dark()"></i></div>
+        <div><i class="fas fa-moon" onclick="light()"></i></div>
     </div>
     <div id="profileS" class="profileSection">
         <img id="dp" class="slide" src="dp.png" style= "max-width: 256px; border-radius: 50%;">
@@ -17,29 +17,30 @@
     </div>
 
     <div id="socialS" class="socialSection">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-github"></i>
-        <i class="fab fa-telegram"></i>
+        <i class="fab fa-twitter" onclick="window.location.href = 'https://twitter.com/nahinbinkaysar/';"></i>
+        <i class="fab fa-instagram" onclick="window.location.href = 'http://instagram.com/nahin_binkaysar/';"></i>
+        <i class="fab fa-github" onclick="window.location.href = 'https://github.com/nahinbinkaysar';"></i>
+        <i class="fab fa-telegram" onclick="window.location.href = 'https://t.me/nahinbinkaysar';"></i>
     </div>
     <div class="navbar" id="nav">
         <div class="handle">
             <i id="up" align="center" class="fas fa-chevron-up" style="text-align: center;" onclick="openNav()"></i>    
         </div>        
         <div class="navbarContent">
-            <a href="#">Datatype</a>
-            <a href="#">Group 8 Book</a>
-            <a href="#">Harry Potter and the Goblet of Fire</a>
-            <a href="#">Harry Potter and the Order of the Phoenix</a>
-            <a href="#">BMI Calculator</a>
+            <a href="https://nahinbinkaysar.github.io/datatype">Datatype</a>
+            <a href="https://nahinbinkaysar.github.io/group_8">Group 8 Book</a>
+            <a href="https://nahinbinkaysar.github.io/hp4">Harry Potter and the Goblet of Fire</a>
+            <a href="https://nahinbinkaysar.github.io/hp5">Harry Potter and the Order of the Phoenix</a>
+            <a href="http://natshint.blogspot.com/2019/01/bmi-calculator.html">BMI Calculator</a>
+            <a href="https://nahinbinkaysar.github.io/thekiterunner">The Kite Runner</a>
       </div>
   </div>
   <script>
     var activated = 0;
-    function dark() {
+    function light() {
         var element = document.body;
-        element.classList.toggle("dark-mode");
-        document.getElementById("nav").classList.toggle("dark-mode-nav");
+        element.classList.toggle("light-mode");
+        document.getElementById("nav").classList.toggle("light-mode-nav");
     }
     function openNav() {
         if (activated == 0) {

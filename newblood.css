@@ -48,6 +48,7 @@ img {
 
 .socialSection {
 	display: flex;
+	margin-top: -24px;
 	justify-content: center;
 	transition: 0.3s;
 }
@@ -65,15 +66,21 @@ img {
 	bottom: 0;
 	margin: 12px;
 	border-radius: 10px;
-	background-color: tomato;
+	background-color: #262626;
 	color: #bdbdbd;
 	height: 32px;
 	transition: 0.3s;
 }
 
+.light-mode .navbar {
+	background-color: #bdbdbd;
+	color: #121212;
+}
+
 .handle {
 	display: flex;
-	align-items: center;
+	margin-top: 3px;
+	align-items: flex-end;
 	justify-content: center;
 	width: 100%;
 }
@@ -87,20 +94,19 @@ img {
 }
 
 .navbar a {
-	border: 1px solid #121212;
+	border: 1px solid #bdbdbd;
 	border-radius: 100px;
 	text-decoration: none;
 	padding: 2px 8px 2px 8px;
 	margin: 16px 4px -2px 4px;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
-	color: #121212;
+	color: #bdbdbd;
 	display: block;
 	transition: 0.3s;
 }
-.bar {
-	height: 4px;
-	width: 10%;
-	background-color: #bdbdbd;
-	border-radius: 100px;
+
+.light-mode .navbar a {
+	border: 1px solid #121212;
+	color: #121212;
 }

@@ -15,6 +15,10 @@ body {
 	color: #121212;
 }
 
+img .light-mode {
+	filter: invert(1);
+}
+
 .topRightPane {
 	display: flex;
 	justify-content: flex-end;

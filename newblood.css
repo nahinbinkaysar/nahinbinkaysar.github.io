@@ -5,22 +5,13 @@
 
 body {
 	margin: 0;
-	font-family: 'Museo';
+	font-family: 'Roboto', sans-serif;
 	background-color: #121212;
 	color: #bdbdbd;
 }
 
-.light-mode {
-	background-color: white;
-	color: #121212;
-}
-
 img {
 	filter: invert(1);
-}
-
-.light-mode img {
-	filter: invert(0);
 }
 
 .topRightPane {
@@ -29,7 +20,7 @@ img {
 	transition: 0.5s;
 }
 
-.topRightPane > div {
+.topRightPane>div {
 	margin: 8px;
 }
 
@@ -106,6 +97,14 @@ img {
 	transition: 0.3s;
 }
 
+.light-mode {
+	background-color: white;
+	color: #121212;
+}
+
+.light-mode img {
+	filter: invert(0);
+}
 .light-mode .navbar a {
 	border: 1px solid #121212;
 	color: #121212;

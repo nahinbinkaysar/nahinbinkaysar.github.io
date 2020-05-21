@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Nahin Bin Kaysar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="fav.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="newblood.css">
     <script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body id="body">
     <div id="topRP" class="topRightPane">
@@ -14,9 +14,8 @@
     </div>
     <div id="profileS" class="profileSection">
         <img id="dp" class="slide" src="lined_dp.svg" style= "max-width: 256px; border-radius: 50%;">
-        <p style="font-size: 26px;">Nahin Bin Kaysar</p>
+        <p style="font-family: 'Museo'; font-size: 26px;">Nahin Bin Kaysar</p>
     </div>
-
     <div id="socialS" class="socialSection">
         <i class="fab fa-twitter" onclick="window.location.href = 'https://twitter.com/nahinbinkaysar/';"></i>
         <i class="fab fa-instagram" onclick="window.location.href = 'http://instagram.com/nahin_binkaysar/';"></i>
@@ -34,33 +33,33 @@
             <a href="https://nahinbinkaysar.github.io/hp5">Harry Potter and the Order of the Phoenix</a>
             <a href="http://natshint.blogspot.com/2019/01/bmi-calculator.html">Get BMI Calculator</a>
             <a href="https://nahinbinkaysar.github.io/thekiterunner">The Kite Runner</a>
-      </div>
-  </div>
-  <script>
-    var activated = 0;
-    function light() {
-        var element = document.body;
-        element.classList.toggle("light-mode");
-    }
-    function openNav() {
-        if (activated == 0) {
-            document.getElementById("nav").style.height = "40%";
-            document.getElementById("up").style.transform = 'rotate(180deg)';
-            document.getElementById("topRP").style.filter = "brightness(50%)";
-            document.getElementById("profileS").style.filter = "brightness(50%)";
-            document.getElementById("socialS").style.filter = "brightness(50%)";
-            document.getElementById("socialS").style.filter = "brightness(50%)";
-            activated = 1; 
+        </div>
+    </div>
+    <script>
+        var activated = 0;
+        function light() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
         }
-        else {
-            document.getElementById("nav").style.height = "32px";
-            document.getElementById("up").style.transform = 'rotate(0deg)';
-            document.getElementById("topRP").style.filter = "brightness(100%)";
-            document.getElementById("profileS").style.filter = "brightness(100%)";
-            document.getElementById("socialS").style.filter = "brightness(100%)";
-            activated = 0;
+        function openNav() {
+            if (activated == 0) {
+                document.getElementById("nav").style.height = "40%";
+                document.getElementById("up").style.transform = 'rotate(180deg)';
+                document.getElementById("topRP").style.filter = "brightness(50%)";
+                document.getElementById("profileS").style.filter = "brightness(50%)";
+                document.getElementById("socialS").style.filter = "brightness(50%)";
+                document.getElementById("socialS").style.filter = "brightness(50%)";
+                activated = 1; 
+            }
+            else {
+                document.getElementById("nav").style.height = "32px";
+                document.getElementById("up").style.transform = 'rotate(0deg)';
+                document.getElementById("topRP").style.filter = "brightness(100%)";
+                document.getElementById("profileS").style.filter = "brightness(100%)";
+                document.getElementById("socialS").style.filter = "brightness(100%)";
+                activated = 0;
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>

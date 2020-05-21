@@ -73,9 +73,7 @@ img {
 
 
 .navbarContent {
-	margin-top: 12px;
-	margin-right: 12px;
-	margin-left: 12px;
+	margin: 12px;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: auto;

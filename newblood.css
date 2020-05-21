@@ -53,9 +53,10 @@ img {
 	display: flex;
 	position: fixed;
 	align-items: flex-start;
-	flex-flow: wrap column;
-	bottom: 0;
-	margin: 12px;
+	flex-flow: nowrap column;
+	right: 12px;
+	left: 12px;
+	bottom: 12px;
 	border-radius: 10px;
 	background-color: #262626;
 	color: #bdbdbd;
@@ -63,15 +64,9 @@ img {
 	transition: 0.3s;
 }
 
-.light-mode .navbar {
-	background-color: #bdbdbd;
-	color: #121212;
-}
-
 .handle {
 	display: flex;
 	margin-top: 3px;
-	align-items: flex-end;
 	justify-content: center;
 	width: 100%;
 }
@@ -79,9 +74,10 @@ img {
 
 .navbarContent {
 	margin-left: 16px;
-	marker-top: 16px;
+	margin-top: 12px;
 	display: flex;
 	flex-wrap: wrap;
+	overflow: auto;
 }
 
 .navbar a {
@@ -89,7 +85,6 @@ img {
 	border-radius: 100px;
 	text-decoration: none;
 	padding: 2px 8px 2px 8px;
-	margin: 16px 4px -2px 4px;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	color: #bdbdbd;
@@ -107,5 +102,10 @@ img {
 }
 .light-mode .navbar a {
 	border: 1px solid #121212;
+	color: #121212;
+}
+
+.light-mode .navbar {
+	background-color: #bdbdbd;
 	color: #121212;
 }

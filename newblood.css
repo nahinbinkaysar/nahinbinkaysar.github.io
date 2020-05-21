@@ -63,15 +63,17 @@ img {
 	align-items: flex-start;
 	flex-flow: wrap column;
 	bottom: 0;
-	background-color: #bdbdbd;
-	color: #121212;
-	width: 100%;
-	height: 24px;
+	margin: 12px;
+	border-radius: 10px;
+	background-color: tomato;
+	color: #bdbdbd;
+	height: 32px;
 	transition: 0.3s;
 }
 
 .handle {
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	width: 100%;
 }
@@ -95,4 +97,10 @@ img {
 	color: #121212;
 	display: block;
 	transition: 0.3s;
+}
+.bar {
+	height: 4px;
+	width: 10%;
+	background-color: #bdbdbd;
+	border-radius: 100px;
 }

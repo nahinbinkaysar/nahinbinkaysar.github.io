@@ -73,18 +73,20 @@ img {
 
 
 .navbarContent {
-	margin-left: 16px;
 	margin-top: 12px;
+	margin-right: 12px;
+	margin-left: 12px;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: auto;
 }
 
-.navbar a {
+.navbarContent a {
 	border: 1px solid #bdbdbd;
 	border-radius: 100px;
 	text-decoration: none;
 	padding: 2px 8px 2px 8px;
+	margin: 6px 6px 0px 0px;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	color: #bdbdbd;

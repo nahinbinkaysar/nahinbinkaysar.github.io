@@ -15,8 +15,12 @@ body {
 	color: #121212;
 }
 
-img .light-mode {
+img {
 	filter: invert(1);
+}
+
+.light-mode img {
+	filter: invert(0);
 }
 
 .topRightPane {

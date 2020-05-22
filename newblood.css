@@ -1,5 +1,5 @@
 :root {
-    --colorDark: #121212;
+    --colorDark: #121212	;
     --colorDarkElement: #bdbdbd;
 }
 
@@ -44,7 +44,6 @@ a {
 .fas, .fab {
 	font-size: 24px;
 	transition: 0.5s;
-	cursor: pointer;
 }
 
 .fas:hover, .fab:hover {
@@ -101,7 +100,6 @@ a {
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	color: var(--colorDarkElement);
-	cursor: url("cur.png"), auto;
 	transition: 0.3s;
 }
 

@@ -2,15 +2,12 @@
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Roboto+Condensed|Slabo+27px&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="newblood.css">
 	<style type="text/css">
 		body {
-			background-color: #202124;
-			color: #fff;
+			/*font-size: 12px;*/
 			font-family: 'Roboto Condensed', sans-serif;
 			font-family: 'Hind Siliguri', sans-serif;
-		}
-		table {
-			
 		}
 		tr:nth-child(odd) {
 			background-color: #3c4042;
@@ -20,20 +17,26 @@
 			color: #fff;
 		}
 		p {
-  			text-align: left;
+			color: var(--coloDarkElement);
+			/*text-align: left;*/
+		}
+
+		.header {
+			display: flex;
+			justify-content: center;
+		}
+
+		.header>div {
+			font-size: 32px;
+			font-family: Museo;
 		}
 
 	</style>
 </head>
 <body>
-	<div style="text-align:center;">
-      <div style="display: inline-block;">
-      		<p  style="margin-bottom: -80px;">Welcome to</p>
-		<p  style="font-size: 64px;font-family:'Slabo 27px'; margin-bottom: -25px">Group 8 Book</p>
-		<p  >Our info's online repository</p>
-      </div>
-    </div>
-
+	<div class="header">
+		<div>Group 8 Book</div>
+	</div>
 
 	<table>
 		<tr>
@@ -1801,5 +1804,6 @@
 			<td style=min-width:50px></td>
 		</tr>
 	</table>
+	<br><br><br><br>
 </body>
 </html>

@@ -10,7 +10,11 @@ body {
 	color: #bdbdbd;
 }
 
-img {
+a {
+	text-decoration: none;
+}
+
+.dp {
 	filter: invert(1);
 }
 
@@ -24,7 +28,7 @@ img {
 	margin: 8px;
 }
 
-.profileSection {
+.mainSection {
 	display: flex;
 	align-items: center;
 	flex-flow: wrap column;
@@ -82,7 +86,6 @@ img {
 .navbarContent a {
 	border: 1px solid #bdbdbd;
 	border-radius: 100px;
-	text-decoration: none;
 	padding: 2px 8px 2px 8px;
 	margin: 6px 6px 0px 0px;
 	font-size: 18px;
@@ -92,14 +95,19 @@ img {
 	transition: 0.3s;
 }
 
+.charukola {
+	font-family: 'Noto Sans Bengali', sans-serif;
+}
+
 .light-mode {
 	background-color: white;
 	color: #121212;
 }
 
-.light-mode img {
+.light-mode .dp {
 	filter: invert(0);
 }
+
 .light-mode .navbar a {
 	border: 1px solid #121212;
 	color: #121212;

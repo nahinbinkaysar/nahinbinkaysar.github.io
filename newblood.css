@@ -1,3 +1,8 @@
+:root {
+    --colorDark: #121212;
+    --colorDarkElement: #bdbdbd;
+}
+
 @font-face {
 	font-family: Museo;
 	src: url(museoslab700.woff);
@@ -6,8 +11,8 @@
 body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
-	background-color: #121212;
-	color: #bdbdbd;
+	background-color: var(--colorDark);
+	color: var(--colorDarkElement);
 }
 
 a {
@@ -36,9 +41,14 @@ a {
 	transition: 0.5s;
 }
 
-.fas {
+.fas, .fab {
 	font-size: 24px;
 	transition: 0.5s;
+	cursor: pointer;
+}
+
+.fas:hover, .fab:hover {
+	color: #004d40;
 }
 
 .socialSection {
@@ -63,7 +73,7 @@ a {
 	bottom: 12px;
 	border-radius: 10px;
 	background-color: #262626;
-	color: #bdbdbd;
+	color: var(--colorDarkElement);
 	height: 32px;
 	transition: 0.3s;
 }
@@ -83,16 +93,20 @@ a {
 	overflow: auto;
 }
 
-.navbarContent a {
+.navbarContent>div {
 	border: 1px solid #bdbdbd;
 	border-radius: 100px;
 	padding: 2px 8px 2px 8px;
 	margin: 6px 6px 0px 0px;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
-	color: #bdbdbd;
-	display: block;
+	color: var(--colorDarkElement);
+	cursor: url("cur.png"), auto;
 	transition: 0.3s;
+}
+
+.navbarContent a:hover {
+	color: #004d40;
 }
 
 .charukola {
@@ -101,19 +115,20 @@ a {
 
 .light-mode {
 	background-color: white;
-	color: #121212;
+	color: var(--colorDark);
 }
 
 .light-mode .dp {
 	filter: invert(0);
 }
 
-.light-mode .navbar a {
-	border: 1px solid #121212;
-	color: #121212;
-}
 
 .light-mode .navbar {
 	background-color: #bdbdbd;
+	color: #121212;
+}
+
+.light-mode .navbarContent a {
+	border: 1px solid #121212;
 	color: #121212;
 }

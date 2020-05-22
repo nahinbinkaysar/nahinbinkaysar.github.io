@@ -18,16 +18,33 @@
 		font-family: 'Roboto Condensed', sans-serif;
 		font-family: 'Hind Siliguri', sans-serif;
 	}
+
+	.buttons {
+		display: flex;
+		flex-flow: wrap row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.self {
+		display: flex;
+		justify-content: center;
+		width: 50%;
+	}
 </style>
 
 <body id="body">
 	<iframe id="g8_frame"src="g8_source.html" style="height: 100%; border: none; width: 100%"></iframe>
-	<div class="navbar" id="nav">
-		<div class="handle">
-			<i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>    
-		</div>        
-		<div class="navbarContent">
-
+	<div class="navbar">
+		<div class="buttons">
+			<div class="self">
+				<i style="font-size: 32px;" class="fas fa-angle-left" onclick="window.location.href = 'https://nahinbinkaysar.github.io/';"></i>				
+			</div>
+			<div class="self">
+				<i style="font-size: 22px;" class="fas fa-download" onclick="window.location.href = 'res/g8_book_offline.pdf';"></i>
+			</div>
 		</div>
 	</div>
 </body>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<style>
+		@font-face {
+			font-family: ProductSans;
+			src: url(ProductSans.woff);
+		}
+		body {
+			margin: 0;
+			font-family: ProductSans;
+			color: white;
+		}
+		.container {
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+			background-color: blue;
+		}
+		.headsup {
+			display: flex;
+			width: 100%;
+			height: 50%;
+			background-color: #228B22;
+			align-items: center;
+			justify-content: center;
+		}
+		.main {
+			display: flex;
+			width: 100%;
+			height: 50%;
+			background-color: white;
+			align-items: center;
+			flex-flow: wrap column;
+		}
+		.nav {
+			display: flex;
+			position: fixed;
+			bottom: 0;
+			border-top: 1px solid gray;
+			flex-flow: wrap row;
+			height: 128px;
+			width: 100%;
+		}
+
+		.navContent {
+			display: flex;
+			height: 100%;
+			width: 33.33%;
+			flex-flow: wrap column;
+			align-items: center;
+			justify-content: center;
+			font-size: 40px;
+			color: gray;
+		}
+		.textField {
+			display: flex;
+			flex-flow: wrap row;
+		}
+		.calcButton {
+			font-size: 64px;
+			border-radius: 100px;
+			border: 2px solid green;
+			background-color: white;
+			padding: 12px 24px 12px 24px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="headsup">
+			<div>
+				<div style="font-size: 54px;">Welcome</div><br>
+				<div style="font-size: 42px; margin-top: -24px;">To</div><br>
+				<div style="font-size: 78px; margin-top: -24px;">BMI Calculator</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="textField">
+				<input type="text" name="weight">
+				<svg width="96" height="96">
+					<circle cx="48" cy="48" r="42" stroke="black" stroke-width="2" fill="white" />
+					<text fill="black" font-size="45" x="48" y="48">kg</text>
+				</svg>
+			</div>
+			<div class="textField">
+				<input type="text" name="ft">
+				<input type="text" name="in">
+				<svg width="96" height="96">
+					<circle cx="48" cy="48" r="42" stroke="black" stroke-width="2" fill="white" />
+					<text fill="black" font-size="45" x="48" y="48">kg</text>
+				</svg>
+			</div>
+			<input type="button" name="calc" value="Calculate" class="calcButton" style="margin-top: 12px;">
+		</div>
+	</div>
+	<div class="nav">
+		<div class="navContent">
+			<object data="bmi/home.svg" style="filter: invert(1); height: 52px;"></object>
+			Home
+		</div>
+		<div class="navContent">Dashboard</div>
+		<div class="navContent">About</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+		
+		 document.getElementById("rect").style.fill = color;
+	</script>
+</body>
+</html>

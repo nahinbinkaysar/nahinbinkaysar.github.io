@@ -1,6 +1,7 @@
 :root {
     --colorDark: #121212	;
     --colorDarkElement: #bdbdbd;
+    --colorDarkMenu: #202020;
 }
 
 @font-face {
@@ -26,7 +27,6 @@ a {
 .topRightPane {
 	display: flex;
 	justify-content: flex-end;
-	transition: 0.5s;
 }
 
 .topRightPane>div {
@@ -43,18 +43,14 @@ a {
 
 .fas, .fab {
 	font-size: 24px;
-	transition: 0.5s;
-}
-
-.fas:hover, .fab:hover {
-	color: #004d40;
+	transition: 0.3s;
+	cursor: pointer;
 }
 
 .socialSection {
 	display: flex;
 	margin-top: -24px;
 	justify-content: center;
-	transition: 0.3s;
 }
 
 .socialSection>i {
@@ -71,7 +67,7 @@ a {
 	left: 12px;
 	bottom: 12px;
 	border-radius: 10px;
-	background-color: #262626;
+	background-color: var(--colorDarkMenu);
 	color: var(--colorDarkElement);
 	height: 32px;
 	transition: 0.3s;
@@ -93,18 +89,15 @@ a {
 }
 
 .navbarContent>div {
-	border: 1px solid #bdbdbd;
 	border-radius: 100px;
-	padding: 2px 8px 2px 8px;
+	padding: 6px 12px 6px 12px;
 	margin: 6px 6px 0px 0px;
-	font-size: 18px;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #303030;
 	font-family: 'Roboto', sans-serif;
 	color: var(--colorDarkElement);
 	transition: 0.3s;
-}
-
-.navbarContent a:hover {
-	color: #004d40;
 }
 
 .charukola {

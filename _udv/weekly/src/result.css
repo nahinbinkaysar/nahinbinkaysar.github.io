@@ -1,0 +1,671 @@
+﻿
+
+/*.question-body {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    overflow: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}*/
+
+.questionBlock .row {
+    display: block;
+}
+
+.serial {
+    width: 8%;
+    float: left;
+    text-align: right;
+}
+
+.question {
+    width: 92%;
+    float: left;
+}
+
+
+
+.questionText {
+    margin-bottom: 5px;
+}
+
+.questionText p {
+    margin-bottom: 5px;
+}
+
+.uddipokText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.solveText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.optionSerial {
+    width: 6%;
+    text-align: right;
+}
+
+.option {
+    width: 94%;
+    padding-left: 10px;
+}
+
+.optionCheckbox {
+    height: 25px;
+    width: 25px;
+}
+
+.TakeExamBody .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.TakeExamWrapper .questionOptions label {
+    left: 0px;
+}
+
+/*.questionOptions {
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 15px;
+}*/
+
+/*.questionTable {
+    border: none;
+}*/
+
+.questionOption {
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+
+.input-group-text {
+    padding: 5px 10px;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    margin-bottom: 0px;
+}
+
+.input-group .form-control {
+    width: 1px;
+    height: 1px;
+}
+
+.input-group p {
+    margin-bottom: 0px;
+}
+
+.input-group-append {
+    padding-left: 5px;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+
+
+
+.TakeExamWrapper {
+    /*padding-left: 100px;
+    padding-right: 100px;*/
+}
+
+/*Result Header*/
+.TakeExamHeader {
+    background-color: #fff;
+    /*margin-bottom: 35px;
+        margin-top: 35px;*/
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #949598;
+}
+
+    .TakeExamHeader h2 {
+        display: inline-block;
+        font-size: 30px;
+        color: #3E4D5C;
+        text-transform: capitalize;
+    }
+
+    .TakeExamHeader h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+        color: #3E4D5C;
+    }
+
+    .TakeExamHeader h5 {
+        font-size: 16px;
+        color: #666;
+    }
+
+        .TakeExamHeader h5 span {
+            color: #94A6B8;
+            font-weight: normal;
+        }
+
+/*Result Body*/
+.TakeExamBody {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 5px;
+}
+
+    .TakeExamBody .questionText, .TakeExamBody .uddipokText, .TakeExamBody .questionTable {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .TakeExamBody .question {
+        background-color: #fff;
+        margin-top: 20px;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px #d7ddea;
+        width: 100%;
+    }
+
+        .TakeExamBody .question .serial {
+            width: 100% !important;
+            float: left;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+            .TakeExamBody .question .serial span {
+                color: #a4b8ca;
+                font-weight: 100;
+                font-size: 16px;
+                border-bottom: 1px solid;
+            }
+
+    .TakeExamBody .questionText {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+.TakeExamWrapper .questionText p,
+.TakeExamWrapper .questionText table,
+.TakeExamWrapper .questionText table tr,
+.TakeExamWrapper .questionText table th,
+.TakeExamWrapper .questionText table td
+{
+    font-size: 22px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    color: #3E4D5C;
+}
+
+.TakeExamBody .uddipokText {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #d7ddea;
+    width: 100%;
+    border: 2px solid #3e4d5c;
+}
+
+    .TakeExamBody .uddipokText p {
+        font-size: 22px;
+    }
+
+.TakeExamWrapper .questionText p {
+    margin-right: 0px;
+}
+
+.TakeExamBody .questionBlock {
+    margin-bottom: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+/* Ans true css */
+.TakeExamWrapper .questionOptions .questionOption .AnsTrue .input-group-append.questionTable label {
+    color: #00C024;
+}
+
+.TakeExamWrapper .questionOptions .questionOption .AnsTrue span.input-group-text {
+    background-color: #00C024;
+    border-color: #02af21;
+    color: #fff;
+    position: relative;
+    font-size: 0;
+}
+
+    .TakeExamWrapper .questionOptions .questionOption .AnsTrue span.input-group-text:before {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 3px;
+        background: #fff;
+        transform: rotate(141deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -7px;
+    }
+
+    .TakeExamWrapper .questionOptions .questionOption .AnsTrue span.input-group-text:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 3px;
+        background: #fff;
+        transform: rotate(51deg);
+        position: absolute;
+        top: 50%;
+        margin-top: 2px;
+        left: 0;
+        margin-left: 4px;
+    }
+
+.TakeExamWrapper .solveText {
+    border: 2px solid #00c024;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.TakeExamWrapper .solveText p {
+    margin: 0;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+    .TakeExamWrapper .solveText span {
+        font-size: 20px;
+    }
+
+.TakeExamWrapper .questionOptions .questionOption .AnsFalse .input-group-append.questionTable label {
+    color: #FF0000;
+}
+
+.TakeExamWrapper .questionOptions .questionOption .AnsFalse span.input-group-text {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: #fff;
+    font-size: 0px;
+    position: relative;
+}
+
+    .TakeExamWrapper .questionOptions .questionOption .AnsFalse span.input-group-text:before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 3px;
+        background: #fff;
+        transform: rotate(135deg);
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        margin-right: -10px;
+        margin-top: -2px;
+    }
+
+    .TakeExamWrapper .questionOptions .questionOption .AnsFalse span.input-group-text:after {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 3px;
+        background: #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -11px;
+        margin-top: -2px;
+    }
+
+.TakeExamWrapper .questionOptions .questionOption {
+    margin-bottom: -1px;
+    padding: 10px 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-color: #dae0e6;
+    border-radius: 0;
+}
+
+.TakeExamWrapper .questionOptions .questionOption {
+    margin-bottom: -1px;
+    padding: 10px 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-color: #dae0e6;
+    border-radius: 0;
+}
+
+    .TakeExamWrapper .questionOptions .questionOption .input-group-prepend {
+        border-radius: 100%;
+    }
+
+        .TakeExamWrapper .questionOptions .questionOption .input-group-prepend .input-group-text {
+            border-radius: 100%;
+            font-weight: 500 !important;
+            background: none;
+            padding: 6px 0;
+            width: 34px;
+            text-align: center !important;
+            display: inline-block;
+            color: #94A6B8;
+            border-color: #94A6B8;
+            cursor: pointer;
+        }
+
+    .TakeExamWrapper .questionOptions .questionOption .input-group {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+
+        .TakeExamWrapper .questionOptions .questionOption .input-group .input-group-append.questionTable {
+            margin-left: 8px;
+        }
+
+    .TakeExamWrapper .questionOptions .questionOption .input-group-prepend .input-group-text.active {
+        background-color: #94A6B8;
+        color: #fff;
+    }
+
+    .TakeExamWrapper .questionOptions .questionOption .input-group-append input[type="checkbox"] {
+        opacity: 0;
+    }
+
+.TakeExamWrapper .questionOptions label {
+    margin-left: 0 !important;
+    position: relative;
+    /*left: -20px;*/
+    color: #3E4D5C;
+    font-size: 18px;
+}
+
+.TakeExamWrapper .questionText .row {
+    align-items: center;
+}
+
+/*Device Code*/
+@media only screen and (max-width: 1025px) {
+   
+    .optionSerial {
+        width: 15%;
+        text-align: right;
+    }
+
+    .option {
+        width: 85%;
+    }
+
+    .input-group-prepend-chk {
+        padding-left: 10px;
+    }
+
+    .input-group-append {
+        width: 89%;
+        padding: 5px 5px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .serial {
+        width: 10%;
+    }
+
+    .question {
+        width: 90%;
+    }
+
+    .input-group-prepend-text {
+        width: 6%;
+    }
+
+    .input-group-prepend-chk {
+        width: 5%;
+        padding-left: 5px;
+    }
+
+    .input-group-append {
+        width: 89%;
+        padding: 5px 3px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .TakeExamWrapper .questionText p {
+        font-size: 22px;
+    }
+
+    .TakeExamWrapper .questionOptions .questionOption .input-group .input-group-append.questionTable p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .optionSerial {
+        width: 15%;
+        text-align: right;
+    }
+
+    .option {
+        width: 85%;
+    }
+
+    .serial {
+        width: 10%;
+    }
+
+    .question {
+        width: 90%;
+    }
+
+    .input-group-prepend-text {
+        width: 6%;
+    }
+
+    .input-group-prepend-chk {
+        width: 5%;
+        padding-left: 5px;
+    }
+
+    .input-group-append {
+        width: 89%;
+        padding: 5px 3px;
+    }
+}
+
+@media only screen and (max-width: 739px) {
+    .serial {
+        width: 12%;
+    }
+
+    .question {
+        width: 88%;
+    }
+
+    .input-group-prepend-text {
+        width: 9%;
+    }
+
+    .input-group-prepend-chk {
+        width: 7%;
+        padding-left: 5px;
+    }
+
+    .input-group-append {
+        width: 84%;
+        padding: 5px 3px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .TakeExamWrapper .questionOptions .questionOption .input-group .input-group-append.questionTable p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .serial {
+        width: 12%;
+    }
+
+    .question {
+        width: 88%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .optionSerial {
+        width: 20%;
+        text-align: right;
+    }
+
+    .option {
+        width: 80%;
+    }
+
+    .serial {
+        width: 12%;
+    }
+
+    .question {
+        width: 88%;
+    }
+
+    .input-group-prepend-text {
+        width: 12%;
+    }
+
+    .input-group-prepend-chk {
+        width: 10%;
+    }
+
+    .input-group-append {
+        width: 78%;
+        padding: 5px 3px;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+
+    .input-group-prepend-text {
+        width: 8%;
+    }
+
+    .input-group-prepend-chk {
+        width: 6%;
+        padding-left: 5px;
+    }
+
+    .input-group-append {
+        width: 86%;
+        padding: 5px 3px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .input-group-prepend-text {
+        width: 12%;
+    }
+
+    .input-group-prepend-chk {
+        width: 8%;
+        padding-left: 5px;
+    }
+
+    .input-group-append {
+        width: 80%;
+        padding: 5px 3px;
+    }
+
+    .serial {
+        width: 18%;
+    }
+
+    .question {
+        width: 82%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .optionSerial {
+        width: 25%;
+        text-align: right;
+    }
+
+    .option {
+        width: 75%;
+    }
+
+    .serial {
+        width: 20%;
+    }
+
+    .question {
+        width: 80%;
+    }
+
+    .input-group-prepend-text {
+        width: 15%;
+    }
+
+    .input-group-prepend-chk {
+        width: 13%;
+    }
+
+    .input-group-append {
+        width: 72%;
+        padding: 0px 3px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+
+    .serial {
+        width: 25%;
+    }
+
+    .question {
+        width: 75%;
+    }
+
+    .input-group-prepend-text {
+        width: 20%;
+    }
+
+    .input-group-prepend-chk {
+        width: 15%;
+    }
+
+    .input-group-append {
+        width: 65%;
+        padding: 5px 3px;
+    }
+}

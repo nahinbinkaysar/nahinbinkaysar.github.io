@@ -1,0 +1,94 @@
+$(document).ready(function () {
+
+    /*From Jahangir For Mobile Menu*/
+
+    $(document).click(function (event) {
+        var icon = $('.icon');
+        var eL = event.target;
+        var menu = $('div.uu-mobile-menu');
+        console.log(eL);
+        if (eL.id == 'wrapper' || eL.classList.contains('icon') || eL.classList.contains('line')) {
+            event.preventDefault();
+            icon.toggleClass('close');
+            menu.toggleClass('uu-active');
+            $('.uu-desible-body').toggleClass('show');
+        } else if (menu.is(eL) || menu.has(eL).length > 0) {
+            if (eL.id == 'top-menu-wrap') {
+                icon.removeClass('close');
+                menu.removeClass('uu-active');
+                $('.uu-desible-body').removeClass('show');
+            } else {
+                return true;
+            }
+        } else {
+            icon.removeClass('close');
+            menu.removeClass('uu-active');
+            $('.uu-desible-body').removeClass('show');
+        }
+    });
+
+
+    $('ul.uu-main-menu li a').click(function (event) {
+        if (jQuery('body').width() <= 992) {
+            if ($(this).attr('href') == '#' || $(this).attr('href') == '') {
+                event.preventDefault();
+                $(this).parent().first().toggleClass('open');
+                $(this).parent().siblings().removeClass('open');
+                $(this).parent().find('.open').removeClass('open');
+            } else {
+                return true;
+            }
+        }
+    });
+
+    /*== menu script ==*/
+    $(document).on("click", "li.uu-profile", function (e) {
+        e.stopPropagation();
+        $(this).find(".uu-dropdown").slideToggle('fast');
+    });
+
+    $(document).on("click", ".uu-dropdown, ul.uu-routine-dropdown", function (e) {
+        e.stopPropagation();
+    });
+
+    $(".uu-has-sub-menu").click(function (e) {
+        e.stopPropagation();
+    });
+
+
+
+    $(document).on("click", "body", function () {
+        $(".uu-dropdown, ul.uu-routine-dropdown").fadeOut('fast');
+    });
+
+    /*== Routine List Script ==*/
+    $(document).on("click", "div.routine-lists > ul > li", function (e) {
+        e.stopPropagation();
+
+        $('div.routine-lists > ul > li').not($(this)).find("ul.uu-routine-dropdown").slideUp('fast');
+
+        $(this).find("ul.uu-routine-dropdown").slideToggle('fast');
+    });
+
+
+    /*== Show bKash Info Script ==*/
+    $(document).on("click", "a.uu-bkash-payment-with-tr-id", function (e) {
+        $(this).addClass('uu-active');
+        $(this).parent().find(".uu-bKash-payment-info").slideDown('fast');
+    });
+    $(document).on("click", ".uu-bKash-payment-info .uu-btn-cancel", function (e) {
+        $('.uu-bkash-payment-with-tr-id').removeClass('uu-active');
+        $(".uu-bKash-payment-info").slideUp('fast');
+    });
+    $(document).on("click", ".uu-bKash-payment-info .uu-btn-confirm", function (e) {
+        $(".uu-confirm-wrapper").addClass('uu-confirm-active');
+        $("body").css('overflow', 'hidden');
+    });
+    $(document).on("click", ".uu-btn-no", function (e) {
+        $(".uu-confirm-wrapper").removeClass('uu-confirm-active');
+        $("body").css('overflow', 'inherit');
+    });
+
+    //datepicker
+    $('.datepicker').datepicker();
+});

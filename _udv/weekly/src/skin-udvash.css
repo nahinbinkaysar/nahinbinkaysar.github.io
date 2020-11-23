@@ -1,0 +1,861 @@
+div.uu-hamBurgerIcon div.bar {
+    background-color: #000;
+}
+
+/** ========================================================================
+	Global Colors
+========================================================================= **/
+body, h1, h2, h3, h4, h5, h6, p, span, a, input, button, label {
+    color: #3B3849;
+}
+
+    a,
+    a:hover {
+        color: inherit;
+    }
+
+.uu-footer-title,
+.uu-footer-menu li,
+.uu-footer-menu li a,
+.uu-footer-bottom p,
+.uu-footer-bottom p a,
+.uu-footer-bottom p span {
+    color: #fff;
+}
+
+.uu-notice {
+    color: #bea0c3;
+}
+
+.uu-notice-danger.uu-notice {
+    color: #f1eae4;
+}
+
+.uu-notice-danger {
+    background-color: #FF7C00;
+}
+
+.uu-notice-blue {
+    background-color: #6c2079;
+}
+
+.uu-notice-dark {
+    background-color: #1e223e;
+}
+
+    .uu-notice-dark.uu-notice {
+        color: #dee0ef;
+    }
+
+
+.form-group label {
+    color: #fff;
+}
+
+a.uu-back {
+    color: #263074;
+}
+
+input[type="text"] {
+    color: #000 !important;
+}
+
+
+
+/* Other's Css */
+ul.uu-profile-action li a:hover:before {
+    color: #8F8F8F;
+}
+
+body.uu-routine-page .uu-routine-item-body h5 {
+    color: #0059FF;
+}
+
+div.uu-pay-with h3 {
+    color: #000;
+}
+
+.uu-bKash-payment-info h3 {
+    color: #000 !important;
+}
+
+.uu-bKash-payment-info ul li {
+    color: #777;
+}
+
+ul.uu-footer-menu li a:hover {
+    color: #b3c022 !important;
+}
+
+body.uu-profile-page .uu-main table.table td:first-child {
+    color: #959597;
+}
+
+
+
+/*= Notification Css =*/
+ul.uu-main-menu > div.uu-last-element > li.uu-notification > a {
+    color: #3b3849;
+}
+
+    ul.uu-main-menu > div.uu-last-element > li.uu-notification > a span.uu-notication-counter {
+        background-color: red;
+        color: #fff;
+    }
+
+/** ========================================================================
+	Button Style Colors
+========================================================================= **/
+.uu-button-style-1,
+.uu-button-style-2,
+.uu-button-style-3,
+.uu-button-style-4 {
+    color: #fff;
+}
+
+    .uu-button-style-1:hover,
+    .uu-button-style-2:hover,
+    .uu-button-style-3:hover,
+    .uu-button-style-4:hover {
+        color: #fff !important;
+    }
+
+.uu-button-style-1 {
+    background: linear-gradient(to right, #322D8F, #1B2134);
+    transition: 0.2s;
+}
+
+    .uu-button-style-1:hover {
+        background: linear-gradient(to left, #322D8F, #1B2134);
+    }
+
+.uu-button-style-2 {
+    background: linear-gradient(to right, #EE4C30, #E00E4C);
+}
+
+    .uu-button-style-2:hover {
+        background: linear-gradient(to left, #EE4C30, #E00E4C);
+    }
+
+.uu-button-style-3 {
+    background: linear-gradient(to right, #681B76, #914C93);
+}
+
+    .uu-button-style-3:hover {
+        background: linear-gradient(to left, #681B76, #914C93);
+    }
+
+
+.uu-button-style-4 {
+    background: linear-gradient(to right, #302C88, #1B2131);
+}
+
+    .uu-button-style-4:hover {
+        background: linear-gradient(to left, #302C88, #1B2131);
+    }
+
+
+.uu-button-style-5 {
+    background-color: #E20F6D;
+    color: #fff;
+}
+
+    .uu-button-style-5:hover, a.uu-button-style-5.uu-bkash-payment-with-tr-id.uu-active {
+        background: linear-gradient(to left, #302C88, #1B2131);
+    }
+
+
+.uu-btn-cancel, .uu-btn-confirm {
+    color: #fff;
+    background-color: #AAAAAA;
+}
+
+    .uu-btn-cancel:hover,
+    .uu-btn-confirm:hover {
+        color: #fff;
+    }
+
+.uu-btn-confirm {
+    background-color: #CB6009;
+}
+
+
+
+/*== Confirmation Colors ==*/
+.uu-confirm-box {
+    background-color: #fff;
+}
+
+.uu-confirm-wrapper {
+    background-color: #dddddde6;
+}
+
+.uu-btn-yes, .uu-btn-no {
+    color: #fff;
+    background-color: #277531;
+}
+
+.uu-btn-no {
+    background-color: #AE0000;
+}
+
+.uu-confirm-box p {
+    color: #666;
+}
+
+
+
+
+div.uu-login-form-wrapper ::-webkit-input-placeholder { /* Edge */
+    color: #ffca00;
+}
+
+div.uu-login-form-wrapper :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ffca00;
+}
+
+div.uu-login-form-wrapper ::placeholder {
+    color: #ffca00;
+}
+
+
+
+
+
+/** ========================================================================
+	Congratulation Page Colors
+========================================================================= **/
+body.uu-congratulations-2 div.uu-login-form-wrapper {
+    background-color: #F8F8F8;
+}
+
+body.uu-congratulations-2 h2.uu-login-form-title {
+    color: #651874;
+}
+
+body.uu-congratulations-2 div.uu-login-form-wrapper p {
+    color: #651874;
+}
+
+    body.uu-congratulations-2 div.uu-login-form-wrapper p span {
+        color: #ff0042;
+    }
+
+
+/** ========================================================================
+	Header Colors
+========================================================================= **/
+/*header {
+    background-color: #ffffff;
+}*/
+
+div.uu-header-wrapper {
+    background-color: #ffffff;
+}
+
+ul.uu-main-menu > li > a:hover {
+    color: #3b3849c9;
+}
+
+ul.uu-main-menu > li:not(:last-child) > a:hover {
+    /*background-color: #DED4DD;*/
+    color: #f05530;
+}
+
+/*== Profile Dropdown Css ==*/
+ul.uu-dropdown {
+    background-color: #fff;
+}
+
+div.uu-profile-box-header {
+    background: #EFEFEF;
+}
+
+ul.uu-profile-action li a {
+    color: #8F8F8F;
+}
+
+    ul.uu-profile-action li a:hover {
+        background-color: #444;
+        color: #fff;
+    }
+
+    ul.uu-profile-action li a:hover {
+        background-color: #444;
+    }
+
+        ul.uu-profile-action li a:hover .cls-1 {
+            fill: #fff;
+        }
+
+
+div.uu-profile-box-footer h4.uu-due-amount {
+    color: #995699;
+}
+
+
+/* Sub Menu Css */
+ul.uu-main-menu ul.uu-dropdown-menu {
+    background-color: #fff;
+}
+
+    ul.uu-main-menu ul.uu-dropdown-menu li a:hover {
+        background-color: rgba(241, 91, 55, 0.15);
+        color: #f05530;
+    }
+
+    ul.uu-main-menu ul.uu-dropdown-menu li a span {
+        color: #f05530;
+    }
+
+
+/*= Mobile Menu Css =*/
+button.uu-mobile-menu-icon {
+    color: #959597;
+}
+
+
+
+
+
+/** ========================================================================
+	Main Colors
+========================================================================= **/
+body.uu-login-page div.uu-main {
+    background-color: #ffd83f;
+}
+
+.uu-has-pattern:after,
+.uu-has-pattern:before {
+    background-color: red;
+}
+
+
+
+/** ========================================================================
+	Login Form Colors
+========================================================================= **/
+div.uu-login-form-wrapper {
+    background-color: #ffffff52;
+}
+
+div.uu-other-links p a.uu-forgot-number {
+    color: #332E94;
+}
+
+div.uu-other-links p a.uu-forgot-pass {
+    color: #FF7100;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder {
+    background-color: #fff;
+}
+
+    .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+        color: #9dd7ff;
+    }
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
+    color: #212529;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.bootstrap-select .dropdown-item.active,
+.bootstrap-select .dropdown-item:active {
+    color: #fff;
+    background-color: #f7f7f7;
+}
+
+/** ========================================================================
+	Forgot Password Form Colors
+========================================================================= **/
+body.uu-forgot-password .uu-login-form-title {
+    color: #ff9a00;
+}
+
+body.uu-forgot-password div.uu-login-form-wrapper {
+    background-color: #F8F8F8;
+}
+
+body.uu-forgot-password div.uu-other-links p a {
+    color: #F0532D;
+}
+
+body.uu-forgot-password div.uu-other-links p span {
+    color: #000;
+}
+
+
+/** ========================================================================
+	Forgot Password Form Colors
+========================================================================= **/
+
+
+/*== Congratulations Colors ==*/
+body.uu-congratulations .uu-login-form-sub-title {
+    color: #651874;
+}
+
+
+
+/*== Forgot Number Form Colors ==*/
+body.uu-forgot-number-page div.uu-main {
+    background-color: #995699;
+}
+
+body.uu-forgot-number-page div.uu-login-form-wrapper {
+    background-color: #F8F8F8;
+}
+
+body.uu-forgot-number-page .uu-login-form-title {
+    color: #651874;
+}
+
+body.uu-forgot-number-page div.uu-login-form-wrapper ::-webkit-input-placeholder { /* Edge */
+    color: #651874;
+}
+
+body.uu-forgot-number-page div.uu-login-form-wrapper :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #651874;
+}
+
+body.uu-forgot-number-page div.uu-login-form-wrapper ::placeholder {
+    color: #651874;
+}
+
+
+body.uu-forgot-number-page div.uu-other-links p span {
+    color: #651874;
+}
+
+body.uu-forgot-number-page div.uu-other-links p a {
+    color: #C98EC2;
+}
+
+    body.uu-forgot-number-page div.uu-other-links p a.uu-resend-time span {
+        color: #651874;
+    }
+
+body.uu-forgot-number-page.uu-congratulations .uu-login-form-sub-title span {
+    color: #FF0042;
+}
+
+
+/** ========================================================================
+	Reset Password Colors
+========================================================================= **/
+body.uu-reset-password-page {
+}
+
+    body.uu-reset-password-page div.uu-main {
+        background-color: #96ad17;
+    }
+
+    body.uu-reset-password-page h2.uu-login-form-title {
+        color: #96ad17;
+    }
+
+    body.uu-reset-password-page div.uu-login-form-wrapper ::-webkit-input-placeholder { /* Edge */
+        color: #96ad17;
+    }
+
+    body.uu-reset-password-page div.uu-login-form-wrapper :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #96ad17;
+    }
+
+    body.uu-reset-password-page div.uu-login-form-wrapper ::placeholder {
+        color: #96ad17;
+    }
+
+    body.uu-reset-password-page .uu-main .uu-button-style-2 {
+        background: linear-gradient(to right, #3f480e, #96ad17);
+    }
+
+        body.uu-reset-password-page .uu-main .uu-button-style-2:hover {
+            background: linear-gradient(to left, #3f480e, #96ad17);
+        }
+
+
+/** ========================================================================
+	Register Page Colors
+========================================================================= **/
+body.uu-register-page div.uu-main {
+    background-color: #2E31CD;
+}
+
+body.uu-register-page div.uu-login-form-wrapper {
+    background-color: transparent;
+}
+
+body.uu-register-page .uu-login-form-title {
+    color: #ffffff;
+}
+
+    body.uu-register-page .uu-login-form-title span {
+        color: #88B0FF;
+    }
+
+body.uu-register-page div.uu-login-form-wrapper ::-webkit-input-placeholder { /* Edge */
+    color: #88B0FF;
+}
+
+body.uu-register-page div.uu-login-form-wrapper :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #88B0FF;
+}
+
+body.uu-register-page div.uu-login-form-wrapper ::placeholder {
+    color: #88B0FF;
+}
+
+body.uu-register-page div.uu-other-links p a {
+    color: #4DEEFF;
+}
+
+body.uu-register-page div.uu-other-links p span {
+    color: #FFFFFF;
+}
+
+body.uu-register-page div.uu-login-form-wrapper .form-control {
+    /*color: #8EC5FF;*/
+}
+
+body.uu-register-page.uu-congratulations h4.uu-login-form-sub-title {
+    color: #fff;
+}
+
+body.uu-register-page.uu-congratulations .uu-login-form-title {
+    color: #00FFFF;
+}
+
+body.uu-register-page.uu-congratulations h3.uu-login-form-sub-title {
+    color: #fff
+}
+
+    body.uu-register-page.uu-congratulations h3.uu-login-form-sub-title span {
+        color: #00FFFF;
+    }
+
+body.uu-profile-page .uu-main .uu-camera-wrapper {
+    background-color: #883BBD;
+}
+
+body.uu-register-page .bootstrap-select > .dropdown-toggle.bs-placeholder,
+body.uu-register-page .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+body.uu-register-page .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: #000;
+}
+
+
+
+
+
+
+/** ========================================================================
+	Routine Page Css
+========================================================================= **/
+body.uu-routine-page div.uu-main,
+body.uu-course-page div.uu-main,
+body.uu-congratulations-2 div.uu-main {
+    background-color: #DED4DE;
+}
+
+div.uu-routine-header > .row div.uu-routine-header-left {
+    background-color: #EFEAEF;
+}
+
+    div.uu-routine-header > .row div.uu-routine-header-left h2 {
+        color: #772397;
+    }
+
+div.uu-routine-header > .row div.uu-routine-header-right {
+    background-color: #E6DFE6;
+}
+
+    div.uu-routine-header > .row div.uu-routine-header-right li i {
+        color: #772397;
+    }
+
+    div.uu-routine-header > .row div.uu-routine-header-right li span {
+        color: #772397;
+    }
+
+div.uu-tab-menus .uu-tab {
+    background-color: #B29AB2;
+}
+
+div.uu-tab-menus a {
+    color: #fff;
+    background-color: #B29AB2;
+}
+
+    div.uu-tab-menus a.uu-active {
+        background: linear-gradient(to right, #EB7800, #FCB500);
+    }
+
+div.routine-lists > ul {
+    background-color: #fff;
+}
+
+    div.routine-lists > ul > li > a {
+        color: #FF6E3B;
+    }
+
+.uu-routine-item {
+    background-color: #fff;
+}
+
+span.uu-routine-status.uu-online,
+span.uu-routine-status.uu-live {
+    background-color: #ff4200;
+}
+
+
+span.uu-routine-status.uu-practice {
+    background: linear-gradient(to right, #EE4C30, #DF074F);
+}
+
+span.uu-routine-status.uu-in-branch {
+    background-color: #11A589;
+}
+/*.uu-routine-item-head {
+    background-color: #EFEFEF;
+}*/
+h2.uu-routine-title {
+    color: #772397;
+}
+
+span.uu-routine-status {
+    color: #fff;
+}
+
+.uu-routine-item-body h3 {
+    color: #000;
+}
+
+.uu-routine-item-body h4 {
+    color: #000;
+}
+
+    .uu-routine-item-body h4 span {
+        color: #000;
+    }
+
+span.uu-routine-status {
+    background-color: red;
+}
+
+ul.uu-routine-dropdown li a {
+    background-color: #F4F4F4;
+}
+
+ul.uu-routine-dropdown li:nth-child(even) a {
+    background-color: #fff;
+}
+
+ul.uu-routine-dropdown li a:hover {
+    color: #ff6e3b;
+}
+
+ul.uu-dropdown-sub-items {
+    background-color: #F3EBF3;
+}
+
+
+
+
+/** ========================================================================
+	Course Page Colors
+========================================================================= **/
+.uu-course-header {
+    background-color: #EFEAEF;
+}
+
+    .uu-course-header h2 {
+        color: #772397;
+    }
+
+a.uu-couse-item {
+    background-color: #fff;
+}
+
+    a.uu-couse-item:hover {
+        box-shadow: none;
+    }
+
+    a.uu-couse-item div.uu-couse-text h3 {
+        color: #772397;
+    }
+
+    a.uu-couse-item div.uu-couse-text p {
+        color: #000;
+    }
+
+div.uu-couse-icon i {
+    color: #ff6e3b;
+}
+
+body.uu-course-page h3.uu-form-sub-title {
+    color: #772397;
+}
+
+body.uu-course-page .uu-routine-item-body h3 {
+    color: #772397;
+}
+
+body.uu-course-page div.uu-login-form-wrapper ::-webkit-input-placeholder { /* Edge */
+    /*color: #8ec5ff;*/
+}
+
+body.uu-course-page div.uu-login-form-wrapper :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    /*color: #8ec5ff;*/
+}
+
+body.uu-course-page div.uu-login-form-wrapper ::placeholder {
+    /*color: #8ec5ff;*/
+}
+
+body.uu-course-page .form-control {
+    /*color: #8ec5ff;*/
+}
+
+
+body.uu-course-page div.uu-login-form-wrapper {
+    background-color: #F8F8F8;
+}
+
+body.uu-course-page .form-group label {
+    color: #000;
+}
+
+
+div.uu-login-form-wrapper .form-group ul > li > .list-details {
+    background-color: #ded4de;
+}
+
+.uu-bKash-payment-info input.form-control {
+    background-color: #F58CBD;
+}
+
+.uu-bKash-payment-info .tr-id-box .tr-id-create span.add-tr-field {
+    background-color: #4DD963;
+    color: #fff;
+}
+
+.uu-bKash-payment-info .tr-id-box .tr-id-filed ::-webkit-input-placeholder { /* Edge */
+    color: #777 !important;
+}
+
+.uu-bKash-payment-info .tr-id-box .tr-id-filed :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #777 !important;
+}
+
+.uu-bKash-payment-info .tr-id-box .tr-id-filed ::placeholder {
+    color: #777 !important;
+}
+
+
+/** ========================================================================
+	Pay Now Page Css
+========================================================================= **/
+body.uu-course-page .uu-routine-item-body p span.uu-due-amount {
+    color: #ff0000;
+}
+
+body.uu-course-page .uu-routine-item-body p a.uu-payment-history {
+    color: #4778ff;
+}
+
+
+
+/** ========================================================================
+	Profile Page Css
+========================================================================= **/
+body.uu-profile-page .uu-main h3.uu-profile-name {
+    color: #53237E;
+}
+
+body.uu-profile-page .uu-main .uu-profile-email {
+    color: #4E4B4B;
+}
+
+body.uu-profile-page .uu-main table.table td {
+    color: #6F7072;
+}
+
+body.uu-profile-page .uu-main table.table th {
+    color: #0C092B;
+}
+
+
+body.uu-profile-page .uu-main table.table td a {
+    color: #883BBD;
+}
+
+
+
+/** ========================================================================
+	Footer Colors
+========================================================================= **/
+footer {
+    background-color: #532355;
+}
+
+.uu-footer-bottom {
+    border-color: #784d79;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Css */
+
+
+
+/* For Mobile Menu */
+@media (max-width: 992px) {
+
+
+    div.uu-mobile-menu {
+        background-color: #fff;
+    }
+
+    ul.uu-main-menu ul.uu-dropdown-menu.uu-active-menu {
+        background-color: #eaeaea;
+    }
+
+    ul.uu-main-menu > li > a:hover {
+        background: none !important;
+    }
+
+    ul.uu-main-menu > li > a.uu-active-icon {
+        background: #dddddd38 !important;
+    }
+
+    ul.uu-main-menu ul.uu-dropdown-menu.uu-active-menu li {
+        background-color: #fff;
+    }
+
+    .uu-desible-body {
+        /*background-color: rgba(0, 0, 0, 0.74);*/
+    }
+}
+
+
+
+a.scroll-to-top i.fas {
+    background-color: #333;
+}
+
+a.scroll-to-top i.fas {
+    color: #fff;
+}

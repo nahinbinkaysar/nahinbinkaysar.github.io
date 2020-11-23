@@ -1,0 +1,128 @@
+﻿var CUSTOM_MESSAGE_CONTAINER_CLASS = ".customMessage";
+var DISPLAY_TIME_SUCCESS = 5000;
+var DISPLAY_TIME_ERROR = 30000;
+var DISPLAY_TIME_WARNING = 30000;
+var DISPLAY_TIME_INFO = 30000;
+
+var setTimeOutObj;
+
+$.fn.customMessage = function (options) {
+    var settings = $.extend({
+        displayMessage: "Something went wrong",
+        displayMessageType: "danger",
+        displayTime: 0,
+        messageHolder: ""
+    }, options);
+
+
+    if (settings.displayMessageType == "" || settings.displayMessageType == undefined || settings.displayMessageType.toLowerCase() == "error" || settings.displayMessageType == "e")
+        settings.displayMessageType = "danger";
+    else if (settings.displayMessageType == "s") {
+        settings.displayMessageType = "success";
+    }
+    else if (settings.displayMessageType == "i") {
+        settings.displayMessageType = "info";
+    }
+    else if (settings.displayMessageType == "w") {
+        settings.displayMessageType = "warning";
+    }
+    //console.log(displayMessageType);
+    settings.displayTime = parseInt(settings.displayTime);
+    if (settings.displayTime == undefined || settings.displayTime <= 0) {
+        if (settings.displayMessageType == "success") {
+            settings.displayTime = DISPLAY_TIME_SUCCESS;
+        }
+        else if (settings.displayMessageType == "danger") {
+            settings.displayTime = DISPLAY_TIME_ERROR;
+        }
+        else if (settings.displayMessageType == "info") {
+            settings.displayTime = DISPLAY_TIME_INFO;
+        }
+        else if (settings.displayMessageType == "warning") {
+            settings.displayTime = DISPLAY_TIME_WARNING;
+        }
+    }
+
+
+
+    if (settings.displayMessage == "" || settings.displayMessage == undefined) settings.displayMessage = "Something went wrong";
+
+
+    var displayMessageDiv = '<div class="alert alert-' + settings.displayMessageType + '" style="display:none"><a class="close" data-dismiss="alert">×</a>' + settings.displayMessage + '</div>';
+
+    if (settings.messageHolder != "") {
+        CUSTOM_MESSAGE_CONTAINER_CLASS = settings.messageHolder;
+    }
+
+
+    if ($(CUSTOM_MESSAGE_CONTAINER_CLASS).length > 0) {
+
+        $(CUSTOM_MESSAGE_CONTAINER_CLASS).find(".alert-" + settings.displayMessageType).remove();
+
+        $(CUSTOM_MESSAGE_CONTAINER_CLASS).append(displayMessageDiv).find(".alert-" + settings.displayMessageType).fadeIn(1000);
+
+        window.clearTimeout(setTimeOutObj);
+
+        setTimeout(function () {
+            $(CUSTOM_MESSAGE_CONTAINER_CLASS).find(".alert-" + settings.displayMessageType).fadeOut(2000, function () { $(this).remove(); });
+        }, settings.displayTime);
+
+    } else {
+        alert(settings.displayMessage);
+    }
+
+}
+
+
+function ShowErrorMessage(message) {
+    try {
+        var msg = '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>' + message + '</div>';
+        if ($(CUSTOM_MESSAGE_CONTAINER_CLASS).length > 0) {
+            $(CUSTOM_MESSAGE_CONTAINER_CLASS).append(msg);
+        } else {
+            alert(message);
+        }
+    } catch (ex) {
+        alert(ex + "");
+    }
+}
+
+function removeMessage() {
+    var displayTime = 0;
+
+    var childrenClass = $(CUSTOM_MESSAGE_CONTAINER_CLASS).children().attr("class");
+    if (childrenClass != undefined) {
+        console.log(childrenClass);
+        if ((childrenClass.indexOf("alert-success") > -1)) {
+            console.log((childrenClass.indexOf("alert-success") > -1));
+            displayTime = DISPLAY_TIME_SUCCESS;
+        } else if ((childrenClass.indexOf("alert-danger") > -1)) {
+            console.log((childrenClass.indexOf("alert-danger") > -1));
+            displayTime = DISPLAY_TIME_ERROR;
+        } else if ((childrenClass.indexOf("alert-info") > -1)) {
+            console.log((childrenClass.indexOf("alert-info") > -1));
+            displayTime = DISPLAY_TIME_INFO;
+        } else if ((childrenClass.indexOf("alert-warning") > -1)) {
+            console.log((childrenClass.indexOf("alert-warning") > -1));
+            displayTime = DISPLAY_TIME_WARNING;
+        } else {
+            displayTime = DISPLAY_TIME_SUCCESS;
+        }
+    } else {
+        displayTime = DISPLAY_TIME_SUCCESS;
+    }
+
+
+    setTimeOutObj = window.setTimeout(function () {
+        $(CUSTOM_MESSAGE_CONTAINER_CLASS).find("div").first().fadeOut(3000, function () { $(this).remove(); });
+        removeMessage();
+    }, displayTime);
+}
+
+$(document).ready(function () {
+    removeMessage();
+
+    $('.numericInputOnly').on('input', function () {
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    });
+});

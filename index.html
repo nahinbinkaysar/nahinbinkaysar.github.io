@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	body {
-		font-family: monospace;
-		display: flex;
-		flex-direction: row;
+
 	}
 	* {
 		box-sizing: border-box;
 	}
-
+	.flex-container {
+		font-family: monospace;
+		display: flex;
+		flex-direction: row;		
+	}
 	.flex-frame {
 		background-color: #f1f1f1;
 		padding: 10px; 
@@ -21,12 +24,14 @@
 		background-color: dodgerblue;
 		padding: 10px;
 		flex: 0%;
+		border-left: 3px solid grey;
 	}
 
 	.flex-side-pane {
 		background-color: dodgerblue;
 		padding: 10px;
 		flex: 10%;
+		font-size: 22px;
 	}
 
 	/* Responsive layout - makes a one column-layout instead of two-column layout */
@@ -39,19 +44,20 @@
 	<title></title>
 </head>
 <body>
-	<div class="flex-container">
-		<div class="flex-content">
+	<div class="flex-container">	
+		<div class="flex-frame">
 			<iframe name="frame" id="frame" src="home.html" style="height: 100%; border: none; width: 100%; padding-left: 100px;"></iframe>
 		</div>
+		<hr>
 		<div class="flex-side-pane">
 			<div class="flex-container" style="flex-direction: column; text-align: left;">
 				<a href="home.html" target="frame"><div>Home</div></a>
 				<a href="datatype.html" target="frame"><div>Data Type</div></a>
-				<a href="home.html" target="frame"><div>Group 8 Book</div></a>
+				<a href="home.html" target="frame"><div>Group 8 Book↗</div></a>
 				<a href="links.html" target="frame"><div>Links</div></a>
 				<a href="softwares.html" target="frame"><div>Softwares</div></a>
 			</div>
-		</div>
+		</div>	
 	</div>
 </body>
 </html>

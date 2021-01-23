@@ -8,24 +8,23 @@
     --colorLightMenu: #e0e0e0;
 }
 
-.light-mode {
-	background-color: var(--colorLight);
-	color: var(--colorLightElement);
+.dark-mode {
+	background-color: var(--colorDark);
+	color: var(--colorDarkElement);
 }
 
-.light-mode .dp {
-	filter: invert(0);
+.dark-mode .dp {
+	filter: invert(1);
 }
 
-
-.light-mode .navbar {
-	background-color: var(--colorLightMenu);
-	color: var(--colorLightElement);
+.dark-mode .navbar {
+	background-color: var(--colorDarkMenu);
+	color: var(--colorDarkElement);
 }
 
-.light-mode .navbarContent>div {
-	background-color: white;
-	color: var(--colorLightElement);
+.dark-mode .navbarContent>div {
+	background-color: black;
+	color: var(--colorDarkElement);
 }
 
 @font-face {
@@ -36,8 +35,8 @@
 body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
-	background-color: var(--colorDark);
-	color: var(--colorDarkElement);
+	background-color: var(--colorLight);
+	color: var(--colorLightElement);
 }
 
 a {
@@ -45,7 +44,7 @@ a {
 }
 
 .dp {
-	filter: invert(1);
+	filter: invert(0);
 }
 
 .topRightPane {
@@ -90,8 +89,8 @@ a {
 	left: 12px;
 	bottom: 12px;
 	border-radius: 10px;
-	background-color: var(--colorDarkMenu);
-	color: var(--colorDarkElement);
+	background-color: var(--colorLightMenu);
+	color: var(--colorLightElement);
 	height: 32px;
 	transition: 0.3s;
 }
@@ -119,7 +118,7 @@ a {
 	font-family: 'Roboto', sans-serif;
 	background-color: #303030;
 	cursor: default;
-	color: var(--colorDarkElement);
+	color: var(--colorLightElement);
 	transition: 0.3s;
 }
 

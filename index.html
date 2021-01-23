@@ -13,7 +13,7 @@
         <div><i class="fas fa-moon" onclick="light()"></i></div>
     </div>
     <div id="main" class="mainSection">
-        <img class="dp" src="res/dp_alt.png">
+        <img id="dp" class="dp" src="dp_alt.png" onclick="dpToggler()">
         <p style="font-family: 'Museo'; font-size: 26px;">Nahin Bin Kaysar</p>
     </div>
     <div id="social" class="socialSection">
@@ -34,21 +34,36 @@
     </div>
     <script>
         var activated = 1;
+        var isDpAngry = true;
         function light() {
             var element = document.body;
-            element.classList.toggle("light-mode");
+            element.classList.toggle("dark-mode");
+            var image = document.getElementsByClassName("dp");
+				image.src = "dp.png";
         }
         function openNav() {
             if (activated == 0) {
                 document.getElementById("nav").style.height = "40%";
                 document.getElementById("up").style.transform = 'rotate(180deg)';
                 activated = 1; 
+                
             }
             else {
                 document.getElementById("nav").style.height = "32px";
                 document.getElementById("up").style.transform = 'rotate(0deg)';
                 activated = 0;
             }
+        }
+
+        function dpToggler() {
+        	if(isDpAngry == true) {
+        		document.getElementById("dp").src="dp.png";
+        		isDpAngry == false;
+        	}
+        	if(isDpAngry == false) {
+        		document.getElementById("dp").src="dp_alt.png";
+        		isDpAngry == true;
+        	}
         }
     </script>
 </body>

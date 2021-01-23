@@ -12,7 +12,9 @@
 	.flex-container {
 		font-family: monospace;
 		display: flex;
-		flex-direction: row;		
+		flex-direction: row;
+		background-color: pink;
+		flex: 1 0 auto;
 	}
 	.flex-frame {
 		background-color: #f1f1f1;
@@ -20,12 +22,6 @@
 		flex: 50%;
 	}
 
-	.flex-bar {	
-		background-color: dodgerblue;
-		padding: 10px;
-		flex: 0%;
-		border-left: 3px solid grey;
-	}
 
 	.flex-side-pane {
 		background-color: dodgerblue;
@@ -44,6 +40,10 @@
 	<title></title>
 </head>
 <body>
+	<div>
+		<br>
+
+	</div>
 	<div class="flex-container">	
 		<div class="flex-frame">
 			<iframe name="frame" id="frame" src="home.html" style="height: 100%; border: none; width: 100%; padding-left: 100px;"></iframe>
@@ -53,7 +53,7 @@
 			<div class="flex-container" style="flex-direction: column; text-align: left;">
 				<a href="home.html" target="frame"><div>Home</div></a>
 				<a href="datatype.html" target="frame"><div>Data Type</div></a>
-				<a href="home.html" target="frame"><div>Group 8 Book↗</div></a>
+				<a href="group_8.html" target="frame"><div>Group 8 Book↗</div></a>
 				<a href="links.html" target="frame"><div>Links</div></a>
 				<a href="softwares.html" target="frame"><div>Softwares</div></a>
 			</div>

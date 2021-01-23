@@ -8,6 +8,26 @@
     --colorLightMenu: #e0e0e0;
 }
 
+.light-mode {
+	background-color: var(--colorLight);
+	color: var(--colorLightElement);
+}
+
+.light-mode .dp {
+	filter: invert(0);
+}
+
+
+.light-mode .navbar {
+	background-color: var(--colorLightMenu);
+	color: var(--colorLightElement);
+}
+
+.light-mode .navbarContent>div {
+	background-color: white;
+	color: var(--colorLightElement);
+}
+
 @font-face {
 	font-family: Museo;
 	src: url(museoslab700.woff);
@@ -105,24 +125,4 @@ a {
 
 .charukola {
 	font-family: 'Noto Sans Bengali', sans-serif;
-}
-
-.light-mode {
-	background-color: var(--colorLight);
-	color: var(--colorLightElement);
-}
-
-.light-mode .dp {
-	filter: invert(0);
-}
-
-
-.light-mode .navbar {
-	background-color: var(--colorLightMenu);
-	color: var(--colorLightElement);
-}
-
-.light-mode .navbarContent>div {
-	background-color: white;
-	color: var(--colorLightElement);
 }

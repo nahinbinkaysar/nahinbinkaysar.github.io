@@ -14,6 +14,7 @@
     </div>
     <div id="main" class="mainSection">
         <img class="dp" src="res/lined_dp.svg" style= "max-width: 256px; border-radius: 50%;">
+        <img class="dp" src="res/dp.png">
         <p style="font-family: 'Museo'; font-size: 26px;">Nahin Bin Kaysar</p>
     </div>
     <div id="social" class="socialSection">
@@ -36,7 +37,7 @@
         </div>
     </div>
     <script>
-        var activated = 0;
+        var activated = 1;
         function light() {
             var element = document.body;
             element.classList.toggle("light-mode");
@@ -45,18 +46,11 @@
             if (activated == 0) {
                 document.getElementById("nav").style.height = "40%";
                 document.getElementById("up").style.transform = 'rotate(180deg)';
-                document.getElementById("topBar").style.filter = "brightness(50%)";
-                document.getElementById("main").style.filter = "brightness(50%)";
-                document.getElementById("social").style.filter = "brightness(50%)";
-                document.getElementById("social").style.filter = "brightness(50%)";
                 activated = 1; 
             }
             else {
                 document.getElementById("nav").style.height = "32px";
                 document.getElementById("up").style.transform = 'rotate(0deg)';
-                document.getElementById("topBar").style.filter = "brightness(100%)";
-                document.getElementById("main").style.filter = "brightness(100%)";
-                document.getElementById("social").style.filter = "brightness(100%)";
                 activated = 0;
             }
         }

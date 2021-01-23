@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-	body {
-
-	}
-	* {
-		box-sizing: border-box;
-	}
-	.flex-container {
-		font-family: monospace;
-		display: flex;
-		flex-direction: row;
-		background-color: pink;
-		flex: 1 0 auto;
-	}
-	.flex-frame {
-		background-color: #f1f1f1;
-		padding: 10px; 
-		flex: 50%;
-	}
-
-
-	.flex-side-pane {
-		background-color: dodgerblue;
-		padding: 10px;
-		flex: 10%;
-		font-size: 22px;
-	}
-
-	/* Responsive layout - makes a one column-layout instead of two-column layout */
-	@media (max-width: 800px) {
-		.flex-container {
-			flex-direction: column;
-		}
-	}
-	</style>
-	<title></title>
+    <title>Nahin Bin Kaysar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="res/fav.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="newblood.css">
+    <script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
 </head>
-<body>
-	<div>
-		<br>
-
-	</div>
-	<div class="flex-container">	
-		<div class="flex-frame">
-			<iframe name="frame" id="frame" src="home.html" style="height: 100%; border: none; width: 100%;"></iframe>
-		</div>
-		<hr>
-		<div class="flex-side-pane">
-			<div class="flex-container" style="flex-direction: column; text-align: left;">
-				<a href="home.html" target="frame"><div>Home</div></a>
-				<a href="datatype.html" target="frame"><div>Data Type</div></a>
-				<a href="group_8.html" target="frame"><div>Group 8 Book↗</div></a>
-				<a href="links.html" target="frame"><div>Links</div></a>
-				<a href="softwares.html" target="frame"><div>Softwares</div></a>
-			</div>
-		</div>	
-	</div>
+<body id="body">
+    <div id="topBar" class="topRightPane">
+        <div><i class="fas fa-moon" onclick="light()"></i></div>
+    </div>
+    <div id="main" class="mainSection">
+        <img class="dp" src="res/lined_dp.svg" style= "max-width: 256px; border-radius: 50%;">
+        <p style="font-family: 'Museo'; font-size: 26px;">Nahin Bin Kaysar</p>
+    </div>
+    <div id="social" class="socialSection">
+        <i class="fab fa-twitter" onclick="window.location.href = 'https://twitter.com/nahinbinkaysar/';"></i>
+        <i class="fab fa-instagram" onclick="window.location.href = 'http://instagram.com/nahin_binkaysar/';"></i>
+        <i class="fab fa-github" onclick="window.location.href = 'https://github.com/nahinbinkaysar';"></i>
+        <i class="fab fa-telegram" onclick="window.location.href = 'https://t.me/nahinbinkaysar';"></i>
+    </div>
+    <div class="navbar" id="nav">
+        <div class="handle">
+            <i id="up" class="fas fa-chevron-up" onclick="openNav()"></i>    
+        </div>        
+        <div class="navbarContent">
+            <div onclick="window.location.href = 'https://nahinbinkaysar.github.io/datatype';">Datatype</div>
+            <div onclick="window.location.href = 'https://nahinbinkaysar.github.io/group_8';">Group 8 Book</div>
+            <div onclick="window.location.href = 'https://nahinbinkaysar.github.io/hp4';">Harry Potter and the Goblet of Fire</div>
+            <div onclick="window.location.href = 'https://nahinbinkaysar.github.io/hp5';">Harry Potter and the Order of the Phoenix</div>
+            <div onclick="window.location.href = 'http://natshint.blogspot.com/2019/01/bmi-calculator.html';">Get BMI Calculator</div>
+            <div onclick="window.location.href = 'https://nahinbinkaysar.github.io/thekiterunner';">The Kite Runner</div>
+        </div>
+    </div>
+    <script>
+        var activated = 0;
+        function light() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
+        }
+        function openNav() {
+            if (activated == 0) {
+                document.getElementById("nav").style.height = "40%";
+                document.getElementById("up").style.transform = 'rotate(180deg)';
+                document.getElementById("topBar").style.filter = "brightness(50%)";
+                document.getElementById("main").style.filter = "brightness(50%)";
+                document.getElementById("social").style.filter = "brightness(50%)";
+                document.getElementById("social").style.filter = "brightness(50%)";
+                activated = 1; 
+            }
+            else {
+                document.getElementById("nav").style.height = "32px";
+                document.getElementById("up").style.transform = 'rotate(0deg)';
+                document.getElementById("topBar").style.filter = "brightness(100%)";
+                document.getElementById("main").style.filter = "brightness(100%)";
+                document.getElementById("social").style.filter = "brightness(100%)";
+                activated = 0;
+            }
+        }
+    </script>
 </body>
 </html>

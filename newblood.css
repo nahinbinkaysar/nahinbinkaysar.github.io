@@ -45,6 +45,7 @@ a {
 
 .dp {
 	filter: invert(0);
+	transition: 0.5s;
 }
 
 .topRightPane {

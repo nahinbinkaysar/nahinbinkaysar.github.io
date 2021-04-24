@@ -10,13 +10,36 @@
     <link rel="stylesheet" type="text/css" href="newblood.css">
     <link rel="stylesheet" type="text/css" href="navControl.css">
     <script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .dpContainer {
+            height: 256px;
+            width: 256px;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        .dp-anim2 {
+            animation: tide 0.8s infinite linear;
+        }
+        @keyframes tide {
+            from {
+                margin-left: -85.3333px;
+                margin-top: -85.3333px;
+            }
+            to{
+                margin-left: 0px;
+                margin-top: 0px;
+            }   
+        }
+    </style>
 </head>
 <body id="body">
     <div id="topBar" class="topRightPane">
         <div><i class="fas fa-moon" onclick="dark()"></i></div>
     </div>
     <div id="main" class="mainSection">
-        <img id="dp" class="dp" src="dp_alt.png" onclick="dpToggler()">
+        <div class="dpContainer">
+            <img id="dp" class="dp dp-anim2" src="res/sine.png" width="341.3333px" height="341.3333px">
+        </div>
         <p style="font-family: 'Roboto Slab', serif; font-size: 26px;">Nahin Bin Kaysar</p>
     </div>
     <div id="social" class="socialSection">
@@ -37,7 +60,6 @@
     </div>
     <script>
         var activated = 1;
-        var isDpAngry = true;
         function dark() {
             var element = document.body;
             element.classList.toggle("dark-mode");
@@ -56,18 +78,6 @@
                 document.getElementById("up").style.transform = 'rotate(0deg)';
                 activated = 0;
             }
-        }
-
-        function dpToggler() {
-        	if(isDpAngry == true) {
-        		document.getElementById("dp").src="dp.png";
-        		isDpAngry == false;
-        	}
-        	else {
-        		document.getElementById("dp").src="dp_alt.png";
-        		document.getElementById("nav").style.height = "40%";
-        		isDpAngry == true;
-        	}
         }
     </script>
 </body>

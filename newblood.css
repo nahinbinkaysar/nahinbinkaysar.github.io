@@ -27,10 +27,6 @@
 	color: var(--colorDarkElement);
 }
 
-@font-face {
-	font-family: Museo;
-	src: url(museoslab700.woff);
-}
 
 body {
 	margin: 0;
@@ -79,48 +75,6 @@ a {
 .socialSection>i {
 	margin: 8px;
 	font-size: 34px;
-}
-
-.navbar {
-	display: flex;
-	position: fixed;
-	align-items: flex-start;
-	flex-flow: nowrap column;
-	right: 12px;
-	left: 12px;
-	bottom: 12px;
-	border-radius: 10px;
-	background-color: var(--colorLightMenu);
-	color: var(--colorLightElement);
-	height: 32px;
-	transition: 0.3s;
-}
-
-.handle {
-	display: flex;
-	margin-top: 3px;
-	justify-content: center;
-	width: 100%;
-}
-
-
-.navbarContent {
-	margin: 12px;
-	display: flex;
-	flex-wrap: wrap;
-	overflow: auto;
-}
-
-.navbarContent>div {
-	border-radius: 100px;
-	padding: 6px 12px 6px 12px;
-	margin: 6px 6px 0px 0px;
-	font-size: 16px;
-	font-family: 'Roboto', sans-serif;
-	background-color: #303030;
-	cursor: default;
-	color: var(--colorLightElement);
-	transition: 0.3s;
 }
 
 .charukola {

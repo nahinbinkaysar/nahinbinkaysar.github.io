@@ -8,8 +8,8 @@
 }
 @media only screen and (min-width: 1280px) {
     .TakeExamBody {
-  width: 80%;
-}
+      width: 80%;
+    }
 }
 
 .questionBlock .row {
@@ -171,7 +171,7 @@
     }
 
     .TakeExamBody .question {
-        background-color: #bdbdbd;
+        background-color: #202020;
         margin-top: 20px;
         padding: 20px 30px;
         border-radius: 10px;
@@ -207,7 +207,7 @@
     font-size: 22px;
     margin-right: 10px;
     margin-bottom: 0;
-    color: #3E4D5C;
+    color: #bdbdbd;
 }
 
 .TakeExamBody .uddipokText {

@@ -1,21 +1,4 @@
-﻿
-
-/*.question-body {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 100%;
-    overflow: auto;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-}*/
-
-body {
-    background-color: #121212;
-}
-
-.questionBlock .row {
+﻿.questionBlock .row {
     display: block;
 }
 
@@ -26,12 +9,9 @@ body {
 }
 
 .question {
-    width: 92%;
     float: left;
     background-color: #121212;
 }
-
-
 
 .questionText {
     margin-bottom: 5px;
@@ -171,7 +151,6 @@ body {
 
 /*Result Body*/
 .TakeExamBody {
-    width: 100%;
     height: auto;
     overflow: hidden;
     padding: 5px;
@@ -187,7 +166,6 @@ body {
         margin-top: 20px;
         padding: 20px 30px;
         border-radius: 32px;
-        width: 100%;
     }
 
         .TakeExamBody .question .serial {

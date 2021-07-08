@@ -2,6 +2,20 @@
     background-color: #121212;
 }
 
+.TakeExamWrapper {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+}
+
+
+
+@media only screen and (min-width: 650px) {
+    .TakeExamBody{
+        width: 80%;
+    }
+}
+
 .questionBlock .row {
     display: block;
 }

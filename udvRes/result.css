@@ -1,4 +1,8 @@
-﻿.questionBlock .row {
+﻿body {
+    background-color: #121212;
+}
+
+.questionBlock .row {
     display: block;
 }
 
@@ -153,7 +157,6 @@
 .TakeExamBody {
     height: auto;
     overflow: hidden;
-    padding: 5px;
 }
 
     .TakeExamBody .questionText, .TakeExamBody .uddipokText, .TakeExamBody .questionTable {

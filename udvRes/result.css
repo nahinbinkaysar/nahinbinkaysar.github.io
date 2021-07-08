@@ -1,8 +1,16 @@
-﻿
-body {
+﻿body {
     background-color: #121212;
 }
 
+.TakeExamBody {
+  margin: auto;
+  width: 99%;
+}
+@media only screen and (min-width: 1280px) {
+    .TakeExamBody {
+  width: 80%;
+}
+}
 
 .questionBlock .row {
     display: block;
@@ -13,13 +21,6 @@ body {
     float: left;
     text-align: right;
 }
-
-.question {
-    width: 80%;
-    float: left;
-}
-
-
 
 .questionText {
     margin-bottom: 5px;
@@ -170,7 +171,7 @@ body {
     }
 
     .TakeExamBody .question {
-        background-color: #fff;
+        background-color: #bdbdbd;
         margin-top: 20px;
         padding: 20px 30px;
         border-radius: 10px;
@@ -231,9 +232,6 @@ body {
     margin-bottom: 15px;
     padding-left: 0px;
     padding-right: 0px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 

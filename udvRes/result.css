@@ -173,7 +173,7 @@
     .TakeExamBody .question {
         background-color: #202020;
         margin-top: 20px;
-        padding: 20px 30px;
+        padding: 15px 10px 6px 10px;
         border-radius: 10px;
     }
 
@@ -282,6 +282,9 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    border-radius: 8px;
+    color:  #202020 !important;
+    background-color: #bdbdbd !important;
 }
 
 .TakeExamWrapper .solveText p {

@@ -1,20 +1,8 @@
-﻿body {
+﻿
+body {
     background-color: #121212;
 }
 
-.TakeExamWrapper {
-    display: flex;
-    flex-flow: wrap column;
-    align-items: center;
-}
-
-
-
-@media only screen and (min-width: 650px) {
-    .TakeExamBody{
-        width: 80%;
-    }
-}
 
 .questionBlock .row {
     display: block;
@@ -27,9 +15,11 @@
 }
 
 .question {
+    width: 80%;
     float: left;
-    background-color: #121212;
 }
+
+
 
 .questionText {
     margin-bottom: 5px;
@@ -171,6 +161,7 @@
 .TakeExamBody {
     height: auto;
     overflow: hidden;
+    padding: 5px;
 }
 
     .TakeExamBody .questionText, .TakeExamBody .uddipokText, .TakeExamBody .questionTable {
@@ -179,10 +170,10 @@
     }
 
     .TakeExamBody .question {
-        background-color: #202020;
+        background-color: #fff;
         margin-top: 20px;
         padding: 20px 30px;
-        border-radius: 32px;
+        border-radius: 10px;
     }
 
         .TakeExamBody .question .serial {
@@ -215,7 +206,7 @@
     font-size: 22px;
     margin-right: 10px;
     margin-bottom: 0;
-    color: #bdbdbd;
+    color: #3E4D5C;
 }
 
 .TakeExamBody .uddipokText {
@@ -240,6 +231,9 @@
     margin-bottom: 15px;
     padding-left: 0px;
     padding-right: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -284,11 +278,7 @@
     }
 
 .TakeExamWrapper .solveText {
-    color:#202020;
-    background-color: #bdbdbd;
-    border-radius: 24px;
-
-    border: 2px solid #bdbdbd;
+    border: 2px solid #00c024;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

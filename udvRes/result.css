@@ -432,10 +432,6 @@
         width: 10%;
     }
 
-    .question {
-        width: 90%;
-    }
-
     .input-group-prepend-text {
         width: 6%;
     }
@@ -474,10 +470,6 @@
         width: 10%;
     }
 
-    .question {
-        width: 90%;
-    }
-
     .input-group-prepend-text {
         width: 6%;
     }
@@ -496,10 +488,6 @@
 @media only screen and (max-width: 739px) {
     .serial {
         width: 12%;
-    }
-
-    .question {
-        width: 88%;
     }
 
     .input-group-prepend-text {
@@ -526,10 +514,6 @@
     .serial {
         width: 12%;
     }
-
-    .question {
-        width: 88%;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -545,10 +529,6 @@
 
     .serial {
         width: 12%;
-    }
-
-    .question {
-        width: 88%;
     }
 
     .input-group-prepend-text {
@@ -601,10 +581,6 @@
     .serial {
         width: 18%;
     }
-
-    .question {
-        width: 82%;
-    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -614,16 +590,8 @@
         text-align: right;
     }
 
-    .option {
-        width: 75%;
-    }
-
     .serial {
         width: 20%;
-    }
-
-    .question {
-        width: 80%;
     }
 
     .input-group-prepend-text {
@@ -644,10 +612,6 @@
 
     .serial {
         width: 25%;
-    }
-
-    .question {
-        width: 75%;
     }
 
     .input-group-prepend-text {

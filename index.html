@@ -37,7 +37,7 @@
         <div><i class="fas fa-moon" onclick="dark()"></i></div>
     </div>
     <div id="main" class="mainSection">
-        <div class="dpContainer" onclick="window.location.href = 'exceptionalList.html';">
+        <div class="dpContainer" onclick="launchUdv()">
             <img id="dp" class="dp dp-anim2" src="res/sine.png" width="341.3333px" height="341.3333px">
         </div>
         <p style="font-family: 'Roboto Slab', serif; font-size: 26px;">Nahin Bin Kaysar</p>
@@ -79,6 +79,12 @@
                 document.getElementById("up").style.transform = 'rotate(0deg)';
                 activated = 0;
             }
+        }
+
+        var udv = 0;
+        function launchUdv() {
+            udv += 1;
+            if (udv>=3) window.location.href = 'udv.html';
         }
     </script>
 </body>

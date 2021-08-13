@@ -49,8 +49,7 @@
 }
 .navContent>div {
 	border-radius: 100px;
-	border-color: var(--colorDarkMenu);
-	border: 2px  solid;
+	border: 2px solid;
 	padding: 6px 12px 6px 12px;
 	margin: 6px 6px 0px 0px;
 	font-size: 16px;

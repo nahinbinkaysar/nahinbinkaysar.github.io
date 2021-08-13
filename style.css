@@ -1,0 +1,96 @@
+:root {
+	--colorDark: #121212;
+	--colorDarkElement: #bdbdbd;
+	--colorDarkMenu: #202020;
+
+	--colorLight: #ffffff;
+	--colorLightElement: #121212;
+	--colorLightMenu: #e0e0e0;
+}
+
+body {
+	background: var(--colorDark);
+	color: var(--colorDarkElement);
+}
+
+.topBar {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.topBar>div {
+	margin: 8px;
+}
+
+.container {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	width: auto;
+	color: var(--colorDarkElement);
+	transition: 0.3s;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.container {
+		width: 68%;
+	}
+}
+
+.mainSection {
+	display: flex;
+	align-items: center;
+	flex-flow: wrap column;
+	justify-content: center;
+	transition: 0.5s;
+	margin-top: auto;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.mainSection {
+		margin-top: 48px;
+	}
+}
+
+.dp {
+	filter: invert(1);
+	transition: 0.5s;
+}
+
+.dpContainer {
+	height: 256px;
+	width: 256px;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.dp-anim {
+	animation: tide 0.8s infinite linear;
+}
+@keyframes tide {
+	from {
+		margin-left: -85.3333px;
+		margin-top: -85.3333px;
+	}
+	to{
+		margin-left: 0px;
+		margin-top: 0px;
+	}   
+}
+
+.fas, .fab {
+	font-size: 24px;
+	transition: 0.3s;
+}
+
+.socialSection {
+	display: flex;
+	margin-top: -24px;
+	justify-content: center;
+}
+
+.socialSection>i {
+	margin: 8px;
+	font-size: 34px;
+}

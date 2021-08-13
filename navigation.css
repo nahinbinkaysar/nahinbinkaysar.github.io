@@ -14,7 +14,7 @@
 	border-radius: 10px;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
 	/* For desktop: */
 	.nav {
 		top: 96px;
@@ -34,7 +34,7 @@
 	width: 100%;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
 	/* For desktop: */
 	.handle {
 		display: none;

@@ -7,7 +7,6 @@
 	left: 12px;
 	bottom: 12px;
 	background: var(--colorDarkMenu);
-	color: var(--colorDarkElement);
 	width: auto;
 	height: 32px;
 	transition: 0.3s;
@@ -55,7 +54,6 @@
 	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
 	cursor: default;
-	color: var(--colorDarkElement);
 	transition: 0.3s;
 }
 
@@ -75,7 +73,6 @@
 		font-size: 16px;
 		font-family: 'Roboto', sans-serif;
 		cursor: pointer;
-		color: var(--colorDarkElement);
 		transition: 0.3s;
 	}
 	.navContent>div:hover {

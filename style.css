@@ -8,6 +8,24 @@
 	--colorLightMenu: #e0e0e0;
 }
 
+.light-mode {
+	background-color: var(--colorLight);
+	color: var(--colorLightElement);
+}
+
+.light-mode .dp {
+	filter: invert(0);
+}
+
+.light-mode .nav {
+	background-color: var(--colorLightMenu);
+	color: var(--colorLightElement);
+}
+
+.light-mode .navbarContent>div {
+	background-color: var(--colorLight);
+}
+
 body {
 	background: var(--colorDark);
 	color: var(--colorDarkElement);
@@ -27,7 +45,6 @@ body {
 	flex-flow: wrap column;
 	align-items: center;
 	width: auto;
-	color: var(--colorDarkElement);
 	transition: 0.3s;
 }
 

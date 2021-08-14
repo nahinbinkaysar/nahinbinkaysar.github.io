@@ -46,6 +46,7 @@
 	flex-wrap: wrap;
 	overflow: auto;
 }
+
 .navContent>div {
 	border-radius: 100px;
 	border: 2px solid;
@@ -76,6 +77,6 @@
 		transition: 0.3s;
 	}
 	.navContent>div:hover {
-		color:dodgerblue;
+		color: dodgerblue;
 	}
 }

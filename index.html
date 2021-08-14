@@ -1,17 +1,20 @@
 <html>
+
 <head>
 	<title>Nahin Bin Kaysar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="navigation.css">
 </head>
-<body>	
+
+<body>
 	<div class="topBar">
-        <div><i class="fas fa-moon" onclick="dark()"></i></div>
-    </div>
+		<div><i class="fas fa-moon" onclick="dark()"></i></div>
+	</div>
 	<div class="container">
 		<div id="main" class="mainSection">
 			<div class="dpContainer" onclick="launchUdv()">
@@ -29,8 +32,8 @@
 	</div>
 	<div class="nav" id="nav">
 		<div class="handle" onclick="openNav()">
-			<i id="up" class="fas fa-chevron-up"></i>    
-		</div> 
+			<i id="up" class="fas fa-chevron-up"></i>
+		</div>
 		<div class="navContent">
 			<div onclick="window.location.href = 'datatype.html';">Datatype</div>
 			<div onclick="window.location.href = 'group_8.html';">Group 8 Book</div>
@@ -41,31 +44,32 @@
 		</div>
 	</div>
 	<script>
-        var activated = 1;
-        function dark() {
-            var element = document.body;
-            element.classList.toggle("light-mode");
-            var image = document.getElementsByClassName("dp");
-				image.src = "dp.png";
-        }
-        function openNav() {
-            if (activated == 0) {
-                document.getElementById("nav").style.height = "40%";
-                document.getElementById("up").style.transform = 'rotate(180deg)';
-                activated = 1; 
-            }
-            else {
-                document.getElementById("nav").style.height = "32px";
-                document.getElementById("up").style.transform = 'rotate(0deg)';
-                activated = 0;
-            }
-        }
+		var activated = 1;
+		function dark() {
+			var element = document.body;
+			element.classList.toggle("light-mode");
+			var image = document.getElementsByClassName("dp");
+			image.src = "dp.png";
+		}
+		function openNav() {
+			if (activated == 0) {
+				document.getElementById("nav").style.height = "40%";
+				document.getElementById("up").style.transform = 'rotate(180deg)';
+				activated = 1;
+			}
+			else {
+				document.getElementById("nav").style.height = "32px";
+				document.getElementById("up").style.transform = 'rotate(0deg)';
+				activated = 0;
+			}
+		}
 
-        var udv = 0;
-        function launchUdv() {
-            udv += 1;
-            if (udv>=3) window.location.href = 'udv.html';
-        }
-    </script>
+		var udv = 0;
+		function launchUdv() {
+			udv += 1;
+			if (udv >= 3) window.location.href = 'udv.html';
+		}
+	</script>
 </body>
+
 </html>

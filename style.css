@@ -8,6 +8,13 @@
 	--colorLightMenu: #e0e0e0;
 }
 
+/* Elements */
+body {
+	background: var(--colorDark);
+	color: var(--colorDarkElement);
+}
+
+/* Light mode */
 .light-mode {
 	background-color: var(--colorLight);
 	color: var(--colorLightElement);
@@ -26,11 +33,7 @@
 	background-color: var(--colorLight);
 }
 
-body {
-	background: var(--colorDark);
-	color: var(--colorDarkElement);
-}
-
+/* Classes */
 .topBar {
 	display: flex;
 	justify-content: flex-end;
@@ -48,7 +51,7 @@ body {
 	transition: 0.3s;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
 	/* For desktop: */
 	.container {
 		width: 68%;
@@ -64,7 +67,7 @@ body {
 	margin-top: auto;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
 	/* For desktop: */
 	.mainSection {
 		margin-top: 48px;
@@ -75,7 +78,6 @@ body {
 	filter: invert(1);
 	transition: 0.5s;
 }
-
 .dpContainer {
 	height: 256px;
 	width: 256px;

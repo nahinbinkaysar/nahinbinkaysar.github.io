@@ -13,7 +13,7 @@
 	border-radius: 10px;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
 	/* For desktop: */
 	.nav {
 		top: 96px;
@@ -33,7 +33,7 @@
 	width: 100%;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
 	/* For desktop: */
 	.handle {
 		display: none;
@@ -57,7 +57,7 @@
 	transition: 0.3s;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
 	/* For desktop: */
 	.navContent {
 		margin: 12px;
@@ -65,6 +65,7 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		overflow: auto;
+		/* filter: blur(4px); */
 	}
 	.navContent>div {
 		border: none;
@@ -74,8 +75,10 @@
 		font-family: 'Roboto', sans-serif;
 		cursor: pointer;
 		transition: 0.3s;
+		
 	}
 	.navContent>div:hover {
 		color:dodgerblue;
+		filter: blur(10px);
 	}
 }

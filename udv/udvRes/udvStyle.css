@@ -1,0 +1,23 @@
+.btn {
+	border: none;
+	border-radius: 32px;
+	outline: none;
+	padding: 10px 10px;
+	margin: 4px;
+	background-color: #202020;
+	color:  #bdbdbd;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #ddd;
+	color: black;
+}
+.btn.active {
+	background-color: #666;
+	color: white;
+}
+.buttons {
+	display: flex;
+	flex-flow: wrap row;
+	align-items: center;
+}

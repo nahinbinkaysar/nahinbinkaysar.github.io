@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Group 8 Book</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="navigation.css">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+</head>
+<style>
+	html, body {
+		height: 100%;
+	}
+	body {
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+	}
+
+	.buttons {
+		display: flex;
+		flex-flow: wrap row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.self {
+		display: flex;
+		justify-content: center;
+		width: 50%;
+	}
+
+	.nav {
+		top:auto;
+		right: 12px;
+		left: 12px;
+		bottom: 12px;
+		background: var(--colorDarkMenu);
+		width: auto;
+		height: 32px;
+		background-color: #e0e0e0;
+		color: #121212;
+	}
+</style>
+
+<body id="body">
+	<iframe id="g8_frame"src="g8_source.html" style="height: 100%; border: none; width: 100%"></iframe>
+	<div class="nav">
+		<div class="buttons">
+			<div class="self">
+				<i style="font-size: 32px;" class="fas fa-angle-left" onclick="window.location.href = 'https://nahinbinkaysar.github.io/';"></i>				
+			</div>
+			<div class="self">
+				<i style="font-size: 22px;" class="fas fa-download" onclick="window.location.href = 'res/g8_book_offline.pdf';"></i>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

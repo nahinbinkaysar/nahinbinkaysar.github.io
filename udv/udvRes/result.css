@@ -348,16 +348,6 @@
     border-radius: 0;
 }
 
-.TakeExamWrapper .questionOptions .questionOption {
-    margin-bottom: -1px;
-    padding: 10px 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 0;
-    border-color: #dae0e6;
-    border-radius: 0;
-}
-
     .TakeExamWrapper .questionOptions .questionOption .input-group-prepend {
         border-radius: 100%;
     }

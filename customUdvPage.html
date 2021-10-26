@@ -1,0 +1,65 @@
+<html>
+
+<head>
+	<title>Udvash Customization</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+
+
+	<link href="prism.css" rel="stylesheet" />
+	<script src="prism.js"></script>
+
+	<style>
+		pre {
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="mainSection" style="align-items: flex-start;">
+
+			<code>--hide for re-test</code>
+			<pre><code class="language-javascript">$('span:contains("/10")').hide()
+$('span:contains("Not Answered")').hide()
+$('span:contains("Request")').hide()
+$('img[style*="width:100%"]').hide()
+$('.solveText').hide()</code></pre>
+
+
+			<code>--dark mode</code>
+			<pre><code class="language-javascript">$('.uu-main').css('background-color', '#121212');
+$('div.uu-header-wrapper').css('background-color', '#121212');
+$('.TakeExamBody .question').css('background-color', '#202020');
+$('.TakeExamBody .question').css('box-shadow', '0px 0px 0px #000');
+$('.TakeExamHeader').css('background-color', '#202020');
+$('body, h1, h2, h3, h4, h5, h6, p, span, a, input, button, label').css('color', '#e0e0e0');
+$('p img').css({filter : "invert(88%)"});</code></pre>
+
+
+			<code>--hide marks</code>
+			<pre><code class="language-javascript">$('span:contains("/10")').hide()</code></pre>
+			<code>--hide not answered status</code>
+			<pre><code class="language-javascript">$('span:contains("Not Answered")').hide()</code></pre>
+			<code>--hide request for review</code>
+			<pre><code class="language-javascript">$('span:contains("Request")').hide()</code></pre>
+			<code>--hide submitted answer</code>
+			<pre><code class="language-javascript">$('img[style*="width:100%"]').hide()</code></pre>
+			<code>--hide solution</code>
+			<pre><code class="language-javascript">$('.solveText').hide()</code></pre>
+
+
+		</div>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,58 +1,69 @@
 <html>
-    <head>
-        <title>email</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
-            rel="stylesheet">
-        <script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="navigation.css">
-    </head>
-    <style>
-        p {
-            font-family: monospace;
-            font-size: 18px;
-        }
-        .main {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            word-wrap: break-word;
-        }
-        .top {
-            display: flex;
-            flex-direction: row;
-        }
-    </style>
-    
+
+<head>
+	<title>email</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+</head>
+<style>
+	p {
+		font-family: monospace;
+		font-size: 18px;
+	}
+
+	button {
+		height: 64px;
+		width: 64px;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		word-wrap: break-word;
+	}
+
+	.top {
+		display: flex;
+		flex-direction: row;
+	}
+</style>
+
 <body>
 
-    <div class="main">
-   
-    <div class="top">
-        <p>Email list:</p>
-        <p id='msg' style="display: none;">Emails copied</p>
-        <button onclick="copyToClipboard('email')">Copy</button>
-    </div>
-   
-      <p id="email">lazimalmuttakin07@gmail.com,mdisahak829@gmail.com,Syedaafifamobassira@gmail.com,dipankar.mitra4854@gmail.com,nishansheikh157@gmail.com,meherunnesasadiya23@gmail.com,sajjat657bd@gmail.com,amdadulhaque17november@gmail.com,samihafariha6696@gmail.com,adiba200124@gmail.com,hassinbiva22@gmail.com,apurbokumar1355@gmail.com,hasibulsifat12@gmail.com,aminuldcc02@gmail.com,abdullahalshafeechowdhury@gmail.com,akmar.sultan780@gmail.com,arianbashir02@gmail.com,neshatprova2002@gmail.com,mozharulasif@gmail.com,sazidalmuhaimin@gmail.com,1100ehsan@gmail.com,sabithossainpranto@gmail.com,mariasultana216@gmail.com,rizawanaraisa@gmail.com,romanaroxy02@gmail.com,protivaprova24@gmail.com,tanjiltahin@gmail.com,azmain619tamim@gmail.com,al.nazmus.sakib.009@gmail.com,sahatrina2002@gmail.com,sakibhasan1407@gmail.com,nirjharaminrowdra@gmail.com,sadmansakib440@gmail.com,pritomsingha2020@gmail.com,adnanakib1233@gmail.com,samiarimi097531@gmail.com,mah.auyon47@gmail.com,nurulkabir782001@gmail.com,raihanrakib222@gmail.com,tapu0610@gmail.com,raufulhasan1224@gmail.com,20arafatrahman02@gmail.com,shahriaralam2817@gmail.com,gksafi16@gmail.com,avikdey2k00@gmail.com,adibridwan1@gmail.com,naimulabir21@gmail.com,jobayerahmedshimul@gmail.com,mushfiqur6164@gmail.com,tanjimulhasanrafi@gmail.com,sikderaunkur@gmail.com,rafiq270901@gmail.com,mail.tanimrahaman@gmail.com,uddinarman18@gmail.com,mehedifgc@gmail.com,khairulbari59@gmail.com,himelmamun71@gmail.com,takbirudro20@gmail.com,ibnulahmadshafin@gmail.com,khansahabuddin295@gmail.com,shokha100@gmail.com,mahmudfarazimim@gmail.com,saminsadman8@gmail.com,sfahmmed46@gmail.com,labibanawar66@gmail.com,anikatasnim394@gmail.com,hasibmahatab01@gmail.com,hasinmesbahtuhin@gmail.com,mohontachandan@gmail.com,arifulhoque1601@gmail.com,mahianazaayat@gmail.com,shuvomoybiswas7@gmail.com,biplobhossen648@gmail.com,mehertanifa@gmail.com,mohammadmazharulislam9@gmail.com,nahinbinkaysar@gmail.com,durjoybhowmick99@gmail.com,ashik.anik1@gmail.com,studentmdjunayed675@gmail.com,jrrifat023@gmail.com,rhrahat170@gmail.com,asifhannan2020@gmail.com,alimulrafi2020@gmail.com,hishambauk@gmail.com,anisurrahmandip18249@gmail.com,zannatulmisty410@gmail.com,sukallannandy786@gmail.com,abd.hannan01@gmail.com,sk.sayemcufl@gmail.com,shahedhossain1215@gmail.com,hitman3652@gmail.com,sayeadalshahaf@gmail.com,tasmiasultanajuthy@gmail.com,urekaa66@gmail.com,kazizawadhosein@gmail.com,alaminkhanmadani@gmail.com,shadril.neawz@gmail.com,rafiul.buet1@gmail.com,sukti200261@gmail.com,sultanasamiha696@gmail.com,shajila314@gmail.com,abaurko01@gmail.com,shovarani2021@gmail.com,sabbirmahamud110203@gmail.com,alrafiulislam21@gmail.com,asmtahmid111@gmail.com,anuvasarwar326@gmail.com,arefien.razi@gmail.com,abrar.faiaz200.30@gmail.com,mehedi.hasan.pranto2018@gmail.com,muhibbinmahbub04@gmail.com,nafisahmedmridha@gmail.com,nafisiqbalbc@gmail.com,ahmedjubayer101@gmail.com,alphyshaharintamim@gmail.com,muhezulfikar@gmail.com,sanjida7560@gmail.com,mirzarajit59@gmail.com,saadbinyousuf10@gmail.com,mdalmamun259802@gmail.com,uddinmdkamal953@gmail.com,ahruman935@gmail.com,arpighosh53@gmail.com,wazihamehrin@gmail.com,shishirshanks123@gmail.com,jiprann@gmail.com,rownokjc@gmail.com,soumiksakib007@gmail.com,tanvirsifat.khan@gmail.com,towsiftahmid2@gmail.com,mahin.shahriar2015@gmail.com,zisanzia1@gmail.com,www.smajmain02@gmail.com,hkabdullah07@gmail.com,rashedmansur001@gmail.com,ratulrakib12@gmail.com,farhantanvirfahim.18@gmail.com,ferdous7138@gmail.com,aslamhossain8586@gmail.com,jannatuladon20005@gmail.com,atikulalamfahad253@gmail.com,tauhidamahbub@gmail.com,farihatabassumoyshi@gmail.com,mahjabeenrabiah@gmail.com,ahnaf120230@gmail.com,syedizaz1247@gmail.com,tasnimmahin896@gmail.com,tasmimatabassumtamanna@gmail.com,mth.zihad@gmail.com,700whoami@gmail.com,rayhan1607007@gmail.com,siamarefin030@gmail.com,shahariauzzaman20@gmail.com,sakib.nazmus1020@gmail.com,rsadikur507@gmail.com,shanzidatuly2003@gmail.com,biprodurjoy@gmail.com,www.mumin20abdullah@gmail.com,ahnaftahmid4046@gmail.com,sumaiyasafa2001@gmail.com,taranatasnim356@gmail.com,debjyotice20@gmail.com,ahmedfardin100@gmail.com,muhtasimmonjur@gmail.com,mohtasimsabab@gmail.com,krahi2341@gmail.com</p>
-      
-    
-</div>
+	<div class="main">
+		<p>Email list:</p>
+		<div class="top">
+			<button onclick="copyToClipboard('email')">Copy</button>
+			<p id='msg' style="display: none;">Emails copied</p>
+
+		</div>
+
+		<p id="email">
+			lazimalmuttakin07@gmail.com,mdisahak829@gmail.com,Syedaafifamobassira@gmail.com,dipankar.mitra4854@gmail.com,nishansheikh157@gmail.com,meherunnesasadiya23@gmail.com,sajjat657bd@gmail.com,amdadulhaque17november@gmail.com,samihafariha6696@gmail.com,adiba200124@gmail.com,hassinbiva22@gmail.com,apurbokumar1355@gmail.com,hasibulsifat12@gmail.com,aminuldcc02@gmail.com,abdullahalshafeechowdhury@gmail.com,akmar.sultan780@gmail.com,arianbashir02@gmail.com,neshatprova2002@gmail.com,mozharulasif@gmail.com,sazidalmuhaimin@gmail.com,1100ehsan@gmail.com,sabithossainpranto@gmail.com,mariasultana216@gmail.com,rizawanaraisa@gmail.com,romanaroxy02@gmail.com,protivaprova24@gmail.com,tanjiltahin@gmail.com,azmain619tamim@gmail.com,al.nazmus.sakib.009@gmail.com,sahatrina2002@gmail.com,sakibhasan1407@gmail.com,nirjharaminrowdra@gmail.com,sadmansakib440@gmail.com,pritomsingha2020@gmail.com,adnanakib1233@gmail.com,samiarimi097531@gmail.com,mah.auyon47@gmail.com,nurulkabir782001@gmail.com,raihanrakib222@gmail.com,tapu0610@gmail.com,raufulhasan1224@gmail.com,20arafatrahman02@gmail.com,shahriaralam2817@gmail.com,gksafi16@gmail.com,avikdey2k00@gmail.com,adibridwan1@gmail.com,naimulabir21@gmail.com,jobayerahmedshimul@gmail.com,mushfiqur6164@gmail.com,tanjimulhasanrafi@gmail.com,sikderaunkur@gmail.com,rafiq270901@gmail.com,mail.tanimrahaman@gmail.com,uddinarman18@gmail.com,mehedifgc@gmail.com,khairulbari59@gmail.com,himelmamun71@gmail.com,takbirudro20@gmail.com,ibnulahmadshafin@gmail.com,khansahabuddin295@gmail.com,shokha100@gmail.com,mahmudfarazimim@gmail.com,saminsadman8@gmail.com,sfahmmed46@gmail.com,labibanawar66@gmail.com,anikatasnim394@gmail.com,hasibmahatab01@gmail.com,hasinmesbahtuhin@gmail.com,mohontachandan@gmail.com,arifulhoque1601@gmail.com,mahianazaayat@gmail.com,shuvomoybiswas7@gmail.com,biplobhossen648@gmail.com,mehertanifa@gmail.com,mohammadmazharulislam9@gmail.com,nahinbinkaysar@gmail.com,durjoybhowmick99@gmail.com,ashik.anik1@gmail.com,studentmdjunayed675@gmail.com,jrrifat023@gmail.com,rhrahat170@gmail.com,asifhannan2020@gmail.com,alimulrafi2020@gmail.com,hishambauk@gmail.com,anisurrahmandip18249@gmail.com,zannatulmisty410@gmail.com,sukallannandy786@gmail.com,abd.hannan01@gmail.com,sk.sayemcufl@gmail.com,shahedhossain1215@gmail.com,hitman3652@gmail.com,sayeadalshahaf@gmail.com,tasmiasultanajuthy@gmail.com,urekaa66@gmail.com,kazizawadhosein@gmail.com,alaminkhanmadani@gmail.com,shadril.neawz@gmail.com,rafiul.buet1@gmail.com,sukti200261@gmail.com,sultanasamiha696@gmail.com,shajila314@gmail.com,abaurko01@gmail.com,shovarani2021@gmail.com,sabbirmahamud110203@gmail.com,alrafiulislam21@gmail.com,asmtahmid111@gmail.com,anuvasarwar326@gmail.com,arefien.razi@gmail.com,abrar.faiaz200.30@gmail.com,mehedi.hasan.pranto2018@gmail.com,muhibbinmahbub04@gmail.com,nafisahmedmridha@gmail.com,nafisiqbalbc@gmail.com,ahmedjubayer101@gmail.com,alphyshaharintamim@gmail.com,muhezulfikar@gmail.com,sanjida7560@gmail.com,mirzarajit59@gmail.com,saadbinyousuf10@gmail.com,mdalmamun259802@gmail.com,uddinmdkamal953@gmail.com,ahruman935@gmail.com,arpighosh53@gmail.com,wazihamehrin@gmail.com,shishirshanks123@gmail.com,jiprann@gmail.com,rownokjc@gmail.com,soumiksakib007@gmail.com,tanvirsifat.khan@gmail.com,towsiftahmid2@gmail.com,mahin.shahriar2015@gmail.com,zisanzia1@gmail.com,www.smajmain02@gmail.com,hkabdullah07@gmail.com,rashedmansur001@gmail.com,ratulrakib12@gmail.com,farhantanvirfahim.18@gmail.com,ferdous7138@gmail.com,aslamhossain8586@gmail.com,jannatuladon20005@gmail.com,atikulalamfahad253@gmail.com,tauhidamahbub@gmail.com,farihatabassumoyshi@gmail.com,mahjabeenrabiah@gmail.com,ahnaf120230@gmail.com,syedizaz1247@gmail.com,tasnimmahin896@gmail.com,tasmimatabassumtamanna@gmail.com,mth.zihad@gmail.com,700whoami@gmail.com,rayhan1607007@gmail.com,siamarefin030@gmail.com,shahariauzzaman20@gmail.com,sakib.nazmus1020@gmail.com,rsadikur507@gmail.com,shanzidatuly2003@gmail.com,biprodurjoy@gmail.com,www.mumin20abdullah@gmail.com,ahnaftahmid4046@gmail.com,sumaiyasafa2001@gmail.com,taranatasnim356@gmail.com,debjyotice20@gmail.com,ahmedfardin100@gmail.com,muhtasimmonjur@gmail.com,mohtasimsabab@gmail.com,krahi2341@gmail.com
+		</p>
+
+
+	</div>
 </body>
 <script>
- function copyToClipboard(elementId) {
+	function copyToClipboard(elementId) {
 
-var aux = document.createElement("input");
-aux.setAttribute("value", document.getElementById(elementId).innerHTML);
-document.body.appendChild(aux);
-aux.select();
-document.execCommand("copy");
-document.body.removeChild(aux);
+		var aux = document.createElement("input");
+		aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+		document.body.appendChild(aux);
+		aux.select();
+		document.execCommand("copy");
+		document.body.removeChild(aux);
 
-document.getElementById('msg').style.display = 'block';
+		document.getElementById('msg').style.display = 'block';
 
-}
+	}
 </script>
+
 </html>

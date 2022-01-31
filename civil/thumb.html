@@ -7,7 +7,9 @@
 
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Raleway:wght@800&family=Sen:wght@400;700&display=swap');
-
+		body {
+			font-family: 'Sen', sans-serif;
+		}
 		.thumbDiv {
 			width: 1280px;
 			height: 720px;
@@ -134,7 +136,7 @@
 </head>
 
 <body>
-	<h1>Youtube thumbnail generator, ver: 1.2</h1>
+	<h1>Youtube thumbnail generator, ver: 1.3</h1>
 	<form action="javascript:;" onsubmit="generate(this)">
 		<label for="sec">Section:</label>
 		<input type="text" id="sec" name="sec">
@@ -147,14 +149,13 @@
 		<label for="lecture">Lecture:</label>
 		<input type="text" id="lecture" name="lecture"><br>
 		<input type="submit" value="⛶ Generate"
-			style="margin-top:10px; margin-bottom: 10px; padding:2px; border-radius: 4px; font-size: large;">
+			style="margin-top:10px; margin-bottom: 10px;padding: auto;; border-radius: 4px; font-size: large;font-family: 'Sen', sans-serif;">
 	</form>
 	<div style="display: flex;">
-		<input id="title" name="title" value="Video title will appear once thumbnail is generated" style="width: 360px;">
-		<button onclick="copyToClipboard('title')" style="margin-left: 8px;margin-right: 8px;">Copy</button>
+		<input id="title" name="title" value="Video title will appear once thumbnail is generated" style="width: 360px;font-family: 'Sen', sans-serif;">
+		<button onclick="copyToClipboard('title')" style="margin-left: 8px;margin-right: 8px;font-family: 'Sen', sans-serif;">Copy</button>
 		<div id='msg' style="display: none;">Video Title copied</div>
 	</div>
-	<br>
 	<br>
 	<div class='thumbDiv' id='container'>
 		<div class="rect"></div>
@@ -320,7 +321,7 @@
 	</div>
 	<br>
 	<input type='button'
-		style="height: auto;width: auto; padding:10px; background-color:green; color: white; border-radius: 16px; font-size: larger;"
+		style="height: auto;width: auto; padding:10px; background-color:green; color: white; border-radius: 16px; font-size: larger;font-family: 'Sen', sans-serif;"
 		id='but_screenshot' value='⇩ Download' onclick='screenshot();'><br />
 
 	<!-- Script -->

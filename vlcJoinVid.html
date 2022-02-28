@@ -1,0 +1,79 @@
+<html>
+
+<head>
+	<title>Udvash Customization</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+
+
+	<link href="prism.css" rel="stylesheet" />
+	<script src="prism.js"></script>
+
+	<style>
+		pre {
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="topBar" style="justify-content: flex-start;">
+		<div><i class="fas fa-arrow-left" onclick="window.location.href = 'index.html';"></i></div>
+	</div>
+	<div class="container">
+		<div class="mainSection" style="align-items: flex-start;">
+			<code>--commandline code</code>
+			<pre><code class="language-javascript">vlc 1.mp4 2.mp4 --sout "#gather:std{access=file,dst=joinedVid.mp4}" --sout-keep</code></pre>
+			<p id="code" style="display:none;">vlc 1.mp4 2.mp4 --sout "#gather:std{access=file,dst=joinedVid.mp4}" --sout-keep</p>
+			<div class="top">
+			<button onclick="copyToClipboard('code')">Copy</button>
+			<p id='msg' style="display: none;">code copied</p>
+
+			</div>
+		</div>
+	</div>
+	<div class="nav" id="nav">
+		<div class="handle" onclick="openNav()">
+			<i id="up" class="fas fa-chevron-up"></i>
+		</div>
+		<div class="navContent">
+			<div style="font-weight: 600;">Customize your Udvash Unmesh Exam Page!</div><br>
+			<div>Open the console window from F12 Developer Tools. Paste these codes to your needs.</div>
+		</div>
+	</div>
+	<script>
+		var activated = 1;
+		function openNav() {
+			if (activated == 0) {
+				document.getElementById("nav").style.height = "40%";
+				document.getElementById("up").style.transform = 'rotate(180deg)';
+				activated = 1;
+			}
+			else {
+				document.getElementById("nav").style.height = "32px";
+				document.getElementById("up").style.transform = 'rotate(0deg)';
+				activated = 0;
+			}
+		}
+
+		function copyToClipboard(elementId) {
+
+			var aux = document.createElement("input");
+			aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+			document.body.appendChild(aux);
+			aux.select();
+			document.execCommand("copy");
+			document.body.removeChild(aux);
+
+			document.getElementById('msg').style.display = 'block';
+
+		}
+	</script>
+</body>
+
+</html>

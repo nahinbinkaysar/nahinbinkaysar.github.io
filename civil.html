@@ -58,10 +58,24 @@
 			</div>
 			<div class="self">
 				<i style="font-size: 22px;" class="fas fa-download"
-					onclick="window.location.href = 'res/';"></i>
+					onclick="fx()"></i>
 			</div>
 		</div>
 	</div>
 </body>
+<script>
+	let a = 1;
+	function fx() {
+		if(a==1) {
+			document.querySelector('meta[name="viewport"]').setAttribute("content", "width=device-width, initial-scale=1");
+			a = 0;
+		}
+		else {
+			document.querySelector('meta[name="viewport"]').setAttribute("content", "");
+			a = 1;
+		}
+	}
+	
+</script>
 
 </html>

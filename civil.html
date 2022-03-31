@@ -31,7 +31,7 @@
 	.self {
 		display: flex;
 		justify-content: center;
-		width: 50%;
+		width: 25%;
 	}
 
 	.nav {
@@ -48,7 +48,7 @@
 </style>
 
 <body id="body">
-	<iframe id="g8_frame" src="civil_source.html" style="height: 100%; border: none; width: 100%"></iframe>
+	<iframe id="g8_frame" src="civil/civil_source.html" style="height: 100%; border: none; width: 100%"></iframe>
 	
 	<div class="nav">
 		<div class="buttons">
@@ -56,8 +56,17 @@
 				<i style="font-size: 32px;" class="fas fa-angle-left"
 					onclick="window.location.href = 'https://nahinbinkaysar.github.io/';"></i>
 			</div>
+			
 			<div class="self">
-				<i style="font-size: 22px;" class="fas fa-download"
+				<i style="font-size: 22px;" class="fa-solid fa-magnifying-glass"
+					onclick="fx()"></i>
+			</div>
+			<div class="self">
+				<i style="font-size: 22px;" class="fas fa-chart-bar"
+					onclick="window.location.href = 'civil/stats.html';"></i>
+			</div>
+			<div class="self">
+				<i style="font-size: 22px;" class="fa-solid fa-arrow-down-to-bracket"
 					onclick="fx()"></i>
 			</div>
 		</div>

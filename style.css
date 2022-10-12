@@ -109,6 +109,20 @@ body {
 	justify-content: center;
 }
 
+.weblogSection {
+	background-color: tomato;
+	display: flex;
+	font-family: Bangers;
+	font-size: 100px;
+	margin-top: 10px;
+	justify-content: center;
+	left: auto;
+	bottom: auto;
+	width: 100px;
+	height: 60px;
+	border-radius: 16px;
+}
+
 .socialSection>i {
 	margin: 8px;
 	font-size: 34px;

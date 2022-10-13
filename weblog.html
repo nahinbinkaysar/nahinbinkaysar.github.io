@@ -1,39 +1,58 @@
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		.blogCard {
+			height: 200px;
+			width: auto;
+			background-color:indigo;
+			margin:10px;
+			padding: 10px;
+		}
+	</style>
 </head>
+
 <body>
-	<h1 id="tit">title</h1>
-	<pre id="wri">writer</pre>
-	<pre id="dat">date</pre>
-	<pre id="txt">text</pre>
+
+	<div id="cardContainer">
+		<div class="blogCard" onclick="forrr(3)">
+			<div id="title" style="font-size: 30px;">title</div>
+			<div id="author" style="font-size: 20px;">author</div>
+			<div id="date" style="font-size: 15px;">date</div>
+			<div id="text" style="font-size: 18px; word-wrap: break-word;">text</div>
+		</div>
+
+		<div class="blogCard" onclick="forrr(2)">
+			<div id="title" style="font-size: 30px;">Akkhep</div>
+			<div id="author" style="font-size: 20px;">by Nahin Bin Kaysar</div>
+			<div id="date" style="font-size: 15px;">13/10/2022 @ 12:17pm</div>
+			<div id="text" style="font-size: 18px; word-wrap: break-word;">Things got ended with her about a month ago. I wanted always her as a friend. I don't think there will be any conversation between us going forward.
+				I am imagining it will be hurtful to me in th</div>
+		</div>
+		
+		<div class="blogCard" onclick="forrr(1)">
+			<div id="title" style="font-size: 30px;">সময় কতই না দ্রুত যায়, তাই না?</div>
+			<div id="author" style="font-size: 20px;">by nahin bin kaysar</div>
+			<div id="date" style="font-size: 15px;">January 01, 2019</div>
+			<div id="text" style="font-size: 18px; word-wrap: break-word;">কিরে বিশ্ববাসীর পোলাইপানগণ কি অবস্থা? ২০১৯ এর কেবলই ওর দরজা খুললো। সবাই ঢুকতে পারছেন? নাকি কেউ আবার আইস্টাইনের পদার্থবিদ্যা ভুল</div>
+		</div>
+	</div>
 </body>
 
 <script>
-    Mode = 0;
-    fetch('weblog/1.txt')
-	.then(response => response.text())
-	.then(data => {
-		DATA = data;
-        title = "";
-		writer = "";
-		date = "";
-		text = "";
-		for (i = 0; i < DATA.length; i++) {
-			if(DATA[i] == '*') {
-				Mode++;
-				continue;
-			}
-			if(Mode == 1) title = title + DATA[i];
-			if(Mode == 2) writer = writer + DATA[i];
-			if(Mode == 3) date = date + DATA[i];
-			if(Mode == 4) text = text + DATA[i];
-		}
-        document.getElementById('tit').innerHTML = title;
-		document.getElementById('wri').innerHTML = writer;
-		document.getElementById('dat').innerHTML = date;
-			
-		document.getElementById('txt').innerHTML = text;
-	});
+	function forrr(a) {
+		window.location.href = 'blogLoader.html';
+		localStorage.setItem("serialNumber", a);
+	}
+	// var htmlElements = "";
+	// for (var i = 0; i <4; i++) {
+	// 	htmlElements += '<div class="blogCard"></div>';
+	// }
+	// var container = document.getElementById("cardContainer");
+	// container.innerHTML = htmlElements;
+
+
 </script>
+
 </html>

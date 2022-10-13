@@ -1,0 +1,21 @@
+*something new!*by nahin bin kaysar*13/10/2022 @ 2:46pm*
+
+I was going to write something totally different than you will be seeing now. But rest assured as I am also going to write that off here.
+
+1
+Some time before I was thinking I am pulling myself from giving my full potential. This is not something I am proud to say. I don't really like CIVIL and I am also not giving my full strength to programming.
+
+That was one part of the story. On the filpped side of the coin, the matter comes with the persons I liked over the years. Remember for chocolate, nothing was serious, it never became
+serious. It was always a convulated mess. Also I never wanted anything for chikorita too. Never my full efforts or will power. Need fixing.
+
+2
+I am designing a system to show all these posts like a normal blogsite would do. I just completed the process to pass the unique data needed to identify a particular post. Then I will use the data to show the txt files on a single html. This is the page you're seeing now(are you? /cryptic). This brings a smile to my face.
+
+2:45pm
+Voila! The whole system done. I just saw this page in the middle of editing in the browser by clicking its card. Real progess.
+
+I will continue on it more next days. Guess this is the end.
+
+
+
+(i am gonna make my life hell in future thinking what i meant by the "/cryptic" text)

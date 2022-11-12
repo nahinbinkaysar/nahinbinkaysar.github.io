@@ -28,24 +28,27 @@
 	<div class="container">
 		<div class="mainSection" style="align-items: flex-start;">
 			<code>macro to toggle between Cambria Math and SolaimanLipi</code>
-			<pre><code class="language-vbs">Sub FontToggler()
-    Select Case Selection.Font.Name
-        Case "SolaimanLipi"
-            Selection.Font.Name = "Cambria Math"
-            Selection.Font.Bold = False
-        Case "Cambria Math"
-            Selection.Font.Name = "SolaimanLipi"
-            Selection.Font.Bold = False
-    End Select
+		<pre><code class="language-vbs">Sub FontToggler()
+	Select Case Selection.Font.Name
+		Case "SolaimanLipi"
+				Selection.Font.Name = "Cambria Math"
+		Case "Cambria Math"
+			Selection.Font.Name = "SolaimanLipi"
+		Case Else
+			Selection.Font.Name = "Cambria Math"
+	End Select
 End Sub
+
 Sub ColorToggler()
-    Select Case Selection.Font.Color
-        Case wdColorRed
-            Selection.Font.Color = wdColorBlack
-        Case awdColorBlack
-            Selection.Font.Color = wdColorRed
-    End Select
-End Sub
+	Select Case Selection.Font.Color
+		Case wdColorRed
+			Selection.Font.Color = wdColorAuto
+		Case wdColorAuto
+			Selection.Font.Color = wdColorRed
+		Case Else
+			Selection.Font.Color = wdColorAuto
+	End Select
+End Sub		
 			</code></pre>
 			add keyboard shortcuts by recording macro
 		</div>
@@ -55,8 +58,7 @@ End Sub
 			<i id="up" class="fas fa-chevron-up"></i>
 		</div>
 		<div class="navContent">
-			<div style="font-weight: 600;">Customize your Udvash Unmesh Exam Page!</div><br>
-			<div>Open the console window from F12 Developer Tools. Paste these codes to your needs.</div>
+			<div style="font-weight: 600;">¯\_(ツ)_/¯</div><br>
 		</div>
 	</div>
 	<script>

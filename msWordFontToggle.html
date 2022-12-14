@@ -18,17 +18,38 @@
 		pre {
 			border-radius: 10px;
 		}
+
+		.mainSection {
+			font-family: Roboto;
+			overflow-wrap: break-word;
+		}
 	</style>
 </head>
 
 <body>
+
 	<div class="topBar" style="justify-content: flex-start;">
 		<div><i class="fas fa-arrow-left" onclick="window.location.href = 'index.html';"></i></div>
 	</div>
 	<div class="container">
 		<div class="mainSection" style="align-items: flex-start;">
-			<code>macro to toggle between Cambria Math and SolaimanLipi</code>
-		<pre><code class="language-vbs">Sub FontToggler()
+			<div style="overflow-wrap: break-word;">Macro to toggle between Cambria Math and SolaimanLipi</div>
+			<br>
+			<div style="display: flex;">
+				<div>
+					<div>View</div>
+					<div style="border-radius: 100px;width: 35px; height: 2px; background-color: #82ABF1;"></div>
+				</div>
+				<div>></div>
+				<div style="background-color: #3f3f3f; border-radius: 2px; padding-left: 4px; padding-right: 4px;">
+					Macros</div>
+				<div>></div>
+				<div>View Macros</div>
+			</div>
+			<div style="display: flex;">
+				<div>Create any new macros. Paste on the vb</div>
+			</div>
+			<pre><code class="language-vbs">Sub FontToggler()
 	Select Case Selection.Font.Name
 		Case "SolaimanLipi"
 				Selection.Font.Name = "Cambria Math"
@@ -38,7 +59,6 @@
 			Selection.Font.Name = "Cambria Math"
 	End Select
 End Sub
-
 Sub ColorToggler()
 	Select Case Selection.Font.Color
 		Case wdColorRed
@@ -50,8 +70,15 @@ Sub ColorToggler()
 	End Select
 End Sub		
 			</code></pre>
-			add keyboard shortcuts by recording macro
+			<div>Word Options>Customize Ribbon>Keyboard Shortcuts</div>
+			<div style="background-color: #3f3f3f; border-radius: 2px; padding-left: 4px; padding-right: 4px;">
+				Customize</div>
+			<div>Macros</div>
+			<div>>FontToggler: Ctrl+W</div>
+			<div>>ColorToggler: Ctrl+Q</div>
+			<div>Assign</div>
 		</div>
+		<br><br><br><br><br><br>
 	</div>
 	<div class="nav" id="nav">
 		<div class="handle" onclick="openNav()">

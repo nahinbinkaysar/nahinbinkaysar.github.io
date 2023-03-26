@@ -49,11 +49,8 @@
 		.particle {
 			transition: 0.5s;
 			position: absolute;
-			background-color: #f00;
-			border-radius: 50%;
-			width: 20px;
-			height: 20px;
 			font-size: 32px;
+			color: white;
 		}
 
 		.container {
@@ -98,69 +95,69 @@
 		<br>
 		<button id="btn" onclick="showMessage()">Button</button>
 		<div class="loading"></div>
-		</div>
+	</div>
 
-		<script>
-			function showMessage() {
-				// Show the loading spinner
-				var loadingDiv = document.querySelector(".loading");
-				loadingDiv.style.display = "block";
+	<script>
+		function showMessage() {
+			// Show the loading spinner
+			var loadingDiv = document.querySelector(".loading");
+			loadingDiv.style.display = "block";
 
-				// Simulate a delay (replace with your own logic)
-				setTimeout(function () {
-					// Hide the loading spinner
-					loadingDiv.style.display = "none";
-					document.getElementById("btn").style.display = "none";
-					document.getElementById("msg").style.display = "none";
-					// Show the message
-					document.getElementById("msg").style.display = "block";
-					document.getElementById("msg").innerHTML = "i love you";
-					document.getElementById("chatWindow").style.height = "80%";
-					document.getElementById("chatWindow").style.width = "80%";
-					
-				}, 3000); // Delay of 3 seconds (adjust as needed)
-				
+			// Simulate a delay (replace with your own logic)
+			setTimeout(function () {
+				// Hide the loading spinner
+				loadingDiv.style.display = "none";
+				document.getElementById("btn").style.display = "none";
+				document.getElementById("msg").style.display = "none";
+				// Show the message
 				document.getElementById("con").style.display = "block";
 				document.getElementById("con").style.height = "65%";
 				document.getElementById("con").style.width = "65%";
 				setInterval(createParticle, 1000);
-			}
-			function createParticle() {
-				// Create a new particle element
-				var particle = document.createElement("div");
-				particle.className = "particle";
-				particle.innerHTML = "❤"
+				document.getElementById("msg").style.display = "block";
+				document.getElementById("msg").innerHTML = "i love you";
+				document.getElementById("chatWindow").style.height = "80%";
+				document.getElementById("chatWindow").style.width = "80%";
 
-				// Set a random position on the x-axis
-				particle.style.left = Math.random() * document.getElementById("con").clientWidth + "px"; // 280 = container width - particle width
+			}, 3000); // Delay of 3 seconds (adjust as needed)
 
-				// Set the initial position on the y-axis
-				particle.style.bottom = "-10px";
+		}
+		function createParticle() {
+			// Create a new particle element
+			var particle = document.createElement("div");
+			particle.className = "particle";
+			particle.innerHTML = "❤";
 
-				// Add the particle to the container
-				document.querySelector(".container").appendChild(particle);
+			// Set a random position on the x-axis
+			particle.style.left = Math.random() * document.getElementById("con").clientWidth + "px"; // 280 = container width - particle width
 
-				// Animate the particle moving up
-				var animation = particle.animate(
-					[
-						{ bottom: "-10px" },
-						{ bottom: document.getElementById("con").clientHeight + "px" } // 210 = container height + particle height
-					],
-					{
-						duration: Math.random() * 2000 + 4000, // Random duration between 1 and 4 seconds
-						easing: "linear",
-						fill: "forwards"
-					}
-				);
+			// Set the initial position on the y-axis
+			particle.style.bottom = "-10px";
 
-				// Remove the particle element from the container when the animation is done
-				animation.onfinish = function () {
-					particle.remove();
-				};
-			}
+			// Add the particle to the container
+			document.querySelector(".container").appendChild(particle);
+
+			// Animate the particle moving up
+			var animation = particle.animate(
+				[
+					{ bottom: "-10px" },
+					{ bottom: document.getElementById("con").clientHeight + "px" } // 210 = container height + particle height
+				],
+				{
+					duration: Math.random() * 2000 + 4000, // Random duration between 1 and 4 seconds
+					easing: "linear",
+					fill: "forwards"
+				}
+			);
+
+			// Remove the particle element from the container when the animation is done
+			animation.onfinish = function () {
+				particle.remove();
+			};
+		}
 
 			// Create a new particle every 100 milliseconds
-		</script>
+	</script>
 </body>
 
 </html>

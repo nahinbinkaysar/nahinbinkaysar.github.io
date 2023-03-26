@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<title>__spoj</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://nahinbinkaysar.github.io/style.css">
+	<style>
+		/* CSS for the loading animation */
+		.loading {
+			display: none;
+			/* Initially hidden */
+			width: 100px;
+			height: 100px;
+			border: 10px solid #7a7a7a;
+			border-top-color: rgb(28, 23, 160);
+			border-radius: 50%;
+			animation: spin 1s infinite linear;
+			margin: 20px auto;
+		}
+
+		body {
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#chatWindow {
+			transition: 0.5s;
+			display: flex;
+			flex-direction: column;
+			margin-top: auto;
+			height: 300px;
+			width: 300px;
+			border-radius: 10px;
+			background-color: rgb(32, 32, 32);
+			align-items: center;
+			font-family: monospace;
+			justify-content: center;
+		}
+
+		.particle {
+			transition: 0.5s;
+			position: absolute;
+			background-color: #f00;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			font-size: 32px;
+		}
+
+		.container {
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			opacity: 50%;
+		}
+
+		#msg {
+			transition: 0.5s;
+			display: flex;
+			font-size: 32px;
+			transition: 0.5s;
+			color: rgb(175, 175, 175);
+		}
+
+		#btn {
+			transition: 0.5s;
+			padding: 10px;
+			border-radius: 8px;
+			background-color: rgb(222, 222, 222);
+		}
+
+		/* Keyframe animation for the loading spinner */
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="con" class="container" style="display:none">
+	</div>
+	<div id="chatWindow">
+		<div id="msg">
+			hi maho
+		</div>
+		<br>
+		<button id="btn" onclick="showMessage()">Button</button>
+		<div class="loading"></div>
+		</div>
+
+		<script>
+			function showMessage() {
+				// Show the loading spinner
+				var loadingDiv = document.querySelector(".loading");
+				loadingDiv.style.display = "block";
+
+				// Simulate a delay (replace with your own logic)
+				setTimeout(function () {
+					// Hide the loading spinner
+					loadingDiv.style.display = "none";
+					document.getElementById("btn").style.display = "none";
+					document.getElementById("msg").style.display = "none";
+					// Show the message
+					document.getElementById("msg").style.display = "block";
+					document.getElementById("msg").innerHTML = "i love you";
+					document.getElementById("chatWindow").style.height = "80%";
+					document.getElementById("chatWindow").style.width = "80%";
+					
+				}, 300); // Delay of 3 seconds (adjust as needed)
+				
+				document.getElementById("con").style.display = "block";
+				document.getElementById("con").style.height = "65%";
+				document.getElementById("con").style.width = "65%";
+				setInterval(createParticle, 1000);
+			}
+			function createParticle() {
+				// Create a new particle element
+				var particle = document.createElement("div");
+				particle.className = "particle";
+				particle.innerHTML = "❤"
+
+				// Set a random position on the x-axis
+				particle.style.left = Math.random() * document.getElementById("con").clientWidth + "px"; // 280 = container width - particle width
+
+				// Set the initial position on the y-axis
+				particle.style.bottom = "-10px";
+
+				// Add the particle to the container
+				document.querySelector(".container").appendChild(particle);
+
+				// Animate the particle moving up
+				var animation = particle.animate(
+					[
+						{ bottom: "-10px" },
+						{ bottom: document.getElementById("con").clientHeight + "px" } // 210 = container height + particle height
+					],
+					{
+						duration: Math.random() * 2000 + 4000, // Random duration between 1 and 4 seconds
+						easing: "linear",
+						fill: "forwards"
+					}
+				);
+
+				// Remove the particle element from the container when the animation is done
+				animation.onfinish = function () {
+					particle.remove();
+				};
+			}
+
+			// Create a new particle every 100 milliseconds
+		</script>
+</body>
+
+</html>

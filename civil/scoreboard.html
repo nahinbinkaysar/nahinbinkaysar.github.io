@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Thumb Generator</title>
+	<title>Scoreboard Generator</title>
 	<script type="text/javascript" src="https://nahinbinkaysar.github.io/civil/html2canvas.min.js"></script>
 	<script type="text/javascript" src="https://nahinbinkaysar.github.io/civil/FileSaver.js"></script>
 	<link rel="stylesheet"
@@ -12,7 +12,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@800&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Color+Emoji&display=swap');
 
 		body {
 			font-family: 'Sen', sans-serif;
@@ -50,18 +50,18 @@
 		}
 
 		.wrapper2 {
+			position: relative;
 			display: flex;
 			flex-direction: row;
+			top: 50px;
 			justify-content: space-between;
 		}
 
 		.scoreboard {
-			position: relative;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
 			height: 300px;
-			top: 50px;
 		}
 
 		.oneDiv {
@@ -94,39 +94,25 @@
 			padding: 16px;
 		}
 
-		.goalDiv {
+		.goalNassist {
 			position: relative;
-			display: flex;
-			top: 80px;
+			top: 60px;
 			width: 1000px;
-			height: auto;
+			height: 256px;
+			font-size: 42px;
+			font-family: 'DM Sans', sans-serif;
+			font-family: 'Noto Color Emoji', sans-serif;
+		}
+
+		.goalDiv {
+			display: flex;
 			justify-content: space-between;
+			white-space: pre-wrap;
 		}
 
-		.oneGoal {
-			position: relative;
-			font-size: 42px;
-			font-family: 'DM Sans', sans-serif;
-		}
-
-		.twoGoal {
-			position: relative;
-			font-size: 42px;
-			font-family: 'DM Sans', sans-serif;
-		}
-		.oneAssist {
-			position: relative;
-			font-size: 42px;
-			font-family: 'DM Sans', sans-serif;
-		}
-
-		.twoAssist {
-			position: relative;
-			font-size: 42px;
-			font-family: 'DM Sans', sans-serif;
-		}
 
 		.wrapper3 {
+			position: relative;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
@@ -156,7 +142,7 @@
 
 <body>
 
-	<h1>Scoreboard Generator ver 1</h1>
+	<h1>Scoreboard Generator ver 1.2(09/06/2023)</h1>
 	<form action="javascript:;" onsubmit="generate(this)">
 		<label for="one">Team #1</label>
 		<input type="text" id="one" name="one"><br>
@@ -166,18 +152,22 @@
 		<input type="text" id="two" name="two"><br>
 		<label for="twoScore">Team #2 Score</label>
 		<input type="number" id="twoScore" name="twoScore"><br><br>
-		
+
 		<label for="oneGoal">Team #1 Goals</label>
 		<textarea id="oneGoal" name="oneGoal" rows="2" cols="20"></textarea><br>
 		<label for="oneGoal">Team #1 Assist</label>
 		<textarea id="oneAssist" name="oneAssist" rows="2" cols="20"></textarea><br>
-		
+
 		<label for="twoGoal">Team #2 Goals</label>
 		<textarea id="twoGoal" name="twoGoal" rows="2" cols="20"></textarea><br>
 		<label for="twoGoal">Team #2 Assist</label>
 		<textarea id="twoAssist" name="twoAssist" rows="2" cols="20"></textarea><br>
-		
-		
+
+		<label for="twoGoal">Font Size</label>
+		<input style="width: 30px;" type='button' value="+" onclick='fonttt("+");'>
+		<input style="width: 30px;" type='button' value="-" onclick='fonttt("-");'>
+		<input style="width: 100px;" type='button' value="reset" onclick='fonttt("r");'><br />
+
 		<label for="date">Date:</label>
 		<input type="date" id="date" name="date"><br>
 		<label for="mom">mom</label>
@@ -206,19 +196,22 @@
 				</div>
 
 			</div>
-			<div class="goalDiv">
-				<div class="oneGoal">Players Name</div>
-				<div class="twoGoal">Players Name</div>
+			<div class="goalNassist">
+				<div class="goalDiv">
+					<div class="oneGoal">Players Name</div>
+					<div class="twoGoal">Players Name</div>
+				</div>
+				<div class="goalDiv">
+					<div class="oneAssist">Players Name</div>
+					<div class="twoAssist">Players Name</div>
+				</div>
 			</div>
-			<div class="goalDiv">
-				<div class="oneAssist">Players Name</div>
-				<div class="twoAssist">Players Name</div>
-			</div>
-			<div style="height: 200px;"></div>
+			<div style="height: 50px;"></div>
 			<div class="wrapper3">
-				<p>Man of the Match:&nbsp;</p>
+				<div>Man of the Match:</div>
 				<div class="mom">mom</div>
 			</div>
+			<div style="height: 20px;"></div>
 			<div class="wrapper3">
 				<span class="material-symbols-outlined">
 					calendar_month
@@ -248,7 +241,7 @@
 
 	<br>
 	<br>
-	<h3>made by Nahin Bin Kaysar, for BUET </h3>
+	<h3>made by Nahin Bin Kaysar, for BUET Premier League</h3>
 	<!-- Script -->
 	<script type='text/javascript'>
 		/**
@@ -323,7 +316,14 @@
 				window.saveAs(canvasBlob, fileName);
 			});
 		}
-
+		function fonttt(a) {
+			txt = document.getElementsByClassName('goalNassist')[0];
+			style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+			currentSize = parseFloat(style);
+			if (a == "+") txt.style.fontSize = (currentSize + 5) + 'px';
+			if (a == "-") txt.style.fontSize = (currentSize - 5) + 'px';
+			if (a == "r") txt.style.fontSize = 42 + 'px';
+		}
 		function generate() {
 			one = document.getElementById('one').value.toUpperCase();
 			two = document.getElementById('two').value.toUpperCase();
@@ -347,17 +347,15 @@
 			document.getElementsByClassName('two')[0].innerHTML = two;
 			document.getElementsByClassName('oneScore')[0].innerHTML = oneScore;
 			document.getElementsByClassName('twoScore')[0].innerHTML = twoScore;
-			if(oneGoal=="") document.getElementsByClassName('oneGoal')[0].innerHTML = oneGoal;
-			else document.getElementsByClassName('oneGoal')[0].innerHTML = oneGoal + '⚽';
 
-			if(twoGoal=="") document.getElementsByClassName('twoGoal')[0].innerHTML = twoGoal;
-			else document.getElementsByClassName('twoGoal')[0].innerHTML = twoGoal + '⚽';
-			
-			if(oneAssist=="") document.getElementsByClassName('oneAssist')[0].innerHTML = oneAssist;
-			else document.getElementsByClassName('oneAssist')[0].innerHTML = oneAssist + '👟';
-			
-			if(twoAssist=="") document.getElementsByClassName('twoAssist')[0].innerHTML = twoAssist;
-			else document.getElementsByClassName('twoAssist')[0].innerHTML = twoAssist + '👟';
+			for (let i = 0; i < oneGoal.length; i++) oneGoal = oneGoal.replace(";", "⚽\n");
+			for (let i = 0; i < twoGoal.length; i++) twoGoal = twoGoal.replace(";", "⚽\n");
+			for (let i = 0; i < oneAssist.length; i++) oneAssist = oneAssist.replace(";", "👟\n");
+			for (let i = 0; i < twoAssist.length; i++) twoAssist = twoAssist.replace(";", "👟\n");
+			document.getElementsByClassName('oneGoal')[0].innerHTML = oneGoal;
+			document.getElementsByClassName('twoGoal')[0].innerHTML = twoGoal;
+			document.getElementsByClassName('oneAssist')[0].innerHTML = oneAssist;
+			document.getElementsByClassName('twoAssist')[0].innerHTML = twoAssist;
 
 
 			document.getElementsByClassName('date')[0].innerHTML = date2;
@@ -368,4 +366,4 @@
 
 </body>
 
-</html> c33
+</html>

@@ -53,8 +53,9 @@ body {
 
 @media only screen and (min-width: 1200px) {
 	/* For desktop: */
+	/* chaged it to calc(84% - 300px) on 10 october 2023 */
 	.container {
-		width: 68%;
+		width: calc(84% - 300px);
 	}
 }
 

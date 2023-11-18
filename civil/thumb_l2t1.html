@@ -129,7 +129,7 @@
 </head>
 
 <body>
-	<h1>Youtube thumbnail generator, ver: 1.6(BUILD 18112023)</h1>
+	<h1>Youtube thumbnail generator, ver: 1.5(BUILD 16072022)</h1>
 	<form action="javascript:;" onsubmit="generate(this)">
 		<label for="sec">Section:</label>
 		<input type="text" id="sec" name="sec">
@@ -172,11 +172,28 @@
 				<div class="teacher">Teacher</div>
 				<div class="lecture">Lecture</div>
 			</div>
-			
 			<div class="fluidline" style="
-			margin-left: 395px;
+			margin-left: 370px;
+			margin-top: 20px;
+			height: 20px;
+			width: 10px;
+			"></div>
+			<div class="fluidline" style="
+			margin-left: 385px;
+			margin-top: 20px;
+			height: 100px;
+			width: 10px;
+			"></div>
+			<div class="fluidline" style="
+			margin-left: 400px;
 			margin-top: 60px;
-			height: 520px;
+			height: 320px;
+			width: 10px;
+			"></div>
+			<div class="fluidline" style="
+			margin-left: 400px;
+			margin-top: 450px;
+			height: 100px;
 			width: 10px;
 			"></div>
 
@@ -191,7 +208,7 @@
 					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
 					<style type="text/css">
 						.st0 {
-							fill: #ffffff;
+							fill: #EC1E24;
 							stroke: #231F20;
 							stroke-width: 3;
 							stroke-miterlimit: 10;
@@ -199,36 +216,36 @@
 
 						.st1 {
 							fill: none;
-							stroke: #ffffff;
+							stroke: #AC1F24;
 							stroke-width: 3;
 							stroke-linecap: round;
 							stroke-linejoin: round;
 						}
 
 						.st2 {
-							fill: #ffffff;
-							stroke: #ffffff;
+							fill: #AC1F25;
+							stroke: #AC1F24;
 							stroke-miterlimit: 10;
 						}
 
 						.st3 {
-							fill: #ffffff;
-							stroke: #ffffff;
+							fill: #AC1F25;
+							stroke: #AC1F24;
 							stroke-linecap: round;
 							stroke-linejoin: round;
 						}
 
 						.st4 {
 							fill: none;
-							stroke: #ffffff;
+							stroke: #AC1F24;
 							stroke-width: 3;
 							stroke-linecap: round;
 							stroke-linejoin: bevel;
 						}
 
 						.st5 {
-							fill: #ffffff;
-							stroke: #ffffff;
+							fill: #AC1F25;
+							stroke: #AC1F24;
 							stroke-width: 3;
 							stroke-linecap: round;
 							stroke-linejoin: round;
@@ -303,7 +320,7 @@
 				</svg>
 			</div>
 			<div class="wrapper3">
-				<div>L3T1</div>
+				<div>L1T2</div>
 			</div>
 		</div>
 	</div>
@@ -416,18 +433,30 @@
 				document.getElementsByClassName('sectionCircle')[0].style.borderColor = "yellow";
 				document.getElementById('container').style.backgroundColor = "yellow";
 				document.getElementsByClassName('fluidline')[0].style.backgroundColor = "yellow";
+				document.getElementsByClassName('fluidline')[1].style.backgroundColor = "yellow";
+				document.getElementsByClassName('fluidline')[2].style.backgroundColor = "yellow";
+				document.getElementsByClassName('fluidline')[3].style.backgroundColor = "yellow";
 			} else if (sec[0] == 'A') {
 				document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#fe0a0c";
 				document.getElementById('container').style.backgroundColor = "#fe0a0c";
 				document.getElementsByClassName('fluidline')[0].style.backgroundColor = "#fe0a0c";
+				document.getElementsByClassName('fluidline')[1].style.backgroundColor = "#fe0a0c";
+				document.getElementsByClassName('fluidline')[2].style.backgroundColor = "#fe0a0c";
+				document.getElementsByClassName('fluidline')[3].style.backgroundColor = "#fe0a0c";
 			} else if (sec[0] == "B") {
 				document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#0ff3dc";
 				document.getElementById('container').style.backgroundColor = "#0ff3dc";
 				document.getElementsByClassName('fluidline')[0].style.backgroundColor = "#0ff3dc";
+				document.getElementsByClassName('fluidline')[1].style.backgroundColor = "#0ff3dc";
+				document.getElementsByClassName('fluidline')[2].style.backgroundColor = "#0ff3dc";
+				document.getElementsByClassName('fluidline')[3].style.backgroundColor = "#0ff3dc";
 			} else if (sec[0] == "C") {
 				document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#57ff00";
 				document.getElementById('container').style.backgroundColor = "#57ff00";
 				document.getElementsByClassName('fluidline')[0].style.backgroundColor = "#57ff00";
+				document.getElementsByClassName('fluidline')[1].style.backgroundColor = "#57ff00";
+				document.getElementsByClassName('fluidline')[2].style.backgroundColor = "#57ff00";
+				document.getElementsByClassName('fluidline')[3].style.backgroundColor = "#57ff00";
 			}
 
 			document.getElementById('title').value = '[' + sec + '] ' + sub + ' || ' + date2 + ' || ' + teacher +

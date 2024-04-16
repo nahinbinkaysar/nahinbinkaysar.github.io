@@ -1,42 +1,30 @@
-<html>
+<!-- article.html -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
 </head>
 <body>
-	<h1 id="tit">title</h1>
-	<pre id="wri">writer</pre>
-	<pre id="dat">date</pre>
-	<pre id="txt">text</pre>
-</body>
+    <h1>Article</h1>
 
-<script>
-    name = (localStorage.getItem("serialNumber"));
-    Mode = 0;
-    name = "weblog/"+name+".txt";
-    console.log(name);
-    fetch(name)
-	.then(response => response.text())
-	.then(data => {
-		DATA = data;
-        title = "";
-		writer = "";
-		date = "";
-		text = "";
-		for (i = 0; i < DATA.length; i++) {
-			if(DATA[i] == '*') {
-				Mode++;
-				continue;
-			}
-			if(Mode == 1) title = title + DATA[i];
-			if(Mode == 2) writer = writer + DATA[i];
-			if(Mode == 3) date = date + DATA[i];
-			if(Mode == 4) text = text + DATA[i];
-		}
-        document.getElementById('tit').innerHTML = title;
-		document.getElementById('wri').innerHTML = writer;
-		document.getElementById('dat').innerHTML = date;
-			
-		document.getElementById('txt').innerHTML = text;
-	});
-</script>
+    <div id="articleContent">
+        <!-- Content of the selected article will be loaded here -->
+    </div>
+
+    <script>
+        // Read the article name from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleName = urlParams.get('article');
+
+        // Load and display the content of the article
+        fetch(`weblog/${articleName}.json`)
+            .then(response => response.json())
+            .then(article => {
+                document.getElementById('articleContent').innerHTML = `<h2>${article.title}</h2><p>${article.content}</p>`;
+            })
+            .catch(error => console.error('Error loading article:', error));
+    </script>
+</body>
 </html>

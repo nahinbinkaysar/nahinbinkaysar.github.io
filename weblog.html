@@ -2,20 +2,19 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
+	<title>weblog</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Weblog</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 20px;
-		}
-
 		#files {
-			margin-top: 20px;
-		}
-
-		#output {
 			margin-top: 20px;
 		}
 
@@ -23,38 +22,37 @@
 			display: block;
 			margin: 5px 0;
 		}
+
 	</style>
+
 </head>
 
 <body>
-
 	<h1>Weblog</h1>
 	<div id="files"></div>
 
-	<script type="module">
-		async function fetchFiles() {
-			try {
-				const response = await fetch('/weblog/files.json');
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				const files = await response.json();
-				const filesDiv = document.getElementById('files');
-				filesDiv.innerHTML = ''; // Clear previous content
-				files.forEach(file => {
-					const link = document.createElement('a');
-					link.href = `blogLoader.html?blog=${file}`;
-					link.textContent = file;
-					filesDiv.appendChild(link);
-				});
-			} catch (error) {
-				console.error('Error fetching file list:', error);
-			}
-		}
-		// Fetch and display the list of files on page load
-		fetchFiles();
-	</script>
-
 </body>
+<script type="module">
+	async function fetchFiles() {
+		try {
+			const response = await fetch('/weblog/files.json');
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			const files = await response.json();
+			const filesDiv = document.getElementById('files');
+			filesDiv.innerHTML = ''; // Clear previous content
+			files.forEach(file => {
+				const link = document.createElement('a');
+				link.href = `blogLoader.html?blog=${file}`;
+				link.textContent = file;
+				filesDiv.appendChild(link);
+			});
+		} catch (error) {
+			console.error('Error fetching file list:', error);
+		}
+	}
+	fetchFiles();
+</script>
 
 </html>

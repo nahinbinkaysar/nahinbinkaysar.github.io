@@ -23,12 +23,19 @@
 			margin: 0;
 		}
 
-		#output {
+		#content {
 			padding: 6px 12px 6px 12px;
 			margin: 6px 6px 0px 0px;
 			font-size: 16px;
 			font-family: 'Roboto', sans-serif;
 			transition: 0.3s;
+		}
+		
+		@media only screen and (min-width: 1200px) {
+			#content {
+				margin: auto;
+				width: calc(64%);
+			}
 		}
 	</style>
 
@@ -36,7 +43,9 @@
 
 
 <body>
-	<div id="output"></div>
+	<div id="content">
+		hehe
+	</div>
 	<script type="module">
 		import { parseMarkdown } from '/weblog/parser.js';
 
@@ -52,7 +61,7 @@
 				}
 				const markdownText = await response.text();
 				const htmlText = parseMarkdown(markdownText);
-				document.getElementById('output').innerHTML = htmlText;
+				document.getElementById('content').innerHTML = htmlText;
 			} catch (error) {
 				console.error('Error fetching file content:', error);
 			}

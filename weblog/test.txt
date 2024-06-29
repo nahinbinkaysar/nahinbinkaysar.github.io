@@ -1,0 +1,9 @@
+*this file is for my sanity*
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+This is **bold text** and this is *italic text*.
+
+Here is a [link](http://example.com).

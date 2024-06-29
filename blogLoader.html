@@ -1,30 +1,65 @@
-<!-- article.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article</title>
+	<title>blogLoader</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+	<style>
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+		}
+
+		#output {
+			padding: 6px 12px 6px 12px;
+			margin: 6px 6px 0px 0px;
+			font-size: 16px;
+			font-family: 'Roboto', sans-serif;
+			transition: 0.3s;
+		}
+	</style>
+
 </head>
+
+
 <body>
-    <h1>Article</h1>
+	<div id="output"></div>
+	<script type="module">
+		import { parseMarkdown } from '/weblog/parser.js';
 
-    <div id="articleContent">
-        <!-- Content of the selected article will be loaded here -->
-    </div>
+		async function fetchAndDisplayFile() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const fileName = '/weblog/' + urlParams.get('blog');
+			console.log(fileName);
 
-    <script>
-        // Read the article name from the URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const articleName = urlParams.get('article');
+			try {
+				const response = await fetch(fileName);
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				const markdownText = await response.text();
+				const htmlText = parseMarkdown(markdownText);
+				document.getElementById('output').innerHTML = htmlText;
+			} catch (error) {
+				console.error('Error fetching file content:', error);
+			}
+		}
 
-        // Load and display the content of the article
-        fetch(`weblog/${articleName}.json`)
-            .then(response => response.json())
-            .then(article => {
-                document.getElementById('articleContent').innerHTML = `<h2>${article.title}</h2><p>${article.content}</p>`;
-            })
-            .catch(error => console.error('Error loading article:', error));
-    </script>
+		fetchAndDisplayFile();
+	</script>
 </body>
+
 </html>

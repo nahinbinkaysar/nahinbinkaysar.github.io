@@ -1,23 +1,60 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
-    <h1>Blog</h1>
-    <ul id="articleList">
-        <li><a href="blogLoader.html?article=article1">Article 1</a></li>
-        <li><a href="blogLoader.html?article=article2">Article 2</a></li>
-        <!-- Add more articles as needed -->
-    </ul>
 
-    <script>
-        function loadArticle(articleName) {
-            window.location.href = `article.html?article=${articleName}`;
-        }
-    </script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weblog</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+
+		#files {
+			margin-top: 20px;
+		}
+
+		#output {
+			margin-top: 20px;
+		}
+
+		a {
+			display: block;
+			margin: 5px 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Weblog</h1>
+	<div id="files"></div>
+
+	<script type="module">
+		async function fetchFiles() {
+			try {
+				const response = await fetch('/weblog/files.json');
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				const files = await response.json();
+				const filesDiv = document.getElementById('files');
+				filesDiv.innerHTML = ''; // Clear previous content
+				files.forEach(file => {
+					const link = document.createElement('a');
+					link.href = `blogLoader.html?blog=${file}`;
+					link.textContent = file;
+					filesDiv.appendChild(link);
+				});
+			} catch (error) {
+				console.error('Error fetching file list:', error);
+			}
+		}
+		// Fetch and display the list of files on page load
+		fetchFiles();
+	</script>
+
 </body>
+
 </html>

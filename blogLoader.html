@@ -4,16 +4,16 @@
 <head>
 	<title>blogLoader</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;700;900&display=swap"
-		rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="navigation.css">
 	<style>
+		body {
+			font-family: Georgia, 'Times New Roman', Times, serif;
+			font-size: 17px;
+			line-height: 1.5;
+			transition: 0.3s;
+		}
+
 		h1,
 		h2,
 		h3,
@@ -26,11 +26,10 @@
 		#content {
 			padding: 6px 12px 6px 12px;
 			margin: 6px 6px 0px 0px;
-			font-size: 16px;
-			font-family: 'Roboto', sans-serif;
-			transition: 0.3s;
+			text-align: justify;
+			text-justify: inter-word;
 		}
-		
+
 		@media only screen and (min-width: 1200px) {
 			#content {
 				margin: auto;
@@ -43,10 +42,14 @@
 
 
 <body>
+	<div class="topBar">
+		<div><i class="fas fa-moon" onclick="document.body.classList.toggle('light-mode')"></i></div>
+	</div>
 	<div id="content">
 		hehe
 	</div>
 	<script type="module">
+
 		import { parseMarkdown } from '/weblog/parser.js';
 
 		async function fetchAndDisplayFile() {

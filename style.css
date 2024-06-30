@@ -14,10 +14,36 @@ body {
 	color: var(--colorDarkElement);
 }
 
+a:link {
+	color: var(--colorDarkElement);
+}
+a:visited {
+	color: var(--colorDarkElement);
+}
+a:hover {
+	color: dodgerblue;
+}
+a:active {
+	color: dodgerblue;
+}
+
 /* Light mode */
 .light-mode {
 	background-color: var(--colorLight);
 	color: var(--colorLightElement);
+}
+
+.light-mode a:link {
+	color: var(--colorLightElement);
+}
+.light-mode a:visited {
+	color: var(--colorLightElement);
+}
+.light-mode a:hover {
+	color: dodgerblue;
+}
+.light-mode a:active {
+	color: dodgerblue;
 }
 
 .light-mode .dp {
@@ -29,7 +55,7 @@ body {
 	color: var(--colorLightElement);
 }
 
-.light-mode .navbarContent>div {
+.light-mode .navbarContent > div {
 	background-color: var(--colorLight);
 }
 
@@ -39,7 +65,7 @@ body {
 	justify-content: flex-end;
 }
 
-.topBar>div {
+.topBar > div {
 	margin: 8px;
 }
 
@@ -93,13 +119,14 @@ body {
 		margin-left: -85.3333px;
 		margin-top: -85.3333px;
 	}
-	to{
+	to {
 		margin-left: 0px;
 		margin-top: 0px;
-	}   
+	}
 }
 
-.fas, .fab {
+.fas,
+.fab {
 	font-size: 24px;
 	transition: 0.3s;
 }
@@ -124,11 +151,11 @@ body {
 	border-radius: 16px;
 }
 
-.socialSection>i {
+.socialSection > i {
 	margin: 8px;
 	font-size: 34px;
 }
 
 .charukola {
-	font-family: 'Noto Sans Bengali', sans-serif;
+	font-family: "Noto Sans Bengali", sans-serif;
 }

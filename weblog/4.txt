@@ -22,7 +22,7 @@ I just found out I can directly use any **HTML TAG!!!!!!**
 
 Let's try an embed:
 
-<iframe width="942" height="530" src="https://www.youtube.com/embed/EoVQ_TQFJy0" title="Djo - End of Beginning (Official Lyric Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/EoVQ_TQFJy0" title="Djo - End of Beginning (Official Lyric Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Ofcourse it should work. Why wouldn't it? It is good to become and surprised and happy at the same time nowawdays.
 

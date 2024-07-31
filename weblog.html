@@ -13,7 +13,7 @@
 			line-height: 1.5;
 			transition: 0.3s;
 		}
-	
+
 		/* @media only screen and (min-width: 1200px) {
 			#files {
 				margin: auto;
@@ -21,7 +21,7 @@
 			}
 		} */
 
-		
+
 
 		.parent {
 			margin: auto;
@@ -32,19 +32,42 @@
 			width: fit-content;
 		}
 
-		#files {
-			padding: 6px 12px 6px 12px;
-			margin: 6px 6px 0px 0px;
-			text-align: justify;
-			text-justify: inter-word;
 
-			font-size: 20px;
-		}
-		
 		a {
 			display: block;
-			text-decoration:wavy;
+			text-decoration: wavy;
 			margin: 5px 0;
+		}
+
+		.card {
+			border-radius: 5px;
+			padding: 10px;
+			margin: 10px;
+			
+			right: 12px;
+			left: 12px;
+			bottom: 12px;
+			background: var(--colorDarkMenu);
+			border: 2px solid var(--colorDarkMenu);
+			transition: 0.3s;
+			border-radius: 10px;
+		}
+		
+		.card:hover {
+			transition: 0.3s;
+			border: 2px dotted dodgerblue;
+			/* color: dodgerblue; */
+		}
+		
+		.card-title {
+			font-size: 1em;
+			margin-bottom: 5px;
+		}
+		
+		.card-date {
+			font-size: 0.9em;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #888;
 		}
 	</style>
 
@@ -54,25 +77,38 @@
 	<div class="parent">
 		<div style="font-size: 100px;">Blog</div>
 		<div style="width: 100px;"></div>
-		<div id="files"></div>
+		<div id="card-container"></div>
 	</div>
 
 </body>
 <script type="module">
 	async function fetchFiles() {
 		try {
-			const response = await fetch('/weblog/files.json');
+			const response = await fetch('/weblog/files2.json');
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
 			}
-			const files = await response.json();
-			const filesDiv = document.getElementById('files');
-			filesDiv.innerHTML = ''; // Clear previous content
-			files.forEach(file => {
-				const link = document.createElement('a');
-				link.href = `blogLoader.html?blog=${file}`;
-				link.textContent = file;
-				filesDiv.appendChild(link);
+			const data = await response.json();
+			const container = document.getElementById('card-container');
+
+			container.innerHTML = ''; // Clear previous content
+			data.forEach(elem => {
+				const card = document.createElement('a');
+				card.className = 'card';
+				card.href = `blogLoader.html?blog=${elem.filename}`;
+
+				const title = document.createElement('div');
+				title.className = 'card-title';
+				title.textContent = elem.title;
+
+				const date = document.createElement('div');
+				date.className = 'card-date';
+				date.textContent = elem.date;
+
+				card.appendChild(title);
+				card.appendChild(date);
+
+				container.appendChild(card);
 			});
 		} catch (error) {
 			console.error('Error fetching file list:', error);

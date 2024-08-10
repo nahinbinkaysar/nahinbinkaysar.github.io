@@ -72,7 +72,7 @@ a:active {
 
 /* Classes */
 .topBar {
-	display: flex;
+    display: flex;
 	justify-content: space-between;
 }
 

@@ -21,9 +21,13 @@
 			display: flex;
 			flex-direction: column;
 		}
-
+		
+		.blog-title {
+			margin-left: 10px;
+			font-size: 3em;
+		}
 		@media only screen and (min-width: 1200px) {
-
+			
 			/* For desktop: */
 			.parent {
 				margin: auto;
@@ -31,8 +35,14 @@
 				display: flex;
 				flex-direction: row;
 				width: fit-content;
+				justify-content: space-between;
+			}
+			.blog-title {
+				font-size: 6em;
+				margin-right: 1em;
 			}
 		}
+
 
 		a {
 			display: block;
@@ -40,15 +50,10 @@
 			margin: 5px 0;
 		}
 
-		#card-container {
-			margin-left: 10px;
-			margin-right: 10px;
-		}
-
 		.card {
 			padding: 10px;
 			margin: 10px;
-			
+
 			background: var(--colorDarkMenu);
 			border: 2px solid var(--colorDarkMenu);
 			transition: 0.3s;
@@ -81,7 +86,7 @@
 		<div><i class="fas fa-moon" onclick="document.body.classList.toggle('light-mode')" aria-hidden="true"></i></div>
 	</div>
 	<div class="parent">
-		<div style="font-size: 100px;">Blog</div>
+		<div class="blog-title">Blog</div>
 		<div id="card-container"></div>
 	</div>
 

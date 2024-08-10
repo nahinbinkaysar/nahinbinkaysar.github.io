@@ -7,7 +7,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;700;900&display=swap"
+		rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="navigation.css">
@@ -20,19 +21,26 @@
 	<div class="container">
 		<div id="main" class="mainSection">
 			<div class="dpContainer" onclick="launchUdv()">
-				<img id="dp" class="dp dp-anim" src="res/sine.png" width="341.3333px" height="341.3333px">
+				<img class="dp" src="res/name2.svg">
+				<!-- <img id="dp" class="dp dp-anim" src="res/sine.png" width="341.3333px" height="341.3333px"> -->
 			</div>
-			<p style="font-family: 'Google Sans', serif; font-size: 32px; display: block;">নাহিন বিন কায়ছার</p>
-			<img class="dp" style="margin-top: 24px; margin-bottom: 24px; display: none;" src="res/name.svg">
+			<!-- <p style="font-family: 'Google Sans', serif; font-size: 32px; display: block;">নাহিন বিন কায়ছার</p> -->
+			<!-- <img class="dp" style="margin-top: 24px; margin-bottom: 24px; display: block;" src="res/name.svg"> -->
 		</div>
 		<div id="social" class="socialSection">
-			<i class="fa-brands fa-x-twitter" onclick="window.location.href = 'https://twitter.com/nahinbinkaysar/';"></i>
-			<i class="fa-brands fa-instagram" onclick="window.location.href = 'http://instagram.com/nahin_binkaysar/';"></i>
-			<i class="fa-brands fa-github-alt" onclick="window.location.href = 'https://github.com/nahinbinkaysar';"></i>
+			<i class="fa-brands fa-x-twitter"
+				onclick="window.location.href = 'https://twitter.com/nahinbinkaysar/';"></i>
+			<i class="fa-brands fa-instagram"
+				onclick="window.location.href = 'http://instagram.com/nahin_binkaysar/';"></i>
+			<i class="fa-brands fa-github-alt"
+				onclick="window.location.href = 'https://github.com/nahinbinkaysar';"></i>
 			<i class="fa-brands fa-telegram" onclick="window.location.href = 'https://t.me/nahinbinkaysar';"></i>
 		</div>
 		<div class="weblogSection" onclick="window.location.href = 'weblog.html';">
-			BLOG
+			<span class="letter">B</span>
+			<span class="letter">L</span>
+			<span class="letter">O</span>
+			<span class="letter">G</span>
 		</div>
 	</div>
 	<div class="nav" id="nav">
@@ -44,7 +52,8 @@
 			<div onclick="window.location.href = 'group_8.html';">Group 8 Book</div>
 			<div onclick="window.location.href = 'links.html';">Links</div>
 			<div onclick="window.location.href = 'https://recursion.vercel.app/';">Recusrion Tree Visualizer</div>
-			<div onclick="window.location.href = 'https://earthshakira.github.io/a2oj-clientside/server/Ladders.html';">A2 Ladder</div>
+			<div onclick="window.location.href = 'https://earthshakira.github.io/a2oj-clientside/server/Ladders.html';">
+				A2 Ladder</div>
 			<div onclick="window.location.href = 'softwares.html';">Softwares</div>
 			<div onclick="window.location.href = 'realReasonForASCII.html';">Real Reason for A==65 and a==97</div>
 			<div onclick="window.location.href = 'customUdvPage.html';">Customize your Udvash Unmesh Exam Page!</div>
@@ -80,6 +89,19 @@
 			udv += 1;
 			if (udv >= 3) window.location.href = 'udv.html';
 		}
+
+
+		const letters = document.querySelectorAll('.letter');
+		const fonts = ['serif', 'sans-serif', 'monospace', 'cursive', 'fantasy', 'Arial', 'Times New Roman'];
+
+		function changeFont() {
+			letters.forEach(letter => {
+				const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+				letter.style.fontFamily = randomFont;
+			});
+		}
+
+		setInterval(changeFont, 200);  // Change fonts every 200ms
 	</script>
 </body>
 

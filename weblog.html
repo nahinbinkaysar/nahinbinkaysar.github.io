@@ -74,6 +74,10 @@
 </head>
 
 <body>
+	<div class="topBar">
+		<div><i class="fas fa-arrow-left" onclick="window.location.href = 'index.html';" aria-hidden="true"></i></div>
+		<div><i class="fas fa-moon" onclick="document.body.classList.toggle('light-mode')" aria-hidden="true"></i></div>
+	</div>
 	<div class="parent">
 		<div style="font-size: 100px;">Blog</div>
 		<div style="width: 100px;"></div>
@@ -84,7 +88,7 @@
 <script type="module">
 	async function fetchFiles() {
 		try {
-			const response = await fetch('/weblog/files2.json');
+			const response = await fetch('/weblog/files.json');
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
 			}

@@ -1,0 +1,77 @@
+[CSES - Apartments](https://cses.fi/problemset/task/1084/)
+
+
+দুইটা অ্যারে দেয়া আছে।
+প্রথমটায় applicant এর desired apartment size, যেটার সাইজ \(n → a_i\)
+পরেরটায় apartment size, যেটার সাইজ \(m → b_j\)
+
+গ্রীডি সলিউশন
+আগে দুইটা অ্যারে সর্ট করে নিব। টেস্টকেস ড্রাই রান করলেই বুঝা যাবে।
+
+\(45\ 60\ 60\ 80 → desired\ size\ a_i\)
+\(30\ 60\ 75	→ apartment\ size\ b_j\)
+
+### Simulation
+\(\overline{45}\ 60\ 60\ 80\)
+\(\overline{30}\ 60\ 75\)
+\(45-30=+15>5:\) desired size বড়। এই applicant এর আরো বড় apartment লাগবে। পরের apartment এর জন্য *j++*
+
+\(\overline{45}\ 60\ 60\ 80\)
+\(30\ \overline{60}\ 75\)
+\(45-60=-15<5:\) এখন আবার apartment বড়। এই applicant এর মনমত apartment সম্ভব না। পরের applicant এর জন্য *i++*
+
+\(45\ \overline{60}\ 60\ 80\)
+\(30\ \overline{60}\ 75\)
+\(60-60=0:\) perfect! *i++, j++, ans++*
+
+\(45\ 60\ \overline{60}\ 80\)
+\(30\ 60\ \overline{75}\)
+\(60-75=-15<5:\) apartment বড়। to the next applicant *i++*
+
+\(45\ 60\ 60\ \overline{80}\)
+\(30\ 60\ \overline{75}\)
+\(80-75=5==5:\) perfect! *i++, j++, ans++*
+
+*i, j* এর শেষ মান পর্যন্ত যাওয়া হইছে। সিমুলেশন শেষ।
+
+### Code
+```#include <bits/stdc++.h>
+using namespace std;
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define all(x) x.begin(),x.end()
+#define ll long long
+#define gap ' '
+#define endl '\n'
+#define vi vector<int>
+#define debug cout << "DEBUG: " << 
+
+void solve()
+{
+	int n, m, k; cin >> n >> m >> k;
+	vi a(n); for(auto &i:a) cin >> i;
+	vi b(m); for(auto &i:b) cin >> i;
+
+	sort(all(a));
+	sort(all(b));
+	
+	int i = 0, j = 0;
+	int ans = 0;
+	while(i < n and j < m) {
+		if(abs(a[i] - b[j]) <= k) {
+			i++;
+			j++;
+			ans++;
+		}
+
+		else if(a[i] - b[j] > k) j++;
+		else i++;
+	} 
+
+	cout << ans << endl;
+}
+
+int main()
+{
+	solve();
+	return 0;
+}```

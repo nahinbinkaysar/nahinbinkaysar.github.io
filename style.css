@@ -17,12 +17,15 @@ body {
 a:link {
 	color: var(--colorDarkElement);
 }
+
 a:visited {
 	color: var(--colorDarkElement);
 }
+
 a:hover {
 	color: dodgerblue;
 }
+
 a:active {
 	color: dodgerblue;
 }
@@ -36,12 +39,15 @@ a:active {
 .light-mode a:link {
 	color: var(--colorLightElement);
 }
+
 .light-mode a:visited {
 	color: var(--colorLightElement);
 }
+
 .light-mode a:hover {
 	color: dodgerblue;
 }
+
 .light-mode a:active {
 	color: dodgerblue;
 }
@@ -55,19 +61,30 @@ a:active {
 	color: var(--colorLightElement);
 }
 
-.light-mode .navbarContent > div {
+.light-mode .navbarContent>div {
 	background-color: var(--colorLight);
+}
+
+.light-mode .card {
+	background-color: var(--colorLightMenu);
+	color: var(--colorLightElement);
 }
 
 /* Classes */
 .topBar {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
 
-.topBar > div {
+.topBar>div {
 	margin: 8px;
 }
+
+.topBar>div:only-child {
+	margin: 8px;
+	margin-left: auto;
+}
+
 
 .container {
 	display: flex;
@@ -78,6 +95,7 @@ a:active {
 }
 
 @media only screen and (min-width: 1200px) {
+
 	/* For desktop: */
 	/* chaged it to calc(84% - 300px) on 10 october 2023 */
 	.container {
@@ -95,6 +113,7 @@ a:active {
 }
 
 @media only screen and (min-width: 1200px) {
+
 	/* For desktop: */
 	.mainSection {
 		margin-top: 48px;
@@ -105,20 +124,24 @@ a:active {
 	filter: invert(1);
 	transition: 0.5s;
 }
+
 .dpContainer {
 	height: 256px;
 	width: 256px;
-	border-radius: 100%;
+	/* border-radius: 100%; */
 	overflow: hidden;
 }
+
 .dp-anim {
 	animation: tide 0.8s infinite linear;
 }
+
 @keyframes tide {
 	from {
 		margin-left: -85.3333px;
 		margin-top: -85.3333px;
 	}
+
 	to {
 		margin-left: 0px;
 		margin-top: 0px;
@@ -133,25 +156,22 @@ a:active {
 
 .socialSection {
 	display: flex;
-	margin-top: -24px;
+	/* margin-top: -24px; */
 	justify-content: center;
 }
 
 .weblogSection {
-	background-color: tomato;
 	display: flex;
-	font-family: Bangers;
-	font-size: 100px;
-	margin-top: 10px;
+	font-size: 5rem;
 	justify-content: center;
-	left: auto;
-	bottom: auto;
-	width: 100px;
-	height: 60px;
-	border-radius: 16px;
 }
 
-.socialSection > i {
+.letter {
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+
+.socialSection>i {
 	margin: 8px;
 	font-size: 34px;
 }

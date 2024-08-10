@@ -53,7 +53,7 @@ a:active {
 }
 
 .light-mode .dp {
-	filter: invert(0);
+	filter: invert(1);
 }
 
 .light-mode .nav {
@@ -121,7 +121,7 @@ a:active {
 }
 
 .dp {
-	filter: invert(1);
+	filter: invert(0);
 	transition: 0.5s;
 }
 

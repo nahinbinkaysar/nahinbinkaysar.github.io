@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* --colorDark: #121212;
+	--colorDarkElement: #bdbdbd;
+	--colorDarkMenu: #202020; */
+		body {
+			background: #121212;
+			color: #bdbdbd;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="video-placeholder"></div>
+
+	<p id="current-time"></p>
+	<p id="duration"></p>
+	<input type="text" id="start" name="start"><br><br>
+	<input type="text" id="end" name="end"><br>
+	<script src="https://www.youtube.com/iframe_api"></script>
+
+	<script type="text/javascript">
+		var player, time_update_interval = 0;
+		const urlParams = new URLSearchParams(window.location.search);
+		const video = urlParams.get('id');
+
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('video-placeholder', {
+				width: 600,
+				height: 400,
+				videoId: video,
+				playerVars: {
+					color: 'white',
+				},
+				events: {
+					onReady: initialize
+				}
+			});
+		}
+
+		function initialize() {
+
+			// // Update the controls on load
+			updateTimerDisplay();
+
+			clearInterval(time_update_interval);
+
+			// Start interval to update elapsed time display and
+			// the elapsed part of the progress bar every second.
+			time_update_interval = setInterval(function () {
+				updateTimerDisplay();
+				enforceLoop();
+			}, 1000);
+		}
+
+		// This function is called by initialize()
+		var f = 0;
+		function updateTimerDisplay() {
+			// Update current time text display.
+			document.getElementById('current-time').innerHTML = formatTime(player.getCurrentTime());
+			document.getElementById('duration').innerHTML = formatTime(player.getDuration());
+			if (f == 0) {
+				document.getElementById('start').value = formatTime(player.getCurrentTime());
+				document.getElementById('end').value = formatTime(player.getDuration());
+				f = 1;
+			}
+		}
+
+		function enforceLoop() {
+			var currentTime = player.getCurrentTime();
+			var start = parseTime(document.getElementById('start').value);
+			var end = parseTime(document.getElementById('end').value);
+			if (start <= currentTime && currentTime <= end) { }
+			else {
+				player.seekTo(start);
+			}
+		}
+
+		function formatTime(time) {
+			var minutes = Math.floor(time / 60);
+			var seconds = Math.floor(time % 60);
+			return minutes + ":" + seconds;
+		}
+
+		function parseTime(formattedTime) {
+			var parts = formattedTime.split(":");
+			var minutes = parseInt(parts[0], 10);
+			var seconds = parseInt(parts[1], 10);
+
+			return (minutes * 60) + seconds;
+		}
+
+	</script>
+</body>
+
+</html>

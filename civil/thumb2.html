@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Thumb Generator</title>
+	<script type="text/javascript" src="html2canvas.min.js"></script>
+	<script type="text/javascript" src="FileSaver.js"></script>
+
+	<style>
+		body {
+			font-family: 'Cascadia Code', monospace;
+		}
+
+		.thumbDiv {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 1280px;
+			height: 720px;
+			background-color: #080808;
+			justify-content: space-around;
+		}
+
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			color: gainsboro;
+		}
+
+		.subTitle {
+			display: inline-block;
+			font-size: 132px;
+		}
+
+		.date {
+			font-size: 64px;
+		}
+
+		.teacher {
+			font-size: 44px;
+		}
+
+		.lecture {
+			font-weight: 700;
+			font-size: 90px;
+		}
+
+		.wrapper2 {
+			font-weight: 400;
+			font-size: 28px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: gainsboro;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Youtube thumbnail generator, ver: 1.6(BUILD 18112023)</h1>
+	<form action="javascript:;" onsubmit="generate(this)">
+		<label for="sec">Section:</label>
+		<input type="text" id="sec" name="sec" value="B">
+		<label for="sub">Subject:</label>
+		<input type="text" id="sub" name="sub" value="CE 319">
+		<label for="date">Date:</label>
+		<input type="date" id="date" name="date">
+		<label for="teacher">Teacher:</label>
+		<input type="text" id="teacher" name="teacher" value="Dr. Khan Mahmud Amanat">
+		<label for="lecture">Lecture:</label>
+		<input type="text" id="lecture" name="lecture"><br>
+		<input type="submit" value="⛶ Generate"
+			style="margin-top:10px; margin-bottom: 10px;padding: auto;; border-radius: 4px; font-size: large;font-family: 'Sen', sans-serif;">
+	</form>
+	<div style="display: flex;">
+		<input id="title" name="title" value="Video title will appear once thumbnail is generated"
+			style="width: 360px;font-family: 'Sen', sans-serif;">
+		<button onclick="copyToClipboard('title')"
+			style="margin-left: 8px;margin-right: 8px;font-family: 'Sen', sans-serif;">Copy</button>
+		<div id='msg' style="display: none;">Video Title copied</div>
+	</div>
+	<br>
+
+	<div class='thumbDiv' id='container'>
+		<div class="wrapper">
+			<div class="subTitle">Subject</div>
+			<div class="date">Date</div>
+			<div class="teacher">Teacher</div>
+			<div class="lecture">Lecture</div>
+		</div>
+		<div class="wrapper2">
+			<div class="departmentTitle">CIVIL'20\L3T2</div>
+			<div class="sectionCircle"></div>			
+		</div>
+	</div>
+
+	<br>
+	<input type='button'
+		style="height: auto;width: auto; padding:10px; background-color:green; color: white; border-radius: 16px; font-size: larger;font-family: 'Sen', sans-serif;"
+		id='but_screenshot' value='⇩ Download' onclick='screenshot();'><br />
+
+	<br>
+	<br>
+	<h3>made by Nahin Bin Kaysar, for BUET Civil 20</h3>
+	<!-- Script -->
+	<script type='text/javascript'>
+		/**
+		 * Convert a base64 string in a Blob according to the data and contentType.
+		 * 
+		 * @param b64Data {String} Pure base64 string without contentType
+		 * @param contentType {String} the content type of the file i.e (image/jpeg - image/png - text/plain)
+		 * @param sliceSize {Int} SliceSize to process the byteCharacters
+		 * @see http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
+		 * @return Blob
+		 */
+		function b64toBlob(b64Data, contentType, sliceSize) {
+			contentType = contentType || '';
+			sliceSize = sliceSize || 512;
+
+			var byteCharacters = atob(b64Data);
+			var byteArrays = [];
+
+			for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+				var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+				var byteNumbers = new Array(slice.length);
+				for (var i = 0; i < slice.length; i++) {
+					byteNumbers[i] = slice.charCodeAt(i);
+				}
+
+				var byteArray = new Uint8Array(byteNumbers);
+
+				byteArrays.push(byteArray);
+			}
+
+			var blob = new Blob(byteArrays, {
+				type: contentType
+			});
+			return blob;
+		}
+
+		// Generate screenshot and download
+		var element = document.getElementById('container');
+
+		var sub;
+		var sec;
+		var date;
+		var date2;
+		var teacher;
+		var lecture;
+
+		var fileName;
+
+		function screenshot() {
+			html2canvas(element).then(function (canvas) {
+				// Generate the base64 representation of the canvas
+				var base64image = canvas.toDataURL("image/png");
+
+				// Split the base64 string in data and contentType
+				var block = base64image.split(";");
+				// Get the content type
+				var mimeType = block[0].split(":")[1]; // In this case "image/png"
+				// get the real base64 content of the file
+				var realData = block[1].split(",")[1]; // For example:  iVBORw0KGgouqw23....
+
+				// Convert b64 to blob and store it into a variable (with real base64 as value)
+				var canvasBlob = b64toBlob(realData, mimeType);
+
+				// Generate file download
+				window.saveAs(canvasBlob, fileName);
+			});
+		}
+
+		function generate() {
+			sub = document.getElementById('sub').value.toUpperCase();
+			sec = document.getElementById('sec').value.toUpperCase();
+			date = document.getElementById('date').value;
+			date2 = date[8] + date[9] + '/' + date[5] + date[6] + '/' + date[0] + date[1] + date[2] + date[3];
+			teacher = document.getElementById('teacher').value;
+			lecture = document.getElementById('lecture').value;
+			fileName = sec + '_' + sub + '_' + teacher + '_' + lecture + '.png'
+
+			document.getElementsByClassName('subTitle')[0].innerHTML = sub;
+			document.getElementsByClassName('sectionCircle')[0].innerHTML = sec;
+			document.getElementsByClassName('date')[0].innerHTML = date2;
+			document.getElementsByClassName('teacher')[0].innerHTML = teacher;
+			document.getElementsByClassName('lecture')[0].innerHTML = 'Lecture - ' + lecture;
+
+			// if (sec == "ABC") {
+			// 	document.getElementsByClassName('sectionCircle')[0].style.borderColor = "yellow";
+			// 	document.getElementById('container').style.backgroundColor = "yellow";
+			// } else if (sec[0] == 'A') {
+			// 	document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#fe0a0c";
+			// 	document.getElementById('container').style.backgroundColor = "#fe0a0c";
+			// } else if (sec[0] == "B") {
+			// 	document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#0ff3dc";
+			// 	document.getElementById('container').style.backgroundColor = "#0ff3dc";
+			// } else if (sec[0] == "C") {
+			// 	document.getElementsByClassName('sectionCircle')[0].style.borderColor = "#57ff00";
+			// 	document.getElementById('container').style.backgroundColor = "#57ff00";
+			// }
+
+			document.getElementById('title').value = '[' + sec + '] ' + sub + ' || ' + date2 + ' || ' + teacher +
+				' || Lecture ' + lecture;
+		}
+
+		function copyToClipboard() {
+			var textBox = document.getElementById("title");
+			textBox.select();
+			document.execCommand("copy");
+			document.getElementById('msg').style.display = 'block';
+		}
+	</script>
+
+</body>
+
+</html>

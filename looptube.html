@@ -20,16 +20,26 @@
 <body>
 	<div id="video-placeholder"></div>
 
+	<label for="fname">Video Link:</label>
+	<input type="text" id="link" name="link"><br><br>
+	<input type="button" value="Play" onclick="setVideo()">
 	<p id="current-time"></p>
 	<p id="duration"></p>
+	<label for="fname">Start Time:</label>
 	<input type="text" id="start" name="start"><br><br>
+	<label for="fname">End Time:</label>
 	<input type="text" id="end" name="end"><br>
 	<script src="https://www.youtube.com/iframe_api"></script>
 
 	<script type="text/javascript">
 		var player, time_update_interval = 0;
 		const urlParams = new URLSearchParams(window.location.search);
-		const video = urlParams.get('id');
+		video = urlParams.get('id');
+		document.getElementById('link').value = video;
+
+		function setVideo() {
+			video = document.getElementById('link').value;
+		}
 
 		function onYouTubeIframeAPIReady() {
 			player = new YT.Player('video-placeholder', {

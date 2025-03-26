@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text File to Links</title>
+    <title>Our Songs</title>
 </head>
 <body>
     <ul id="linkList"></ul>
 
     <script>
-        fetch('oursongs') // Change this to your fixed file path
+        fetch('oursharedsongs') // Change this to your fixed file path
             .then(response => response.text())
             .then(text => {
                 const lines = text.split('\n');

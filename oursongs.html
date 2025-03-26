@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text File to Links</title>
+</head>
+<body>
+    <ul id="linkList"></ul>
+
+    <script>
+        fetch('oursongs') // Change this to your fixed file path
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.split('\n');
+                const list = document.getElementById('linkList');
+                list.innerHTML = '';
+
+                lines.forEach(line => {
+                    if (line.trim()) {
+                        const parts = line.split('\t');
+                        if (parts.length >= 2) {
+                            const url = parts[0];
+                            const text = parts.slice(1).join(' ');
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.textContent = text;
+                            a.target = '_blank';
+                            li.appendChild(a);
+                            list.appendChild(li);
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading file:', error));
+    </script>
+</body>
+</html>

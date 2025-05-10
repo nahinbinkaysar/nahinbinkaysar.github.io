@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zoom Out Background with Messages</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  .background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('maho/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(10);
+    transition: transform 35s ease-out;
+    z-index: -1;
+  }
+
+  /* Message container */
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background: #201f1e;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    max-width: 90%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  .message p {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .message img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 8px;
+  }
+
+  /* Make text a bit smaller on very small screens */
+  @media (max-width: 400px) {
+    .message p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div id="message-container" class="message"></div>
+
+<script>
+  // Messages list (can include text and optional image URLs)
+  const messages = [
+    { img: "maho/1.jpg" },
+    { img: "maho/2.jpg" },
+    { img: "maho/3.jpg" },
+    { img: "maho/4.jpg" },
+    { img: "maho/5.jpg" },
+    { img: "maho/6.jpg" },
+    { text: null, img: "maho/7.jpg" },
+  ];
+
+  const messageContainer = document.getElementById('message-container');
+  let currentMessage = 0;
+
+  function showMessage(index) {
+    const msg = messages[index];
+	let content = `<img src="${msg.img}" alt="Message Image">`;
+    if (msg.text) {
+		content += `<p>${msg.text}</p>`;
+    }
+    messageContainer.innerHTML = content;
+    messageContainer.style.opacity = '1';
+
+    // Hide after 4 seconds
+    setTimeout(() => {
+      messageContainer.style.opacity = '0';
+    }, 4000);
+  }
+
+  function cycleMessages() {
+    showMessage(currentMessage);
+    currentMessage++;
+    if (currentMessage < messages.length) {
+      setTimeout(cycleMessages, 6000); // 6s per cycle (4s visible + 2s gap)
+    }
+  }
+
+  // Start background zoom-out
+  window.onload = function() {
+    document.querySelector('.background').style.transform = 'scale(1)';
+    cycleMessages();
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+notes from w3 schools
+
+#1	
+In HTML, JavaScript code is inserted between <script> and </script> tags.
+
+```<script>
+	document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>```
+
+You can place any number of scripts in an HTML document.
+
+Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
+
+
+
+
+

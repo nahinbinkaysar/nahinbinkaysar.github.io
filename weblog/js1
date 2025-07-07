@@ -1,7 +1,9 @@
-notes from w3 schools
+# notes from w3 schools
+*by nahin bin kaysar*
+*05/03/2025 @ 1:57am*
 
 #1	
-In HTML, JavaScript code is inserted between <script> and </script> tags.
+In HTML, JavaScript code is inserted between script tag
 
 ```<script>
 	document.getElementById("demo").innerHTML = "My First JavaScript";
@@ -11,7 +13,29 @@ You can place any number of scripts in an HTML document.
 
 Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
 
+Scripts can also be placed in external files.
+```<script src="myScript.js"></script>```
 
+#2
 
+### Using innerHTML
+To access an HTML element, you can use the \(document.getElementById(id)\) method. Use the id attribute to identify the HTML element. Then use the innerHTML property to change the HTML content of the HTML element:
 
+```<!DOCTYPE html>
+<html>
+<body>
 
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+</script>
+
+</body>
+</html>```
+
+### Using innerText
+Use the \(innerText\) property to change the inner text of the HTML element:

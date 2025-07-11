@@ -39,3 +39,134 @@ document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
 
 ### Using innerText
 Use the \(innerText\) property to change the inner text of the HTML element:
+
+```document.getElementById("demo").innerText = "Hello World";```
+
+#...
+
+let a, b, c;  // Declare 3 variables
+a = 5;        // Assign the value 5 to a
+b = 6;        // Assign the value 6 to b
+c = a + b;    // Assign the sum of a and b to c
+
+a = 5; b = 6; c = a + b;
+
+let person = "Nahin";
+let person="Nahin";
+
+"John" + " " + "Doe"
+
+Single line comments start with \(//\)
+
+#...
+### Comment
+Multi-line comments start with \(/* and\ with */\)
+
+var x = 5;
+var y = 6;
+var z = x + y;
+
+#... 
+### Variable re re
+
+Note
+The var keyword was used in all JavaScript code from 1995 to 2015.
+
+The let and const keywords were added to JavaScript in 2015.
+
+The var keyword should only be used in code written for older browsers.
+
+When to Use var, let, or const?
+1. Always declare variables
+2. Always use const if the value should not be changed
+3. Always use const if the type should not be changed (Arrays and Objects)
+4. Only use let if you can't use const
+5. Only use var if you MUST support old browsers.
+
+Variables declared with let have Block Scope
+Variables declared with let must be Declared before use
+Variables declared with let cannot be Redeclared in the same scope
+
+  let x = 2;
+}
+// x can NOT be used here
+
+var x = 10;
+// Here x is 10
+
+{
+var x = 2;
+// Here x is 2
+}
+
+// Here x is 2
+
+let x = 10;
+// Here x is 10
+
+{
+let x = 2;
+// Here x is 2
+}
+
+// Here x is 10
+
+
+let and const have block scope.
+let and const can not be redeclared.
+let and const must be declared before use.
+let and const does not bind to this.
+let and const are not hoisted.
+
+var does not have to be declared.
+
+var is hoisted.
+
+var binds to this.
+
+var x = 2;
+// Now x is 2
+
+var x = 3;
+// Now x is 3
+
+
+
+JavaScript const variables must be assigned a value when they are declared:
+
+const PI;
+PI = 3.14159265359;
+
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
+
+const cars = ["Saab", "Volvo", "BMW"];
+
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+
+// You can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// You can change a property:
+car.color = "red";
+
+// You can add a property:
+car.owner = "Johnson";
+
+var x = 2;     // Allowed
+var x = 3;     // Allowed
+x = 4;         // Allowed
+
+
+### Hoisting re re
+
+Variables defined with var are hoisted to the top and can be initialized at any time.
+
+https://www.w3schools.com/js/js_operators.asp

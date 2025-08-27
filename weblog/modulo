@@ -1,0 +1,28 @@
+# mod inverse is hard...
+*by nahin bin kaysar*
+*28/08/2026 @ 11:49pm*
+
+We have modulo operator (%) in every programming languages. This gets the remainder after a division operations.
+
+### Example:
+5 % 2 is 1 => Dividing 5 by 2 will produce remainder as 1
+We can also write it as, 5 mod 2
+4 % 2 is 0 => 4 is divisible by 2 and will not produce any remainder
+Same as, 4 mod 2
+
+But here is the bane of my existence: the Congruence son of a bitch
+I mean % operator works great. But people had to come up with something stupid and confusing as hell. But I will make your life easy.
+
+# a ≡ b (mod m)
+This is the way to write this shit. Notice that three lines instead of an equal sign? And the location of parentheses? Yeah.
+
+This means a and b will have the same remainder when divided by m
+
+### Example:
+5 ≡ 7 (mod 2) => this means, both 5 and 7 will have the same remainder (it is 1) when divided by 2.
+
+13 ≡ 28 (mod 5) => both 13 and 28 have remainder 3 when we divide them by 5.
+
+ref:
+<a href="https://en.wikipedia.org/wiki/Modular_arithmetic"> Modular arithmetic </a>
+<a href="https://codeforces.com/contest/2134/problem/B"> CF 2134B </a>

@@ -1,39 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Songs</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>our songs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+		}
+
+		.wrap {
+			max-width: 980px;
+			margin: 18px auto;
+			padding: 12px
+		}
+
+		header h1 {
+			margin: 0
+		}
+
+		.list {
+			display: flex;
+			flex-direction: column;
+			margin-top: 14px;
+		}
+
+		.item {
+			display: flex;
+			align-items: center;
+			padding: 6px 2px;
+			gap: 8px;
+			border-bottom: 1px solid rgba(0,0,0,0.04);
+		}
+
+		.date {
+			width: 150px;
+			font-size: 13px;
+			flex-shrink: 0;
+		}
+
+		a.title {
+			background: #375062;
+			padding: 8px 12px;
+			border-radius: 18px;
+			text-decoration: none;
+			display: block;
+			font-size: 15px;
+			min-width: 0; 
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.title-wrap {
+			display: block;
+			max-width: 100%;
+			overflow: hidden;
+			min-width: 0;
+		}
+
+		.tag-n a.title {
+			background: #253D2C;
+		}
+
+		@media (max-width:640px) {
+			.wrap { padding: 10px }
+			.item {
+				flex-direction: row; /* keep row layout on small screens for compactness */
+				align-items: center;
+				gap: 10px;
+			}
+
+			.date {
+				width: 110px;
+				font-size: 12px;
+			}
+
+			a.title {
+				/* keep single-line truncation on small screens */
+				white-space: nowrap;
+				font-size: 14px;
+				padding: 10px;
+			}
+
+			/* stack vertically when extremely narrow (still truncate titles) */
+			@media (max-width:420px) {
+				.item { flex-direction: column; align-items: flex-start }
+				.date { width: auto }
+				/* titles remain single-line with ellipsis */
+			}
+		}
+	</style>
+
 </head>
+
 <body>
-    <ul id="linkList"></ul>
+	<div class="wrap">
+		<header>
+			<h1>our songs</h1>
+		</header>
 
-    <script>
-        fetch('oursharedsongs') // Change this to your fixed file path
-            .then(response => response.text())
-            .then(text => {
-                const lines = text.split('\n');
-                const list = document.getElementById('linkList');
-                list.innerHTML = '';
+		<div id="list" class="list" role="list"></div>
+	</div>
 
-                lines.forEach(line => {
-                    if (line.trim()) {
-                        const parts = line.split('\t');
-                        if (parts.length >= 2) {
-                            const url = parts[0];
-                            const text = parts.slice(1).join(' ');
-                            const li = document.createElement('li');
-                            const a = document.createElement('a');
-                            a.href = url;
-                            a.textContent = text;
-                            a.target = '_blank';
-                            li.appendChild(a);
-                            list.appendChild(li);
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error loading file:', error));
-    </script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"
+		integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg=="
+		crossorigin="anonymous"></script>
+
+	<script>
+		// Helpers
+		function parseDateString(s) {
+			if (!s) return null;
+			s = s.trim();
+			// common format: DD/MM/YYYY HH:MM (24h)
+			let m = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})\s+(\d{1,2}):(\d{2})(?:\s*([APMapm\.]{0,2}))?/);
+			if (m) {
+				let day = parseInt(m[1], 10), month = parseInt(m[2], 10) - 1, year = parseInt(m[3], 10);
+				if (year < 100) year += 2000;
+				let hour = parseInt(m[4], 10), min = parseInt(m[5], 10);
+				// if AM/PM provided and hour<=12 adjust
+				if (m[6]) {
+					let ap = m[6].toLowerCase(); if (ap.includes('p') && hour < 12) hour += 12; if (ap.includes('a') && hour == 12) hour = 0;
+				}
+				return new Date(Date.UTC(year, month, day, hour, min));
+			}
+			// fallback: try Date.parse
+			let d = new Date(s);
+			if (!isNaN(d)) return d;
+			return null;
+		}
+
+		function formatNice(d) {
+			if (!d) return '';
+			// convert UTC date to local timezone display
+			let local = new Date(d.getTime());
+			const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			let day = local.getDate();
+			let mon = months[local.getMonth()];
+			let year = local.getFullYear();
+			let hour = local.getHours();
+			let minute = local.getMinutes();
+			let ampm = hour >= 12 ? 'PM' : 'AM';
+			hour = hour % 12; hour = hour ? hour : 12;
+			minute = minute.toString().padStart(2, '0');
+			return `${day} ${mon} ${year} ${hour}:${minute} ${ampm}`;
+		}
+
+		const listEl = document.getElementById('list');
+		let rows = [];
+
+		function render() {
+			listEl.innerHTML = '';
+			rows.forEach(r => {
+				const item = document.createElement('div');
+				item.className = 'item ' + (r.tag === 'n' ? 'tag-n' : 'tag-other');
+				const dateEl = document.createElement('div'); dateEl.className = 'date'; dateEl.textContent = r.dateNice;
+				const wrap = document.createElement('div'); wrap.className = 'title-wrap';
+				const a = document.createElement('a'); a.className = 'title'; a.textContent = r.title || '(no title)'; a.href = r.url || '#'; a.target = '_blank'; a.rel = 'noopener';
+
+                wrap.appendChild(a);
+				item.appendChild(dateEl);
+				item.appendChild(wrap);
+				listEl.appendChild(item);
+			});
+		}
+
+		async function loadDefault() {
+			try {
+				const res = await fetch('oursharedsongs');
+				if (!res.ok) throw new Error('final.csv not found');
+				const txt = await res.text();
+				const parsed = Papa.parse(txt, { header: true, skipEmptyLines: true });
+				rows = parsed.data.map(r => {
+					const dateRaw = r['Column1'] || r['Date'] || '';
+					const tag = (r['Column2'] || '').trim();
+					const url = (r['Column3'] || '').trim();
+					const title = (r['Title'] || r['Column4'] || '').trim();
+					const dt = parseDateString(dateRaw);
+					const dateNice = formatNice(dt) || dateRaw;
+					return { dateRaw, dateNice, tag, url, title };
+				});
+				render();
+			} catch (err) {
+				console.warn(err);
+			}
+		}
+
+		loadDefault();
+	</script>
 </body>
+
 </html>

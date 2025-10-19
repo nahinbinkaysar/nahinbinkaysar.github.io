@@ -6,6 +6,9 @@
   <title>mag sim</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
   <style>
+    body {
+        background-color: rgb(233, 255, 241);
+    }
     button {
         font-size: 14px;
         border: 1px solid gray;
@@ -29,9 +32,11 @@
 </head>
 <body style="margin:0;overflow:hidden;">
     <div id="ui">
+        <button id="rotate-left">↺</button>
         <button id="btn-grid">grid</button>
         <button id="btn-rnd">random</button>
         <button id="btn-clear">clear</button>
+        <button id="rotate-right">↻</button>
     </div>
 
 <script>
@@ -41,17 +46,12 @@ let magnet, compass, marks = [];
 console.log(new URLSearchParams(window.location.search).get('ui'));
 
 if(new URLSearchParams(window.location.search).get('ui') == 1) {
+    document.getElementById('rotate-left').style.display = 'block';
     document.getElementById('btn-grid').style.display = 'block';
     document.getElementById('btn-rnd').style.display = 'block';
     document.getElementById('btn-clear').style.display = 'block';
+    document.getElementById('rotate-right').style.display = 'block';
 }
-
-// const uiMode = (params.get('ui') || 'visible').toLowerCase();
-// const uiEl = document.getElementById('ui');
-// if (uiEl) {
-
-//     uiEl.style.display = (uiMode === 'hidden') ? 'none' : 'flex';
-// }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -61,7 +61,8 @@ function setup() {
 }
 
 function draw() {
-    background(230, 240, 250);
+    background(233, 255, 241);
+
     drawMarks(marks);
     magnet.draw();
     compass.draw();
@@ -120,9 +121,11 @@ function keyPressed() {
     else if (keyCode === UP_ARROW) fillgridrnd(5);
 }
 
+document.getElementById('rotate-left').addEventListener('click', () => magnet.rotate(radians(-5)));
 document.getElementById('btn-grid').addEventListener('click', () => fillgrid(5));
 document.getElementById('btn-rnd').addEventListener('click', () => fillgridrnd(5));
 document.getElementById('btn-clear').addEventListener('click', () => { marks = []; });
+document.getElementById('rotate-right').addEventListener('click', () => magnet.rotate(radians(5)));
 
 
 function drawMarks(marks) {

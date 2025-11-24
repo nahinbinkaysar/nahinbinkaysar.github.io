@@ -37,73 +37,62 @@
 			<i class="fa-brands fa-telegram" onclick="window.location.href = 'https://t.me/nahinbinkaysar';"></i>
 		</div>
 		<div class="weblogSection" onclick="window.location.href = 'weblog.html';">
-			<span class="letter">B</span>
-			<span class="letter">L</span>
-			<span class="letter">O</span>
-			<span class="letter">G</span>
+			<div data-scramble="" data-text="BLOG" data-delay="1800" class="">BLOG</div>
 		</div>
-	</div>
-	<div class="nav" id="nav">
-		<div class="handle" onclick="openNav()">
-			<i id="up" class="fas fa-chevron-up"></i>
+		<div class="nav" id="nav">
+			<div class="handle" onclick="openNav()">
+				<i id="up" class="fas fa-chevron-up"></i>
+			</div>
+			<div class="navContent">
+				<div onclick="window.location.href = 'datatype.html';">Datatype</div>
+				<div onclick="window.location.href = 'group_8.html';">Group 8 Book</div>
+				<div onclick="window.location.href = 'links.html';">Links</div>
+				<div onclick="window.location.href = 'https://recursion.vercel.app/';">Recusrion Tree Visualizer</div>
+				<div
+					onclick="window.location.href = 'https://earthshakira.github.io/a2oj-clientside/server/Ladders.html';">
+					A2 Ladder</div>
+				<div onclick="window.location.href = 'softwares.html';">Softwares</div>
+				<div onclick="window.location.href = 'realReasonForASCII.html';">Real Reason for A==65 and a==97</div>
+				<div onclick="window.location.href = 'customUdvPage.html';">Customize your Udvash Unmesh Exam Page!
+				</div>
+				<div onclick="window.location.href = 'vlcJoinVid.html';">Join two videos with VLC</div>
+				<div onclick="window.location.href = '1noteColors.html';">OneNote Colors</div>
+				<div onclick="window.location.href = 'msWordFontToggle.html';">Toggle between two fonts in Word</div>
+				<div onclick="window.location.href = 'msExcelMergeToggle.html';">Merge and Center in Excel</div>
+				<div onclick="window.location.href = 'looptube.html';">LoopTube</div>
+			</div>
 		</div>
-		<div class="navContent">
-			<div onclick="window.location.href = 'datatype.html';">Datatype</div>
-			<div onclick="window.location.href = 'group_8.html';">Group 8 Book</div>
-			<div onclick="window.location.href = 'links.html';">Links</div>
-			<div onclick="window.location.href = 'https://recursion.vercel.app/';">Recusrion Tree Visualizer</div>
-			<div onclick="window.location.href = 'https://earthshakira.github.io/a2oj-clientside/server/Ladders.html';">
-				A2 Ladder</div>
-			<div onclick="window.location.href = 'softwares.html';">Softwares</div>
-			<div onclick="window.location.href = 'realReasonForASCII.html';">Real Reason for A==65 and a==97</div>
-			<div onclick="window.location.href = 'customUdvPage.html';">Customize your Udvash Unmesh Exam Page!</div>
-			<div onclick="window.location.href = 'vlcJoinVid.html';">Join two videos with VLC</div>
-			<div onclick="window.location.href = '1noteColors.html';">OneNote Colors</div>
-			<div onclick="window.location.href = 'msWordFontToggle.html';">Toggle between two fonts in Word</div>
-			<div onclick="window.location.href = 'msExcelMergeToggle.html';">Merge and Center in Excel</div>
-			<div onclick="window.location.href = 'looptube.html';">LoopTube</div>
-		</div>
-	</div>
-	<script>
-		var activated = 1;
-		function dark() {
-			var element = document.body;
-			element.classList.toggle("light-mode");
-			var image = document.getElementsByClassName("dp");
-			image.src = "dp.png";
-		}
-		function openNav() {
-			if (activated == 0) {
-				document.getElementById("nav").style.height = "40%";
-				document.getElementById("up").style.transform = 'rotate(180deg)';
-				activated = 1;
+		<script>
+			var activated = 1;
+			function dark() {
+				var element = document.body;
+				element.classList.toggle("light-mode");
+				var image = document.getElementsByClassName("dp");
+				image.src = "dp.png";
 			}
-			else {
-				document.getElementById("nav").style.height = "32px";
-				document.getElementById("up").style.transform = 'rotate(0deg)';
-				activated = 0;
+			function openNav() {
+				if (activated == 0) {
+					document.getElementById("nav").style.height = "40%";
+					document.getElementById("up").style.transform = 'rotate(180deg)';
+					activated = 1;
+				}
+				else {
+					document.getElementById("nav").style.height = "32px";
+					document.getElementById("up").style.transform = 'rotate(0deg)';
+					activated = 0;
+				}
 			}
-		}
 
-		var udv = 0;
-		function launchUdv() {
-			udv += 1;
-			if (udv >= 3) window.location.href = 'udv.html';
-		}
+			var udv = 0;
+			function launchUdv() {
+				udv += 1;
+				if (udv >= 3) window.location.href = 'udv.html';
+			}
+
+			class n { el; text; duration; chars; timer; startTime; interval; isScrambling; constructor(t, r = 750) { this.el = t, this.text = t.getAttribute("data-text") || (t.textContent ? t.textContent.trim() : ""), this.duration = r, this.chars = "!<>-_\\/[]{}—=+*^?#@%&|~", this.timer = null, this.startTime = null, this.interval = null, this.isScrambling = !1 } getRandomChar() { return this.chars[Math.floor(Math.random() * this.chars.length)] } update() { if (this.startTime === null || !this.isScrambling) return; const t = (Date.now() - this.startTime) / this.duration; if (t >= 1) { this.el.textContent = this.text; return } const r = this.text.split("").map((i, e) => { if (t > .7) { const s = Math.floor((t - .7) / .3 * this.text.length); return e < s ? i : this.getRandomChar() } return this.getRandomChar() }).join(""); this.el.textContent = r, this.timer = window.setTimeout(() => this.update(), 50) } start() { this.timer !== null && (clearTimeout(this.timer), this.timer = null), this.isScrambling = !0, this.startTime = Date.now(), this.update() } restart() { this.start(), this.interval !== null && clearInterval(this.interval), this.interval = setInterval(() => this.start(), 7e3) } stop() { this.isScrambling = !1, this.timer !== null && (clearTimeout(this.timer), this.timer = null), this.interval !== null && (clearInterval(this.interval), this.interval = null) } } document.addEventListener("DOMContentLoaded", () => { const a = document.querySelectorAll("[data-scramble]"), t = new IntersectionObserver(r => { r.forEach(i => { const e = i.target; if (e.scrambler) i.isIntersecting ? e.scrambler.restart() : e.scrambler.stop(); else { const s = parseInt(e.getAttribute("data-delay") || "0"); e.scrambler = new n(e), i.isIntersecting && setTimeout(() => e.scrambler?.restart(), s) } }) }, { root: null, threshold: .2, rootMargin: "0px" }); a.forEach(r => { t.observe(r) }) });
 
 
-		const letters = document.querySelectorAll('.letter');
-		const fonts = ['serif', 'sans-serif', 'monospace', 'cursive', 'fantasy', 'Arial', 'Times New Roman'];
-
-		function changeFont() {
-			letters.forEach(letter => {
-				const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-				letter.style.fontFamily = randomFont;
-			});
-		}
-
-		setInterval(changeFont, 200);  // Change fonts every 200ms
-	</script>
+		</script>
 </body>
 
 </html>

@@ -164,6 +164,7 @@ a:active {
 	display: flex;
 	font-size: 5rem;
 	justify-content: center;
+	font-family: monospace;
 }
 
 .letter {

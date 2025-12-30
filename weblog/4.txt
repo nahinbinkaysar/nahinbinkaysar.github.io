@@ -1,0 +1,29 @@
+# something new! (again!)
+*by nahin bin kaysar*
+*30/06/2024 @ 4:58am*
+
+*continuation from the previous **something new!***
+
+### 3
+I took a long break from developing this weblog system. This might be because the lack of motivation on doing so. I have proper time in hand now to pull somthing off like this and I am trying to do by this early morning of 30 June. Hang on a moment, is today DMS's birthday? *(see? /cryptic Do you know him?)* I knew the date was before Harry Potter's birthday. Let's check...
+
+Harry's on the end of July. Regardless I sent DMS a wish.
+
+What I was saying: I wanted to rebuild the weblog system from the ground up. A few months ago *(probably a year)* I started this project. Previous system was not standard. Idea was to hide the links from the address bar. It was successful. I used browser memory to do store a id when the user clicked a blog. It was a lame application.
+
+
+### 4
+This system starts on a json file. That file lists all the weblog files. I will later expand the json file's strength by adding some meta-information regarding individual blogs.
+Then the text file will contain a markdown-like content. I made a parser. This parser will parse text to some custom conditions I made. I already added some md elements. A good advantage is I can make newline with ease. No need to enter the escape character. It has a link functionality. I have been listening to this for a while now: [Shinunoga E-Wa](https://www.youtube.com/watch?v=3zh9Wb1KuW8).
+
+I just found out I can directly use any **HTML TAG!!!!!!**
+<p> This is a paragraph </p>
+<div style="width:100px; height:100px; background-color: tomato;"> This is a div!!!!</div>
+
+Let's try an embed:
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/EoVQ_TQFJy0" title="Djo - End of Beginning (Official Lyric Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Ofcourse it should work. Why wouldn't it? It is good to become and surprised and happy at the same time nowawdays.
+
+Well, after that, there are some javascripts and htmls. Bye for now, need to fix the cssssss.

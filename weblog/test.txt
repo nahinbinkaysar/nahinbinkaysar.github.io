@@ -1,0 +1,27 @@
+*this file is for my sanity*
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+This is **bold text** and this is *italic text*.
+
+Here is a [link](http://example.com).
+
+
+
+### MathJax
+When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+	
+	\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+
+Here is an example of some inline math: \(E = mc^2\)
+
+And here is a block-level math equation:
+
+$$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+
+You can also use LaTeX commands for more complex expressions:
+
+$$\frac{a}{b} + \sqrt{c}$$
+

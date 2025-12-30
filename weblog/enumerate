@@ -1,0 +1,28 @@
+# Printing array elems with index in Python
+*by nahin bin kaysar*
+*03/10/2025 @ 11:21pm*
+
+What does this code do?
+
+```#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	vector<string> a = {"nahin", "bin", "kaysar"};
+	int i = 0;
+	for(auto str:a) {
+		cout << i << " " << str << endl;
+		i++;
+	}
+	return 0;
+}```
+
+This is can be done in python with enumerate()
+
+```a = ['nahin', 'bin', 'kaysar']
+for i, str in enumerate(a):
+	print(i, end=" ")
+	print(str)```
+
+enumerate() enables me to have index and elem at the same time without the need of using a seperate count variable 

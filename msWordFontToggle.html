@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<title>Font and Color Toggler</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@500&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+
+
+	<link href="prism.css" rel="stylesheet" />
+	<script src="prism.js"></script>
+
+	<style>
+		pre {
+			border-radius: 10px;
+		}
+
+		.mainSection {
+			font-family: Roboto;
+			overflow-wrap: break-word;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="topBar" style="justify-content: flex-start;">
+		<div><i class="fas fa-arrow-left" onclick="window.location.href = 'index.html';"></i></div>
+	</div>
+	<div class="container">
+		<div class="mainSection" style="align-items: flex-start;">
+			<div style="overflow-wrap: break-word;">Macro to toggle between Cambria Math and SolaimanLipi</div>
+			<br>
+			<div style="display: flex;">
+				<div>
+					<div>View</div>
+					<div style="border-radius: 100px;width: 35px; height: 2px; background-color: #82ABF1;"></div>
+				</div>
+				<div>></div>
+				<div style="background-color: #3f3f3f; border-radius: 2px; padding-left: 4px; padding-right: 4px;">
+					Macros</div>
+				<div>></div>
+				<div>View Macros</div>
+			</div>
+			<div style="display: flex;">
+				<div>Create any new macros. Paste on the vb</div>
+			</div>
+			<pre><code class="language-vbs">Sub FontToggler()
+	Select Case Selection.Font.Name
+		Case "SolaimanLipi"
+				Selection.Font.Name = "Cambria Math"
+		Case "Cambria Math"
+			Selection.Font.Name = "SolaimanLipi"
+		Case Else
+			Selection.Font.Name = "Cambria Math"
+	End Select
+End Sub
+Sub ColorToggler()
+	Select Case Selection.Font.Color
+		Case wdColorRed
+			Selection.Font.Color = wdColorAuto
+		Case wdColorAuto
+			Selection.Font.Color = wdColorRed
+		Case Else
+			Selection.Font.Color = wdColorAuto
+	End Select
+End Sub		
+			</code></pre>
+			<div>Word Options>Customize Ribbon>Keyboard Shortcuts</div>
+			<div style="background-color: #3f3f3f; border-radius: 2px; padding-left: 4px; padding-right: 4px;">
+				Customize</div>
+			<div>Macros</div>
+			<div>>FontToggler: Ctrl+W</div>
+			<div>>ColorToggler: Ctrl+Q</div>
+			<div>Assign</div>
+		</div>
+		<br><br><br><br><br><br>
+	</div>
+	<div class="nav" id="nav">
+		<div class="handle" onclick="openNav()">
+			<i id="up" class="fas fa-chevron-up"></i>
+		</div>
+		<div class="navContent">
+			<div style="font-weight: 600;">¯\_(ツ)_/¯</div><br>
+		</div>
+	</div>
+	<script>
+		var activated = 1;
+		function openNav() {
+			if (activated == 0) {
+				document.getElementById("nav").style.height = "40%";
+				document.getElementById("up").style.transform = 'rotate(180deg)';
+				activated = 1;
+			}
+			else {
+				document.getElementById("nav").style.height = "32px";
+				document.getElementById("up").style.transform = 'rotate(0deg)';
+				activated = 0;
+			}
+		}
+	</script>
+</body>
+
+</html>

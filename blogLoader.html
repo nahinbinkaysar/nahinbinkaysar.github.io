@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>blogLoader</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/8d492bd0d1.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/pojoaque.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+	<style>
+		body {
+			font-family: Georgia, 'Times New Roman', Times, 'SolaimanLipi', serif;
+			line-height: 1.5;
+			transition: 0.3s;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+		}
+
+		pre code.hljs {
+			tab-size: 4;
+			font-family: 'Cascadia Code', Consolas, monospace;
+			font-size: 12px;
+		}
+
+		#content {
+			padding: 6px 12px 6px 12px;
+			margin: 6px 6px 0px 0px;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		@media only screen and (min-width: 1200px) {
+			#content {
+				margin: auto;
+				width: calc(64%);
+			}
+		}
+
+		.hljs {
+			color: #dccf8f;
+			background: #181914;
+		}
+	</style>
+
+</head>
+
+
+<body>
+	<div class="topBar">
+		<div><i class="fas fa-arrow-left" onclick="window.location.href = 'weblog.html';" aria-hidden="true"></i></div>
+		<div><i class="fas fa-moon" onclick="document.body.classList.toggle('light-mode')"></i></div>
+	</div>
+	<div id="content">
+	</div>
+
+	<script type="module">
+
+		import { parseMarkdown } from '/weblog/parser.js';
+
+		async function fetchAndDisplayFile() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const fileName = '/weblog/' + urlParams.get('blog');
+			console.log(fileName);
+
+			try {
+				const response = await fetch(fileName);
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				const markdownText = await response.text();
+				const htmlText = parseMarkdown(markdownText);
+				document.getElementById('content').innerHTML = htmlText;
+				MathJax.typeset();
+				hljs.highlightAll();
+			} catch (error) {
+				console.error('Error fetching file content:', error);
+			}
+		}
+
+		fetchAndDisplayFile();
+	</script>
+</body>
+
+</html>

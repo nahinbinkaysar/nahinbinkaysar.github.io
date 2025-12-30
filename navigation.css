@@ -1,0 +1,82 @@
+.nav {
+	position: fixed;
+	display: flex;
+	align-items: flex-start;
+	flex-flow: nowrap column;
+	right: 12px;
+	left: 12px;
+	bottom: 12px;
+	background: var(--colorDarkMenu);
+	width: auto;
+	height: 32px;
+	transition: 0.3s;
+	border-radius: 10px;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.nav {
+		top: 96px;
+		right: 16%;
+		left: auto;
+		bottom: auto;
+		width: 300px;
+		height: 600px;
+		border-radius: 16px;
+	}
+}
+
+.handle {
+	display: flex;
+	margin-top: 3px;
+	justify-content: center;
+	width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.handle {
+		display: none;
+	}
+}
+
+.navContent {
+	margin: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+.navContent>div {
+	border-radius: 100px;
+	border: 2px solid;
+	padding: 6px 12px 6px 12px;
+	margin: 6px 6px 0px 0px;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	cursor: default;
+	transition: 0.3s;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.navContent {
+		margin: 12px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		overflow: auto;
+	}
+	.navContent>div {
+		border: none;
+		padding: 3px 0px 3px 12px;
+		margin: 6px 6px 0px 0px;
+		font-size: 16px;
+		font-family: 'Roboto', sans-serif;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+	.navContent>div:hover {
+		color: dodgerblue;
+	}
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mag sim</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+  <style>
+    body {
+        background-color: rgb(233, 255, 241);
+    }
+    button {
+        font-size: 14px;
+        border: 1px solid gray;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: none;
+        box-shadow: 0 2px 6px rgba(7, 32, 74, 0.08);
+    }
+    #ui {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #ui > div {
+       display: flex;
+       gap: 8px;
+       width: 100%;
+       align-items: center;
+   }
+
+    #btn-mark {
+       flex: 1;
+       min-width: 0;
+    }
+
+    </style>
+</head>
+<body style="margin:0;overflow:hidden;">
+    <div id="ui">
+        <div>
+            <button id="btn-grid">grid</button>
+            <button id="btn-rnd">random</button>
+            <button id="btn-clear">clear</button>
+        </div>
+        <div>
+            <button id="rotate-left">↺</button>
+            <button id="btn-mark">___</button>
+            <button id="rotate-right">↻</button>
+        </div>
+    </div>
+
+<script>
+let markSize = 8;
+let magnet, compass, marks = [];
+
+console.log(new URLSearchParams(window.location.search).get('ui'));
+
+if(new URLSearchParams(window.location.search).get('ui') == 1) {
+    document.getElementById('btn-grid').style.display = 'block';
+    document.getElementById('btn-rnd').style.display = 'block';
+    document.getElementById('btn-clear').style.display = 'block';
+    document.getElementById('rotate-left').style.display = 'block';
+    document.getElementById('btn-mark').style.display = 'block';
+    document.getElementById('rotate-right').style.display = 'block';
+}
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    magnet = new BarMagnet(width/2, height/2, 40, 100, radians(270));
+    compass = new Needle(100, 200, 20, 0);
+    compass.barInteraction(magnet);
+}
+
+function draw() {
+    background(233, 255, 241);
+
+    drawMarks(marks);
+    magnet.draw();
+    compass.draw();
+}
+
+function mouseDragged() {
+    compass.x = mouseX;
+    compass.y = mouseY;
+    compass.barInteraction(magnet);
+}
+
+function touchMoved() {
+    compass.x = mouseX;
+    compass.y = mouseY;
+    compass.barInteraction(magnet);
+    return false;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fillgrid(delay = 5) {
+    for (let i = 0; i < width; i+=20) {
+        for (let j = 0; j < height; j+=20) {
+            compass.x = i;
+            compass.y = j;
+            compass.barInteraction(magnet);
+
+            marks.push([compass.x, compass.y, compass.theta]);
+            await sleep(delay);
+        }
+    }
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+async function fillgridrnd(delay = 5) {
+    for (let i = 0; i < 400; i++) {
+        compass.x = randomInt(width/2 - randomInt(200, 400), width/2 + randomInt(200, 400));
+        compass.y = randomInt(height/2 - randomInt(200, 400), height/2 + randomInt(200, 400));
+        compass.barInteraction(magnet);
+
+        marks.push([compass.x, compass.y, compass.theta]);
+        await sleep(delay);
+    }
+}
+
+function keyPressed() {
+    if (keyCode === LEFT_ARROW) magnet.rotate(radians(-5));
+    else if (keyCode === RIGHT_ARROW) magnet.rotate(radians(5));
+    else if (keyCode === 32) marks.push([compass.x, compass.y, compass.theta]);
+    else if (keyCode === DOWN_ARROW) fillgrid(5);
+    else if (keyCode === UP_ARROW) fillgridrnd(5);
+}
+
+document.getElementById('btn-grid').addEventListener('click', () => fillgrid(5));
+document.getElementById('btn-rnd').addEventListener('click', () => fillgridrnd(5));
+document.getElementById('btn-clear').addEventListener('click', () => { marks = []; });
+document.getElementById('rotate-left').addEventListener('click', () => magnet.rotate(radians(-5)));
+document.getElementById('btn-mark').addEventListener('click', () => marks.push([compass.x, compass.y, compass.theta]));
+document.getElementById('rotate-right').addEventListener('click', () => magnet.rotate(radians(5)));
+
+
+function drawMarks(marks) {
+    stroke(10);
+    strokeWeight(2);
+    for (let i = 0; i < marks.length; i++) {
+        let [x, y, t] = marks[i];
+        let s = markSize * sin(t);
+        let c = markSize * cos(t);
+        let x1 = x + s;
+        let y1 = y - c;
+        let x2 = x - s;
+        let y2 = y + c;
+        line(x2, y2, x1, y1);
+        line(x1, y1, x1 + 5 * cos(t + radians(60)), y1 + 5 * sin(t + radians(60)));
+        line(x1, y1, x1 + 5 * cos(t + radians(120)), y1 + 5 * sin(t + radians(120)));
+    }
+}
+
+function BarMagnet(x, y, width, height, angle) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.angle = angle;
+    this.strength = 100;
+
+    this.draw = function() {
+        let w = this.width / 2;
+        let h = this.height / 2;
+        push();
+        translate(this.x, this.y);
+        rotate(this.angle);
+        noStroke();
+        fill(0, 0, 0, 120);
+        rect(-w - 2, 2 - h, this.width, this.height);
+        fill(200, 20, 20);
+        rect(-w, -h, this.width, h);
+        fill(20, 20, 200);
+        rect(-w, 0, this.width, h);
+        textSize(25);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("N", 0, -this.height / 4);
+        text("S", 0, this.height / 4);
+        pop();
+    };
+
+    this.updatePolePositions = function() {
+        let s = (this.height / 2) * sin(this.angle);
+        let c = (this.height / 2) * cos(this.angle);
+        this.x1 = this.x + s;
+        this.x2 = this.x - s;
+        this.y1 = this.y - c;
+        this.y2 = this.y + c;
+    };
+
+    this.rotate = function(angle) {
+        this.angle += angle;
+        this.updatePolePositions();
+    };
+
+    this.updatePolePositions();
+}
+
+function Needle(x, y, r, theta) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.theta = theta;
+
+    this.draw = function() {
+        let width = 10;
+        let r2 = this.r + 5;
+        noStroke();
+        fill(50, 50, 50, 50);
+        ellipse(this.x + 2, this.y + 2, r2 * 2 + 2, r2 * 2 + 2);
+        fill(255, 255, 255, 200);
+        stroke(40);
+        strokeWeight(2);
+        ellipse(this.x, this.y, r2 * 2 + 2, r2 * 2 + 2);
+        strokeWeight(1);
+        stroke(180);
+        line(this.x, this.y - r2, this.x, this.y + r2);
+        line(this.x - r2, this.y, this.x + r2, this.y);
+        let r3 = r2 * sin(radians(45));
+        line(this.x - r3, this.y - r3, this.x + r3, this.y + r3);
+        line(this.x + r3, this.y - r3, this.x - r3, this.y + r3);
+        let s = sin(this.theta);
+        let c = cos(this.theta);
+        let x1 = this.x + s * r;
+        let y1 = this.y - c * r;
+        let x2 = this.x - s * r;
+        let y2 = this.y + c * r;
+        let midX1 = this.x - c * width / 2;
+        let midY1 = this.y - s * width / 2;
+        let midX2 = this.x + c * width / 2;
+        let midY2 = this.y + s * width / 2;
+        stroke(0);
+        fill(220, 20, 20);
+        triangle(midX1, midY1, x1, y1, midX2, midY2);
+        fill(250);
+        triangle(midX1, midY1, x2, y2, midX2, midY2);
+        fill(190);
+        ellipse(this.x, this.y, width, width);
+    };
+
+    this.barInteraction = function(magnet) {
+        let dx = this.x - magnet.x1;
+        let dy = this.y - magnet.y1;
+        let theta1 = atan2(dy, dx) + HALF_PI;
+        let f1 = magnet.strength / (dx * dx + dy * dy);
+        dx = this.x - magnet.x2;
+        dy = this.y - magnet.y2;
+        let theta2 = atan2(dy, dx) - HALF_PI;
+        let f2 = magnet.strength / (dx * dx + dy * dy);
+        let mx = f1 * cos(theta1) + f2 * cos(theta2);
+        let my = f1 * sin(theta1) + f2 * sin(theta2);
+        this.theta = atan2(my, mx);
+    };
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    magnet.x = width / 2;
+    magnet.y = height / 2;
+    magnet.updatePolePositions();
+}
+</script>
+</body>
+</html>

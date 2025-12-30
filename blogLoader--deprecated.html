@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1 id="tit">title</h1>
+	<pre id="wri">writer</pre>
+	<pre id="dat">date</pre>
+	<pre id="txt">text</pre>
+</body>
+
+<script>
+    name = (localStorage.getItem("serialNumber"));
+    Mode = 0;
+    name = "weblog/"+name+".txt";
+    console.log(name);
+    fetch(name)
+	.then(response => response.text())
+	.then(data => {
+		DATA = data;
+        title = "";
+		writer = "";
+		date = "";
+		text = "";
+		for (i = 0; i < DATA.length; i++) {
+			if(DATA[i] == '*') {
+				Mode++;
+				continue;
+			}
+			if(Mode == 1) title = title + DATA[i];
+			if(Mode == 2) writer = writer + DATA[i];
+			if(Mode == 3) date = date + DATA[i];
+			if(Mode == 4) text = text + DATA[i];
+		}
+        document.getElementById('tit').innerHTML = title;
+		document.getElementById('wri').innerHTML = writer;
+		document.getElementById('dat').innerHTML = date;
+			
+		document.getElementById('txt').innerHTML = text;
+	});
+</script>
+</html>

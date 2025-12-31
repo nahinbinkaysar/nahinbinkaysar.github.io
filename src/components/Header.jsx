@@ -1,5 +1,5 @@
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import {
 //   Menu,
 //   ChevronDown,
@@ -35,17 +35,20 @@ import { Button } from "@/components/ui/button";
 // } from "@/components/ui/popover";
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [session, setSession] = useState(null);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
-  
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY.current || currentScrollY < 20) {
+        setVisible(true);
       } else {
-        setScrolled(false);
+        setVisible(false);
       }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -57,12 +60,12 @@ function Header() {
   return (
     <>
       <div
-        className={`w-full h-24 flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-xs ${
-          scrolled ? "bg-background/90" : "bg-background/70"
+        className={`w-full h-24 flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-xs bg-background/70 ${
+          visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         {/* Desktop header */}
-        <div className="hidden md:flex md:justify-between w-full px-32">
+        <div className="hidden md:flex md:justify-between max-w-400 w-full px-32">
           {/* Logo left */}
           <div className="flex m-3 gap-2">
             <a href="/">
@@ -76,7 +79,6 @@ function Header() {
             <div>About</div>
             <div>Blog</div>
             <div>Contact</div>
-
 
             {/* <ModeToggle /> */}
           </div>

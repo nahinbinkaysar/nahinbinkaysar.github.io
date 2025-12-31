@@ -60,12 +60,11 @@ function Header() {
   return (
     <>
       <div
-        className={`w-full h-24 flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-xs bg-background/70 ${
-          visible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`w-full h-24 flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-xs bg-background/70 ${visible ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         {/* Desktop header */}
-        <div className="hidden md:flex md:justify-between max-w-400 w-full px-32">
+        <div className="hidden font-sofia-pro md:flex md:justify-between max-w-400 w-full px-32">
           {/* Logo left */}
           <div className="flex m-3 gap-2">
             <a href="/">
@@ -75,10 +74,10 @@ function Header() {
 
           {/* Social right */}
           <div className="flex items-center m-3 gap-8 ">
-            <div>Work</div>
-            <div>About</div>
-            <div>Blog</div>
-            <div>Contact</div>
+            <Link to="/work" className="hover:text-foreground transition-colors">Work</Link>
+            <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
+            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+            <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
 
             {/* <ModeToggle /> */}
           </div>

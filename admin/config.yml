@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: nahinbinkaysar/nahinbinkaysar.github.io
-  branch: main
+  branch: master
 
 media_folder: "public/uploads"
 public_folder: "/uploads"

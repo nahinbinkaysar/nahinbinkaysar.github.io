@@ -42,10 +42,9 @@ function Header() {
     <>
       {/* Desktop Header - Top */}
       <div
-        className={`w-full h-24 hidden md:flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-md bg-background/80 border-b border-border/50 ${visible ? "translate-y-0" : "-translate-y-full"
-          }`}
+        className={`w-full -translate-y-full flex items-center fixed top-0 z-40 justify-center transition-all duration-300 ease-in-out backdrop-blur-md bg-background/80 border-b border-border/50 overflow-hidden ${visible ? "md:translate-y-0" : "md:-translate-y-full"}`}
       >
-        <div className="font-sofia-pro flex justify-between max-w-400 w-full px-6 lg:px-32 transition-all duration-300">
+        <div className="font-sofia-pro h-24 flex justify-between max-w-400 w-full px-6 lg:px-32 transition-all duration-300">
           <div className="flex items-center gap-2">
             <Link to="/" className="text-lg font-semibold hover:text-primary transition-colors">
               nahin
@@ -70,17 +69,17 @@ function Header() {
 
       {/* Mobile Header - Bottom Navigation Bar */}
       <div
-        className={`md:hidden w-full h-16 flex items-center fixed bottom-0 z-40 justify-center transition-all duration-300 ${visible ? "translate-y-0" : "translate-y-full"
-          }`}
+        className={`w-full flex items-center fixed bottom-0 z-40 justify-center overflow-hidden transition-all duration-300 md:translate-y-full ${visible ? "translate-y-0" : "translate-y-full"}`}
       >
-        <div className="flex items-center justify-around h-14 mx-4 mb-2 bg-card/90 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg w-full max-w-md transition-all duration-300">
+        <div className="flex items-center justify-around p-2 mx-4 mb-2 bg-card backdrop-blur-md rounded-4xl border border-border/50 shadow-lg
+        w-full max-w-md transition-all duration-300">
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-200 ${isActive(link.path)
+                className={`flex flex-col flex-1 items-center justify-center p-2 rounded-2xl transition-all duration-200 ${isActive(link.path)
                   ? "text-foreground bg-accent scale-105"
                   : "text-muted-foreground hover:text-foreground hover:scale-105"
                   }`}

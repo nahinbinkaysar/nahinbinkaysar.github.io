@@ -2,6 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Header } from "./Header";
 import { Blog } from "./Blog";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa"
+import { SiCodeforces } from "react-icons/si"
 
 function Home() {
   const oldStuffs = [
@@ -50,13 +57,13 @@ function Home() {
       <Header />
 
       <div className="flex flex-col h-svh">
-        <div className="h-24"></div>
-        <div className="@container flex flex-col gap-4 max-w-400 m-3 px-4 sm:px-6 lg:px-32">
+        <div className="h-24 transition-all duration-300"></div>
+        <div className="@container flex flex-col gap-4 max-w-400 m-3 px-4 sm:px-6 lg:px-32 transition-all duration-300">
           <h1 className="text-[15cqw] font-anton">
             Nahin Bin Kaysar
           </h1>
 
-          <div className="flex w-full text-sm text-foreground gap-10">
+          <div className="flex flex-col md:flex-row w-full text-sm text-foreground gap-10 transition-all duration-300">
             <div className="flex flex-2">
               I am currently completing my last year as an undergraduate student at BUET.
               Very soon my game with forces and moments will come to an end.
@@ -65,15 +72,55 @@ function Home() {
               I love to build stuffs. Right now my tools of choice are React.js, shadcn, FastAPI and supabase.
               I also do contests on Codeforces.
             </div>
-            <div className="flex flex-1 items-end justify-end underline">
-              <p>GET IN TOUCH →</p>
+            <div className="hidden md:flex flex-1 items-end justify-end underline">
+              <HoverCard>
+                <HoverCardTrigger className="cursor-pointer">GET IN TOUCH →</HoverCardTrigger>
+                <HoverCardContent className="w-fit">
+                  <div className="flex gap-4">
+                    <a href="https://github.com/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      <FaGithub size={24} />
+                    </a>
+                    <a href="https://linkedin.com/in/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      <FaLinkedin size={24} />
+                    </a>
+                    <a href="https://facebook.com/nahin.binkaysar.7" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      <FaFacebook size={24} />
+                    </a>
+                    <a href="https://codeforces.com/profile/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      <SiCodeforces size={24} />
+                    </a>
+                    <a href="mailto:nahinbinkaysar@gmail.com" className="hover:text-primary transition-colors">
+                      <FaEnvelope size={24} />
+                    </a>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+
+            <div className="md:hidden flex-1 items-end justify-end underline">
+              <div className="flex gap-4">
+                <a href="https://github.com/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  <FaGithub size={24} />
+                </a>
+                <a href="https://linkedin.com/in/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  <FaLinkedin size={24} />
+                </a>
+                <a href="https://facebook.com/nahin.binkaysar.7" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  <FaFacebook size={24} />
+                </a>
+                <a href="https://codeforces.com/profile/nahinbinkaysar" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  <SiCodeforces size={24} />
+                </a>
+                <a href="mailto:nahinbinkaysar@gmail.com" className="hover:text-primary transition-colors">
+                  <FaEnvelope size={24} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="flex flex-1 py-10">
-          <div className="flex-1 bg-foreground h-full border-r-8 rounded-r-full"></div>
-          <div className="w-32"></div>
+          <div className="flex-1 bg-foreground h-full border-r-8 rounded-r-full mr-4 sm:mr-6 lg:mr-32 transition-all duration-300"></div>
         </div>
       </div>
 

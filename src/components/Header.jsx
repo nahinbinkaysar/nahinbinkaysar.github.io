@@ -1,42 +1,13 @@
-import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
-// import {
-//   Menu,
-//   ChevronDown,
-//   Pen,
-//   PlusSquare,
-//   User,
-//   UserCircle2,
-//   LogOut,
-//   StickyNote,
-// } from "lucide-react";
-import { Link } from "react-router-dom";
-
-// import {
-//   Sheet,
-//   SheetContent,
-//   SheetHeader,
-//   SheetTitle,
-//   SheetTrigger,
-//   SheetClose,
-// } from "@/components/ui/sheet";
-
-// import {
-//   Collapsible,
-//   CollapsibleContent,
-//   CollapsibleTrigger,
-// } from "@/components/ui/collapsible";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// import { ModeToggle } from "./mode-toggle.jsx";
-// import {
-//   Popover,
-//   PopoverContent,
-//   PopoverTrigger,
-// } from "@/components/ui/popover";
+import { ModeToggle } from "./mode-toggle.jsx";
+import { Home, Briefcase, User, BookOpen, Mail } from "lucide-react";
 
 function Header() {
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,49 +28,68 @@ function Header() {
     };
   }, []);
 
+  const isActive = (path) => location.pathname === path;
+
+  const navLinks = [
+    { path: "/", label: "Home", icon: Home },
+    { path: "/work", label: "Work", icon: Briefcase },
+    { path: "/about", label: "About", icon: User },
+    { path: "/blog", label: "Blog", icon: BookOpen },
+    { path: "/contact", label: "Contact", icon: Mail },
+  ];
+
   return (
     <>
+      {/* Desktop Header - Top */}
       <div
-        className={`w-full h-24 flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-xs bg-background/70 ${visible ? "translate-y-0" : "-translate-y-full"
+        className={`w-full h-24 hidden md:flex items-center fixed top-0 z-40 justify-center transition-all duration-300 backdrop-blur-md bg-background/80 border-b border-border/50 ${visible ? "translate-y-0" : "-translate-y-full"
           }`}
       >
-        {/* Desktop header */}
-        <div className="hidden font-sofia-pro md:flex md:justify-between max-w-400 w-full px-32">
-          {/* Logo left */}
-          <div className="flex m-3 gap-2">
-            <a href="/">
-              <div>nahin</div>
-            </a>
+        <div className="font-sofia-pro flex justify-between max-w-400 w-full px-6 lg:px-32 transition-all duration-300">
+          <div className="flex items-center gap-2">
+            <Link to="/" className="text-lg font-semibold hover:text-primary transition-colors">
+              nahin
+            </Link>
           </div>
 
-          {/* Social right */}
-          <div className="flex items-center m-3 gap-8 ">
-            <Link to="/work" className="hover:text-foreground transition-colors">Work</Link>
-            <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
-            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-            <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
-
-            {/* <ModeToggle /> */}
+          <div className="flex items-center gap-8">
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`hover:text-foreground transition-colors ${isActive(link.path) ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <ModeToggle />
           </div>
         </div>
+      </div>
 
-        {/* Mobile header */}
-        <div className="md:hidden flex w-full">
-          {/* Logo left */}
-          <div className="flex fixed left-0 m-3 gap-2">
-            <a href="/">
-              <img
-                className="w-auto h-18"
-                src="https://zrlccixefhitycbtdnab.supabase.co/storage/v1/object/public/images/ite-logo-buet.svg"
-                alt="ITE BUET logo"
-              />
-            </a>
-          </div>
-
-          {/* Hamburger right */}
-          <div className="flex items-center fixed right-0 m-3 gap-2">
-            {/* <MobileNav /> */}
-          </div>
+      {/* Mobile Header - Bottom Navigation Bar */}
+      <div
+        className={`md:hidden w-full h-16 flex items-center fixed bottom-0 z-40 justify-center transition-all duration-300 ${visible ? "translate-y-0" : "translate-y-full"
+          }`}
+      >
+        <div className="flex items-center justify-around h-14 mx-4 mb-2 bg-card/90 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg w-full max-w-md transition-all duration-300">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-200 ${isActive(link.path)
+                  ? "text-foreground bg-accent scale-105"
+                  : "text-muted-foreground hover:text-foreground hover:scale-105"
+                  }`}
+              >
+                <Icon size={20} />
+                <span className="text-[10px] mt-1">{link.label}</span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>

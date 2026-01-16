@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { ExternalLink, Gavel, Image, Play, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Gavel, Image, Play, ArrowUpRight, Building } from "lucide-react";
 import { FaGithub, FaFacebook, FaTwitter } from "react-icons/fa";
 
 function Work({ amount, onHome = false }) {
@@ -13,6 +13,14 @@ function Work({ amount, onHome = false }) {
             web: "https://ite.ce.buet.ac.bd/",
             facebook: "https://www.facebook.com/share/p/1KAZsVsWaa/",
             twitter: "https://x.com/nahinbinkaysar/status/2004068531491750071?s=20"
+        },
+        {
+            title: "BNBC 2020 Assistant",
+            details: "AI-powered assistant for querying the Bangladesh National Building Code (BNBC) 2020, built with RAG technology.",
+            icon: Building,
+            web: "https://bnbc-assistant.vercel.app/",
+            github: "https://github.com/nahinbinkaysar/rag-bnbc-frontend",
+            github2: "https://github.com/nahinbinkaysar/rag-bnbc-backend"
         },
         {
             title: "Lawyered",
@@ -91,6 +99,16 @@ function Work({ amount, onHome = false }) {
                     {project.github && (
                         <a
                             href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            <FaGithub size={20} />
+                        </a>
+                    )}
+                    {project.github2 && (
+                        <a
+                            href={project.github2}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground transition-colors"

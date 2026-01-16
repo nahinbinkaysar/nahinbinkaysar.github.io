@@ -1,0 +1,18 @@
+i participated in the gamejam 2023 organized by buet cse 
+it is kind of like a shooting game, where the enemies will auto generate
+the game is made with godot
+
+github link: https://github.com/nahinbinkaysar/escape-demolition_men
+youtube video link: https://youtu.be/6XLtzrXTavk
+
+later that year, i participated in the buet cse fest api and cloud services challange
+we were the champion there. it was An interface for contextual chatting, children oriented
+PDF books generation and maintenance and sharing of generated books through user profile.
+
+github: https://github.com/aaniksahaa/Fly-dot-AI
+youtube: https://www.youtube.com/watch?v=di7Bn5uIbQE
+
+hey, last time you made some good changes on the page
+now i want you to create a new page. you will just create that with the contents that i will provide. you don't have to provide its entry to any other existing pages. it will exist on its own.
+
+here i will showcase some more of my projects

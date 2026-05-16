@@ -6,6 +6,7 @@ import { BlogRead } from "./components/BlogRead";
 import { Work } from "./components/Work";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
+import { Designs } from "./components/Designs";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:filename" element={<BlogRead />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/designs" element={<Designs />} />
           </Routes>
         </Router>
       </>

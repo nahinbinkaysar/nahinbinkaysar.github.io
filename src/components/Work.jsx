@@ -16,7 +16,7 @@ function Work({ amount, onHome = false }) {
         },
         {
             title: "BNBC 2020 Assistant",
-            details: "AI-powered assistant for querying the Bangladesh National Building Code (BNBC) 2020, built with RAG technology.",
+            details: "AI-powered assistant for querying the Bangladesh National Building Code (BNBC) 2020, built with RAG technology",
             icon: Building,
             web: "https://bnbc-assistant.vercel.app/",
             github: "https://github.com/nahinbinkaysar/rag-bnbc-frontend",

@@ -4,7 +4,7 @@ Then i found tmux. tmux is a terminal multiplexer. It can run multiple terminal 
 The steps I took - 
 1. SSHed into the VPS
 2. Started a tmux session with: tmux new -s test
-3. Activated the virtual environment inside it: source venv/bin/activate
+3. Activated the virtual environment inside it: source .venv/bin/activate
 4. Ran the Python file inside the venv: python3 discover_all_brands.py
 5. Detached without stopping the command: press Ctrl-b, then d
 6. Closed the SSH

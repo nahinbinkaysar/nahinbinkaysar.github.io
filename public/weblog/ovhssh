@@ -1,0 +1,30 @@
+I was very annoyed to enter my vps password repeatedly while working on the Hypermux.
+So, I added an SSH key onto my OVHcloud vps.
+The steps I took - 
+
+1. Generated an SSH Key Pair with: ssh-keygen -t ed25519 -C "nahinbinkaysar@gmail.com"
+2. It asked for a name and passphrase. I entered a name and left the passphrase blank
+3. Then I added my public key to the OVHcloud by: ssh-copy-id -i ~/.ssh/ovh.pub ubuntu@vps_ip
+4. Then I could login without entering the password: ssh -i /Users/nahin/.ssh/ovh ubuntu@vps_ip
+
+"ed25519 is a modern cryptographic algorithm used to generate SSH key pairs. It is widely considered the current industry standard for securing server connections because it is faster and much more secure than older methods."
+
+We can also disable the password login entirely, but I did not do that because I need to login with my phone.
+
+Using the key in the command is also painful, so I added the key in the config file. The config is stored here: ~/.ssh/config
+I then added this line: IdentityFile ~/.ssh/ovh
+
+Before:
+	Host vps_ip
+	HostName vps_ip
+	User ubuntu
+
+After:
+	Host vps_ip
+	HostName vps_ip
+	IdentityFile ~/.ssh/ovh
+	User ubuntu
+
+Nahin Bin Kaysar
+20 July 2026 @ 11:24 AM
+Started on: 18 July 2026 @ 6 PM
